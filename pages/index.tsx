@@ -1,21 +1,10 @@
-import { useState } from "react";
-import { faAdjust, faSpinner } from "@fortawesome/free-solid-svg-icons";
 import type { NextPage } from "next";
-import { Button } from "../components/Layout/index";
+import Header from "../components/App/Header";
 
 const Home: NextPage = () => {
-  const [loading, setLoading] = useState(false);
-
   return (
     <>
-      <Button
-        children="Clicou"
-        scheme="blue"
-        size="medium"
-        icon={faAdjust}
-        loading={loading}
-        onClick={() => setLoading(!loading)}
-      />
+      <Header />
     </>
   );
 };
