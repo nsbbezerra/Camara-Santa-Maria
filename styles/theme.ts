@@ -41,7 +41,9 @@ const customTheme = extendTheme({
   },
   components: {
     Button: {
-      baseStyle: { _focus: { boxShadow: "none" } },
+      baseStyle: {
+        _focus: { boxShadow: "none" },
+      },
     },
     CloseButton: {
       baseStyle: { _focus: { boxShadow: "none" } },
