@@ -9,19 +9,13 @@ import {
   HStack,
   Divider,
   Text,
-  Menu,
-  MenuButton,
-  MenuList,
-  MenuItem,
 } from "@chakra-ui/react";
 import {
   AiOutlineWhatsApp,
   AiOutlineInstagram,
   AiOutlineYoutube,
 } from "react-icons/ai";
-import { BiChevronDown } from "react-icons/bi";
 import Image from "next/image";
-import { motion } from "framer-motion";
 
 const Header: FC = () => {
   return (

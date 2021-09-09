@@ -15,7 +15,14 @@ const CarouselApp: FC = () => {
   });
 
   return (
-    <Carousel autoPlay showArrows showStatus={false}>
+    <Carousel
+      autoPlay
+      showArrows
+      showStatus={false}
+      showThumbs={false}
+      infiniteLoop
+      interval={5000}
+    >
       <Box>
         <Image
           src="https://img.freepik.com/vetores-gratis/ilustracao-de-verao-cidade-rua-cidade_1284-23433.jpg?size=626&ext=jpg&ga=GA1.2.2032489523.1630713600"
