@@ -9,11 +9,14 @@ import {
   HStack,
   Divider,
   Text,
+  LinkBox,
+  LinkOverlay,
 } from "@chakra-ui/react";
 import {
   AiOutlineWhatsApp,
   AiOutlineInstagram,
   AiOutlineYoutube,
+  AiOutlineMenu,
 } from "react-icons/ai";
 import Image from "next/image";
 
@@ -27,7 +30,23 @@ const Header: FC = () => {
       <Box bg="green.500" h="45px" justify="center" align="center">
         <Container maxW="5xl">
           <Flex justify="space-between" align="center" h="45px">
-            <HStack spacing={4}>
+            <HStack
+              spacing={4}
+              display={["flex", "none", "none", "none", "none"]}
+            >
+              <IconButton
+                aria-label="Menu"
+                icon={<AiOutlineMenu />}
+                variant="link"
+                colorScheme="whiteAlpha"
+                color="white"
+                fontSize="2xl"
+              />
+            </HStack>
+            <HStack
+              spacing={4}
+              display={["none", "flex", "flex", "flex", "flex"]}
+            >
               <Button
                 variant="link"
                 colorScheme="whiteAlpha"
@@ -76,7 +95,13 @@ const Header: FC = () => {
             </HStack>
 
             <HStack spacing={1}>
-              <Text fontWeight="semibold" color="white" mr={3} fontSize="sm">
+              <Text
+                fontWeight="semibold"
+                color="white"
+                mr={3}
+                fontSize="sm"
+                display={["none", "none", "block", "block", "block"]}
+              >
                 SIGA A PREFEITURA
               </Text>
 
@@ -112,18 +137,37 @@ const Header: FC = () => {
       <Box>
         <Container maxW="5xl">
           <Flex h="170px" align="center" justify="space-between">
-            <Box h="170px" overflow="hidden">
-              <Image
-                alt="Prefeitura Municipal de Santa Maria do Tocantins"
-                src="/img/logo.jpeg"
-                width={215}
-                height={170}
-                layout="fixed"
-                objectFit="cover"
-              />
-            </Box>
+            <LinkBox h="130px" overflow="hidden">
+              <LinkOverlay href="/">
+                <Image
+                  alt="Prefeitura Municipal de Santa Maria do Tocantins"
+                  src="/img/logo.png"
+                  width={215}
+                  height={130}
+                  layout="intrinsic"
+                  objectFit="cover"
+                />
+              </LinkOverlay>
+            </LinkBox>
 
-            <HStack spacing={5}>
+            <HStack
+              spacing={5}
+              display={["flex", "flex", "flex", "none", "none"]}
+            >
+              <IconButton
+                aria-label="Menu"
+                icon={<AiOutlineMenu />}
+                colorScheme="blue"
+                variant="outline"
+                fontSize="2xl"
+                size="lg"
+              />
+            </HStack>
+
+            <HStack
+              spacing={5}
+              display={["none", "none", "none", "flex", "flex"]}
+            >
               <Button
                 variant="link"
                 colorScheme="blue"

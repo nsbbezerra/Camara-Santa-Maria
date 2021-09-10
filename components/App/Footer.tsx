@@ -7,6 +7,8 @@ import {
   Stack,
   Text,
   Flex,
+  LinkBox,
+  LinkOverlay,
 } from "@chakra-ui/react";
 import Image from "next/image";
 
@@ -19,58 +21,69 @@ const Footer: FC = () => {
             templateColumns="repeat(auto-fit, minmax(290px, 290px))"
             gap={10}
             justifyContent="center"
+            justifyItems="center"
           >
             <Box w="260px" h="230px">
               <Image
                 src="/img/logo-mono.png"
                 layout="responsive"
                 width={460}
-                height={300}
+                height={280}
                 objectFit="cover"
               />
             </Box>
             <Box>
               <Stack spacing={5}>
-                <Button
-                  variant="link"
-                  colorScheme="whiteAlpha"
-                  color="white"
-                  _hover={{ textDecor: "none" }}
-                >
-                  A PREFEITURA
-                </Button>
-                <Button
-                  variant="link"
-                  colorScheme="whiteAlpha"
-                  color="white"
-                  _hover={{ textDecor: "none" }}
-                >
-                  SECRETARIAS
-                </Button>
-                <Button
-                  variant="link"
-                  colorScheme="whiteAlpha"
-                  color="white"
-                  _hover={{ textDecor: "none" }}
-                >
-                  NOTÍCIAS
-                </Button>
-                <Button
-                  variant="link"
-                  colorScheme="whiteAlpha"
-                  color="white"
-                  _hover={{ textDecor: "none" }}
-                >
-                  LICITAÇÕES E EDITAIS
-                </Button>
-                <Button
-                  variant="link"
-                  colorScheme="whiteAlpha"
-                  color="white"
-                  _hover={{ textDecor: "none" }}
-                >
-                  AGENDA
-                </Button>
+                <LinkBox>
+                  <LinkOverlay
+                    href="/"
+                    color="white"
+                    fontWeight="semibold"
+                    _hover={{ textDecor: "underline" }}
+                  >
+                    A PREFEITURA
+                  </LinkOverlay>
+                </LinkBox>
+                <LinkBox>
+                  <LinkOverlay
+                    href="/"
+                    color="white"
+                    fontWeight="semibold"
+                    _hover={{ textDecor: "underline" }}
+                  >
+                    SECRETARIAS
+                  </LinkOverlay>
+                </LinkBox>
+                <LinkBox>
+                  <LinkOverlay
+                    href="/"
+                    color="white"
+                    fontWeight="semibold"
+                    _hover={{ textDecor: "underline" }}
+                  >
+                    NOTÍCIAS
+                  </LinkOverlay>
+                </LinkBox>
+                <LinkBox>
+                  <LinkOverlay
+                    href="/"
+                    color="white"
+                    fontWeight="semibold"
+                    _hover={{ textDecor: "underline" }}
+                  >
+                    LICITAÇÕES E EDITAIS
+                  </LinkOverlay>
+                </LinkBox>
+                <LinkBox>
+                  <LinkOverlay
+                    href="/"
+                    color="white"
+                    fontWeight="semibold"
+                    _hover={{ textDecor: "underline" }}
+                  >
+                    AGENDA
+                  </LinkOverlay>
+                </LinkBox>
               </Stack>
             </Box>
 

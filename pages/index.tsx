@@ -7,29 +7,19 @@ import {
   Container,
   Grid,
   Button,
-  Stack,
   Flex,
-  Icon,
   Text,
   Box,
   LinkBox,
   LinkOverlay,
   AspectRatio,
 } from "@chakra-ui/react";
-import {
-  AiOutlineSearch,
-  AiOutlineFile,
-  AiOutlineMedicineBox,
-  AiOutlineTool,
-  AiOutlineCopy,
-} from "react-icons/ai";
-import { IoWaterOutline } from "react-icons/io5";
-import { GiInjustice } from "react-icons/gi";
-import { ImNewspaper } from "react-icons/im";
+import { AiOutlinePlus, AiOutlineSearch } from "react-icons/ai";
 import { motion } from "framer-motion";
 import Image from "next/image";
 import { Carousel } from "react-responsive-carousel";
 import Footer from "../components/App/Footer";
+import Navigation from "../components/App/Navigation";
 
 const Home: NextPage = () => {
   return (
@@ -42,343 +32,36 @@ const Home: NextPage = () => {
       </Center>
 
       <Container maxW="6xl">
-        <Grid templateColumns="280px 1fr" gap={4}>
-          <Stack spacing={2}>
-            <Button
-              colorScheme="blue"
-              leftIcon={<AiOutlineSearch />}
-              _hover={{ transform: "scale(1.05)" }}
-              _active={{ transform: "scale(1)" }}
-              size="lg"
-            >
-              Transparência
-            </Button>
-            <Button
-              colorScheme="blue"
-              leftIcon={<IoWaterOutline />}
-              _hover={{ transform: "scale(1.05)" }}
-              _active={{ transform: "scale(1)" }}
-              size="lg"
-            >
-              Saneamento Básico
-            </Button>
-            <Button
-              colorScheme="blue"
-              leftIcon={<AiOutlineFile />}
-              _hover={{ transform: "scale(1.05)" }}
-              _active={{ transform: "scale(1)" }}
-              size="lg"
-            >
-              Nota Eletrônica
-            </Button>
-            <Button
-              colorScheme="blue"
-              leftIcon={<AiOutlineMedicineBox />}
-              _hover={{ transform: "scale(1.05)" }}
-              _active={{ transform: "scale(1)" }}
-              size="lg"
-            >
-              Transparência Covid-19
-            </Button>
-            <Button
-              colorScheme="blue"
-              leftIcon={<AiOutlineSearch />}
-              _hover={{ transform: "scale(1.05)" }}
-              _active={{ transform: "scale(1)" }}
-              size="lg"
-            >
-              Transparência 2014 a 2020
-            </Button>
-            <Button
-              colorScheme="blue"
-              leftIcon={<AiOutlineTool />}
-              _hover={{ transform: "scale(1.05)" }}
-              _active={{ transform: "scale(1)" }}
-              size="lg"
-            >
-              Portal de Serviços
-            </Button>
-          </Stack>
-
-          <Grid templateColumns="repeat(4, 1fr)" gap={3}>
-            <motion.div
-              whileHover={{ scale: 1.03 }}
-              whileTap={{ scale: 1 }}
-              transition={{ duration: 0.2 }}
-            >
-              <Flex
-                bg="green.500"
-                color="white"
-                rounded="md"
-                direction="column"
-                justify="center"
-                align="center"
-                h="102px"
-                cursor="pointer"
-              >
-                <Icon as={ImNewspaper} fontSize="3xl" userSelect="none" />
-                <Text mt={2} userSelect="none">
-                  Diário Municipal
-                </Text>
-              </Flex>
-            </motion.div>
-
-            <motion.div
-              whileHover={{ scale: 1.03 }}
-              whileTap={{ scale: 1 }}
-              transition={{ duration: 0.2 }}
-            >
-              <Flex
-                bg="green.500"
-                color="white"
-                rounded="md"
-                direction="column"
-                justify="center"
-                align="center"
-                h="102px"
-                cursor="pointer"
-              >
-                <Icon as={AiOutlineFile} fontSize="3xl" userSelect="none" />
-                <Text mt={2} userSelect="none">
-                  Decretos
-                </Text>
-              </Flex>
-            </motion.div>
-
-            <motion.div
-              whileHover={{ scale: 1.03 }}
-              whileTap={{ scale: 1 }}
-              transition={{ duration: 0.2 }}
-            >
-              <Flex
-                bg="green.500"
-                color="white"
-                rounded="md"
-                direction="column"
-                justify="center"
-                align="center"
-                h="102px"
-                cursor="pointer"
-              >
-                <Icon as={GiInjustice} fontSize="3xl" userSelect="none" />
-                <Text mt={2} userSelect="none">
-                  Leis Municipais
-                </Text>
-              </Flex>
-            </motion.div>
-
-            <motion.div
-              whileHover={{ scale: 1.03 }}
-              whileTap={{ scale: 1 }}
-              transition={{ duration: 0.2 }}
-            >
-              <Flex
-                bg="green.500"
-                color="white"
-                rounded="md"
-                direction="column"
-                justify="center"
-                align="center"
-                h="102px"
-                cursor="pointer"
-              >
-                <Icon as={AiOutlineCopy} fontSize="3xl" userSelect="none" />
-                <Text mt={2} userSelect="none">
-                  Portarias
-                </Text>
-              </Flex>
-            </motion.div>
-
-            <motion.div
-              whileHover={{ scale: 1.03 }}
-              whileTap={{ scale: 1 }}
-              transition={{ duration: 0.2 }}
-            >
-              <Flex
-                bg="green.500"
-                color="white"
-                rounded="md"
-                direction="column"
-                justify="center"
-                align="center"
-                h="102px"
-                cursor="pointer"
-              >
-                <Icon as={ImNewspaper} fontSize="3xl" userSelect="none" />
-                <Text mt={2} userSelect="none">
-                  Diário Municipal
-                </Text>
-              </Flex>
-            </motion.div>
-
-            <motion.div
-              whileHover={{ scale: 1.03 }}
-              whileTap={{ scale: 1 }}
-              transition={{ duration: 0.2 }}
-            >
-              <Flex
-                bg="green.500"
-                color="white"
-                rounded="md"
-                direction="column"
-                justify="center"
-                align="center"
-                h="102px"
-                cursor="pointer"
-              >
-                <Icon as={AiOutlineFile} fontSize="3xl" userSelect="none" />
-                <Text mt={2} userSelect="none">
-                  Decretos
-                </Text>
-              </Flex>
-            </motion.div>
-
-            <motion.div
-              whileHover={{ scale: 1.03 }}
-              whileTap={{ scale: 1 }}
-              transition={{ duration: 0.2 }}
-            >
-              <Flex
-                bg="green.500"
-                color="white"
-                rounded="md"
-                direction="column"
-                justify="center"
-                align="center"
-                h="102px"
-                cursor="pointer"
-              >
-                <Icon as={GiInjustice} fontSize="3xl" userSelect="none" />
-                <Text mt={2} userSelect="none">
-                  Leis Municipais
-                </Text>
-              </Flex>
-            </motion.div>
-
-            <motion.div
-              whileHover={{ scale: 1.03 }}
-              whileTap={{ scale: 1 }}
-              transition={{ duration: 0.2 }}
-            >
-              <Flex
-                bg="green.500"
-                color="white"
-                rounded="md"
-                direction="column"
-                justify="center"
-                align="center"
-                h="102px"
-                cursor="pointer"
-              >
-                <Icon as={AiOutlineCopy} fontSize="3xl" userSelect="none" />
-                <Text mt={2} userSelect="none">
-                  Portarias
-                </Text>
-              </Flex>
-            </motion.div>
-
-            <motion.div
-              whileHover={{ scale: 1.03 }}
-              whileTap={{ scale: 1 }}
-              transition={{ duration: 0.2 }}
-            >
-              <Flex
-                bg="green.500"
-                color="white"
-                rounded="md"
-                direction="column"
-                justify="center"
-                align="center"
-                h="102px"
-                cursor="pointer"
-              >
-                <Icon as={ImNewspaper} fontSize="3xl" userSelect="none" />
-                <Text mt={2} userSelect="none">
-                  Diário Municipal
-                </Text>
-              </Flex>
-            </motion.div>
-
-            <motion.div
-              whileHover={{ scale: 1.03 }}
-              whileTap={{ scale: 1 }}
-              transition={{ duration: 0.2 }}
-            >
-              <Flex
-                bg="green.500"
-                color="white"
-                rounded="md"
-                direction="column"
-                justify="center"
-                align="center"
-                h="102px"
-                cursor="pointer"
-              >
-                <Icon as={AiOutlineFile} fontSize="3xl" userSelect="none" />
-                <Text mt={2} userSelect="none">
-                  Decretos
-                </Text>
-              </Flex>
-            </motion.div>
-
-            <motion.div
-              whileHover={{ scale: 1.03 }}
-              whileTap={{ scale: 1 }}
-              transition={{ duration: 0.2 }}
-            >
-              <Flex
-                bg="green.500"
-                color="white"
-                rounded="md"
-                direction="column"
-                justify="center"
-                align="center"
-                h="102px"
-                cursor="pointer"
-              >
-                <Icon as={GiInjustice} fontSize="3xl" userSelect="none" />
-                <Text mt={2} userSelect="none">
-                  Leis Municipais
-                </Text>
-              </Flex>
-            </motion.div>
-
-            <motion.div
-              whileHover={{ scale: 1.03 }}
-              whileTap={{ scale: 1 }}
-              transition={{ duration: 0.2 }}
-            >
-              <Flex
-                bg="green.500"
-                color="white"
-                rounded="md"
-                direction="column"
-                justify="center"
-                align="center"
-                h="102px"
-                cursor="pointer"
-              >
-                <Icon as={AiOutlineCopy} fontSize="3xl" userSelect="none" />
-                <Text mt={2} userSelect="none">
-                  Portarias
-                </Text>
-              </Flex>
-            </motion.div>
-          </Grid>
-        </Grid>
+        <Navigation />
 
         <Grid
-          templateColumns="repeat(3, 1fr)"
+          templateColumns={[
+            "repeat(1, 1fr)",
+            "repeat(3, 1fr)",
+            "repeat(3, 1fr)",
+            "repeat(3, 1fr)",
+            "repeat(3, 1fr)",
+          ]}
           gap={5}
           mt={20}
-          h="80px"
           bg="blue.500"
           rounded="md"
           pr={10}
           pl={10}
+          pt={5}
+          pb={5}
           alignItems="center"
         >
-          <Flex align="center">
+          <Flex
+            align="center"
+            justify={[
+              "center",
+              "flex-start",
+              "flex-start",
+              "flex-start",
+              "flex-start",
+            ]}
+          >
             <Image
               src="/img/info.png"
               layout="fixed"
@@ -396,11 +79,20 @@ const Home: NextPage = () => {
             </Box>
           </Flex>
 
-          <Button size="lg" rounded="full">
+          <Button
+            size="lg"
+            rounded="full"
+            _hover={{ transform: "scale(1.05)" }}
+            _active={{ transform: "scale(1)" }}
+          >
             Faça aqui seu pedido
           </Button>
 
-          <Flex justify="flex-end" align="center">
+          <Flex
+            justify="flex-end"
+            align="center"
+            display={["none", "flex", "flex", "flex", "flex"]}
+          >
             <Heading color="white" fontSize="5xl">
               SIC
             </Heading>
@@ -418,7 +110,11 @@ const Home: NextPage = () => {
           </Flex>
         </Grid>
 
-        <Grid templateColumns="300px 1fr" gap={8} mt={20}>
+        <Grid
+          templateColumns={["1fr", "1fr", "1fr", "300px 1fr", "300px 1fr"]}
+          gap={8}
+          mt={20}
+        >
           <Box>
             <Flex align="center">
               <Box h="20px" w="10px" bg="green.500" />
@@ -427,7 +123,13 @@ const Home: NextPage = () => {
               </Heading>
             </Flex>
 
-            <Box w="300px" h="300px" mt={3} overflow="hidden" rounded="md">
+            <Box
+              w={["100%", "100%", "100%", "300px", "300px"]}
+              h="300px"
+              mt={3}
+              overflow="hidden"
+              rounded="md"
+            >
               <Carousel
                 infiniteLoop
                 autoPlay
@@ -441,7 +143,7 @@ const Home: NextPage = () => {
                   rounded="md"
                   overflow="hidden"
                   cursor="pointer"
-                  w="300px"
+                  w={["100%", "100%", "100%", "300px", "300px"]}
                   h="300px"
                 >
                   <Image
@@ -457,7 +159,7 @@ const Home: NextPage = () => {
                   rounded="md"
                   overflow="hidden"
                   cursor="pointer"
-                  w="300px"
+                  w={["100%", "100%", "100%", "300px", "300px"]}
                   h="300px"
                 >
                   <Image
@@ -473,7 +175,7 @@ const Home: NextPage = () => {
                   rounded="md"
                   overflow="hidden"
                   cursor="pointer"
-                  w="300px"
+                  w={["100%", "100%", "100%", "300px", "300px"]}
                   h="300px"
                 >
                   <Image
@@ -486,6 +188,18 @@ const Home: NextPage = () => {
                 </Box>
               </Carousel>
             </Box>
+
+            <Button
+              rightIcon={<AiOutlinePlus />}
+              colorScheme="blue"
+              variant="link"
+              mt={4}
+              size="lg"
+              _hover={{ textDecor: "none", transform: "scale(1.05)" }}
+              _active={{ transform: "scale(1)" }}
+            >
+              Veja Mais
+            </Button>
           </Box>
 
           <Box>
@@ -496,7 +210,17 @@ const Home: NextPage = () => {
               </Heading>
             </Flex>
 
-            <Grid templateColumns="repeat(3, 1fr)" gap={3} mt={3}>
+            <Grid
+              templateColumns={[
+                "repeat(2, 1fr)",
+                "repeat(3, 1fr)",
+                "repeat(3, 1fr)",
+                "repeat(3, 1fr)",
+                "repeat(3, 1fr)",
+              ]}
+              gap={3}
+              mt={3}
+            >
               <Box borderWidth="1px" rounded="md" overflow="hidden">
                 <Flex h="80px" align="center" justify="center">
                   <Text p={2} textAlign="center" fontWeight="semibold">
@@ -618,6 +342,17 @@ const Home: NextPage = () => {
                 </Button>
               </Box>
             </Grid>
+            <Button
+              rightIcon={<AiOutlinePlus />}
+              colorScheme="blue"
+              variant="link"
+              mt={4}
+              size="lg"
+              _hover={{ textDecor: "none", transform: "scale(1.05)" }}
+              _active={{ transform: "scale(1)" }}
+            >
+              Veja Mais
+            </Button>
           </Box>
         </Grid>
 
@@ -767,6 +502,18 @@ const Home: NextPage = () => {
           </motion.div>
         </Grid>
 
+        <Button
+          rightIcon={<AiOutlinePlus />}
+          colorScheme="blue"
+          variant="link"
+          mt={4}
+          size="lg"
+          _hover={{ textDecor: "none", transform: "scale(1.05)" }}
+          _active={{ transform: "scale(1)" }}
+        >
+          Veja Mais Notícias
+        </Button>
+
         <Flex align="center" mt={20} mb={10}>
           <Box h="20px" w="10px" bg="green.500" />
           <Heading fontSize="xl" ml={2}>
@@ -848,6 +595,18 @@ const Home: NextPage = () => {
             </AspectRatio>
           </motion.div>
         </Grid>
+
+        <Button
+          rightIcon={<AiOutlinePlus />}
+          colorScheme="blue"
+          variant="link"
+          mt={4}
+          size="lg"
+          _hover={{ textDecor: "none", transform: "scale(1.05)" }}
+          _active={{ transform: "scale(1)" }}
+        >
+          Veja Mais Vídeos
+        </Button>
 
         <Grid
           templateColumns="repeat(auto-fit, minmax(260px, 260px))"
