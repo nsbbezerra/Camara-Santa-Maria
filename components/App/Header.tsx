@@ -137,13 +137,13 @@ const Header: FC = () => {
       <Box>
         <Container maxW="5xl">
           <Flex h="170px" align="center" justify="space-between">
-            <LinkBox h="130px" overflow="hidden">
+            <LinkBox h="138px" overflow="hidden">
               <LinkOverlay href="/">
                 <Image
                   alt="Prefeitura Municipal de Santa Maria do Tocantins"
-                  src="/img/logo.png"
+                  src="/img/logo.svg"
                   width={215}
-                  height={130}
+                  height={138}
                   layout="intrinsic"
                   objectFit="cover"
                 />

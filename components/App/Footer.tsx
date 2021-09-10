@@ -25,14 +25,14 @@ const Footer: FC = () => {
           >
             <Box w="260px" h="230px">
               <Image
-                src="/img/logo-mono.png"
+                src="/img/logo-mono.svg"
                 layout="responsive"
                 width={460}
-                height={280}
+                height={300}
                 objectFit="cover"
               />
             </Box>
-            <Box>
+            <Box w="100%">
               <Stack spacing={5}>
                 <LinkBox>
                   <LinkOverlay
