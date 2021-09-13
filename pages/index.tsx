@@ -20,6 +20,8 @@ import Image from "next/image";
 import { Carousel } from "react-responsive-carousel";
 import Footer from "../components/App/Footer";
 import Navigation from "../components/App/Navigation";
+import Link from "next/link";
+import News from "../components/App/News";
 
 const Home: NextPage = () => {
   return (
@@ -363,156 +365,23 @@ const Home: NextPage = () => {
           </Heading>
         </Flex>
 
-        <Grid
-          templateColumns="repeat(auto-fit, minmax(260px, 260px))"
-          gap={6}
-          justifyContent="center"
-        >
-          <motion.div
-            whileHover={{ scale: 1.03 }}
-            whileTap={{ scale: 1 }}
-            transition={{ duration: 0.2 }}
-          >
-            <LinkBox rounded="md" overflow="hidden" borderWidth="1px">
-              <Image
-                src="https://img.freepik.com/free-vector/city-skyline-landmarks-illustration_23-2148810172.jpg?size=626&ext=jpg"
-                layout="responsive"
-                width={500}
-                height={350}
-                objectFit="cover"
-              />
-              <Flex h="230px" align="center">
-                <Box p={3}>
-                  <LinkOverlay href="/">
-                    <Heading fontSize="lg">
-                      Portaria n° 224/2021, que dispõe sobre o Feriado
-                      Prolongado devido ao Feriado Nacional
-                    </Heading>
-                    <Text fontSize="md" mt={2}>
-                      O Prefeito de Pedro Afonso, Joaquim Pinheiro, publicou
-                      nesta data a Portaria n° 224/2021, que
-                    </Text>
+        <News />
 
-                    <Text fontSize="sm" mt={2} fontWeight="light">
-                      09 de Setembro de 2021
-                    </Text>
-                  </LinkOverlay>
-                </Box>
-              </Flex>
-            </LinkBox>
-          </motion.div>
-          <motion.div
-            whileHover={{ scale: 1.03 }}
-            whileTap={{ scale: 1 }}
-            transition={{ duration: 0.2 }}
-          >
-            <LinkBox rounded="md" overflow="hidden" borderWidth="1px">
-              <Image
-                src="https://img.freepik.com/free-vector/city-skyline-landmarks-illustration_23-2148810172.jpg?size=626&ext=jpg"
-                layout="responsive"
-                width={500}
-                height={350}
-                objectFit="cover"
-              />
-              <Flex h="230px" align="center">
-                <Box p={3}>
-                  <LinkOverlay href="/">
-                    <Heading fontSize="lg">
-                      Portaria n° 224/2021, que dispõe sobre o Feriado
-                      Prolongado devido ao Feriado Nacional
-                    </Heading>
-                    <Text fontSize="md" mt={2}>
-                      O Prefeito de Pedro Afonso, Joaquim Pinheiro, publicou
-                      nesta data a Portaria n° 224/2021, que
-                    </Text>
-
-                    <Text fontSize="sm" mt={2} fontWeight="light">
-                      09 de Setembro de 2021
-                    </Text>
-                  </LinkOverlay>
-                </Box>
-              </Flex>
-            </LinkBox>
-          </motion.div>
-          <motion.div
-            whileHover={{ scale: 1.03 }}
-            whileTap={{ scale: 1 }}
-            transition={{ duration: 0.2 }}
-          >
-            <LinkBox rounded="md" overflow="hidden" borderWidth="1px">
-              <Image
-                src="https://img.freepik.com/free-vector/city-skyline-landmarks-illustration_23-2148810172.jpg?size=626&ext=jpg"
-                layout="responsive"
-                width={500}
-                height={350}
-                objectFit="cover"
-              />
-              <Flex h="230px" align="center">
-                <Box p={3}>
-                  <LinkOverlay href="/">
-                    <Heading fontSize="lg">
-                      Portaria n° 224/2021, que dispõe sobre o Feriado
-                      Prolongado devido ao Feriado Nacional
-                    </Heading>
-                    <Text fontSize="md" mt={2}>
-                      O Prefeito de Pedro Afonso, Joaquim Pinheiro, publicou
-                      nesta data a Portaria n° 224/2021, que
-                    </Text>
-
-                    <Text fontSize="sm" mt={2} fontWeight="light">
-                      09 de Setembro de 2021
-                    </Text>
-                  </LinkOverlay>
-                </Box>
-              </Flex>
-            </LinkBox>
-          </motion.div>
-          <motion.div
-            whileHover={{ scale: 1.03 }}
-            whileTap={{ scale: 1 }}
-            transition={{ duration: 0.2 }}
-          >
-            <LinkBox rounded="md" overflow="hidden" borderWidth="1px">
-              <Image
-                src="https://img.freepik.com/free-vector/city-skyline-landmarks-illustration_23-2148810172.jpg?size=626&ext=jpg"
-                layout="responsive"
-                width={500}
-                height={350}
-                objectFit="cover"
-              />
-              <Flex h="230px" align="center">
-                <Box p={3}>
-                  <LinkOverlay href="/">
-                    <Heading fontSize="lg">
-                      Portaria n° 224/2021, que dispõe sobre o Feriado
-                      Prolongado devido ao Feriado Nacional
-                    </Heading>
-                    <Text fontSize="md" mt={2}>
-                      O Prefeito de Pedro Afonso, Joaquim Pinheiro, publicou
-                      nesta data a Portaria n° 224/2021, que
-                    </Text>
-
-                    <Text fontSize="sm" mt={2} fontWeight="light">
-                      09 de Setembro de 2021
-                    </Text>
-                  </LinkOverlay>
-                </Box>
-              </Flex>
-            </LinkBox>
-          </motion.div>
-        </Grid>
-
-        <Button
-          rightIcon={<AiOutlinePlus />}
-          colorScheme="blue"
-          variant="link"
-          mt={4}
-          size="lg"
-          _hover={{ textDecor: "none", transform: "scale(1.05)" }}
-          _active={{ transform: "scale(1)" }}
-        >
-          Veja Mais Notícias
-        </Button>
+        <Link href="/noticias" passHref>
+          <a>
+            <Button
+              rightIcon={<AiOutlinePlus />}
+              colorScheme="blue"
+              variant="link"
+              mt={4}
+              size="lg"
+              _hover={{ textDecor: "none", transform: "scale(1.05)" }}
+              _active={{ transform: "scale(1)" }}
+            >
+              Veja Mais Notícias
+            </Button>
+          </a>
+        </Link>
 
         <Flex align="center" mt={20} mb={10}>
           <Box h="20px" w="10px" bg="green.500" />
@@ -638,9 +507,6 @@ const Home: NextPage = () => {
               <Heading fontSize="md" color="white" mt={1}>
                 E-SIC
               </Heading>
-              <Text fontSize="xs" textAlign="center" color="white">
-                Serviço Eletrônico de Informação ao Cidadão
-              </Text>
             </Flex>
           </motion.div>
 
@@ -668,9 +534,6 @@ const Home: NextPage = () => {
               <Heading fontSize="md" color="white" mt={1}>
                 OUVIDORIA MUNICIPAL
               </Heading>
-              <Text fontSize="xs" textAlign="center" color="white">
-                Serviço Eletrônico de Informação ao Cidadão
-              </Text>
             </Flex>
           </motion.div>
 

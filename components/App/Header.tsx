@@ -19,8 +19,15 @@ import {
   AiOutlineMenu,
 } from "react-icons/ai";
 import Image from "next/image";
+import { useRouter } from "next/router";
 
 const Header: FC = () => {
+  const { push } = useRouter();
+
+  const goTo = (rt: string) => {
+    push(rt);
+  };
+
   return (
     <>
       <Head>
@@ -195,15 +202,18 @@ const Header: FC = () => {
               >
                 TRANSPARÊNCIA
               </Button>
+
               <Button
                 variant="link"
                 colorScheme="blue"
                 _hover={{ textDecor: "none", transform: "scale(1.05)" }}
                 _active={{ transform: "scale(1)" }}
                 size="sm"
+                onClick={() => goTo("/noticias")}
               >
                 NOTÍCIAS
               </Button>
+
               <Button
                 variant="link"
                 colorScheme="blue"
