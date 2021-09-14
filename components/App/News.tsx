@@ -29,6 +29,7 @@ const News: FC = () => {
             src="https://img.freepik.com/free-vector/city-skyline-landmarks-illustration_23-2148810172.jpg?size=626&ext=jpg"
             layout="responsive"
             width={500}
+            alt="Prefeitura de Santa Maria"
             height={350}
             objectFit="cover"
           />
@@ -66,6 +67,7 @@ const News: FC = () => {
             width={500}
             height={350}
             objectFit="cover"
+            alt="Prefeitura de Santa Maria"
           />
           <Flex h="230px" align="center">
             <Box p={3}>
@@ -101,6 +103,7 @@ const News: FC = () => {
             width={500}
             height={350}
             objectFit="cover"
+            alt="Prefeitura de Santa Maria"
           />
           <Flex h="230px" align="center">
             <Box p={3}>
@@ -134,6 +137,7 @@ const News: FC = () => {
             width={500}
             height={350}
             objectFit="cover"
+            alt="Prefeitura de Santa Maria"
           />
           <Flex h="230px" align="center">
             <Box p={3}>

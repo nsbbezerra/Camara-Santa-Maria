@@ -156,6 +156,7 @@ const Historia: NextPage = () => {
                     layout="responsive"
                     width={300}
                     height={250}
+                    alt="Prefeitura de Santa Maria"
                     objectFit="cover"
                   />
                 </Box>
@@ -173,6 +174,27 @@ const Historia: NextPage = () => {
                   <Image
                     src="https://img.freepik.com/free-vector/city-skyline-landmarks-illustration_23-2148810172.jpg?size=626&ext=jpg"
                     layout="responsive"
+                    width={300}
+                    height={250}
+                    alt="Prefeitura de Santa Maria"
+                    objectFit="cover"
+                  />
+                </Box>
+                <Text fontSize="xs" fontStyle="italic">
+                  Copy Image
+                </Text>
+              </motion.div>
+
+              <motion.div
+                whileHover={{ scale: 1.03 }}
+                whileTap={{ scale: 1 }}
+                transition={{ duration: 0.2 }}
+              >
+                <Box w="100%" rounded="md" overflow="hidden" cursor="pointer">
+                  <Image
+                    src="https://img.freepik.com/free-vector/city-skyline-landmarks-illustration_23-2148810172.jpg?size=626&ext=jpg"
+                    layout="responsive"
+                    alt="Prefeitura de Santa Maria"
                     width={300}
                     height={250}
                     objectFit="cover"
@@ -194,25 +216,7 @@ const Historia: NextPage = () => {
                     layout="responsive"
                     width={300}
                     height={250}
-                    objectFit="cover"
-                  />
-                </Box>
-                <Text fontSize="xs" fontStyle="italic">
-                  Copy Image
-                </Text>
-              </motion.div>
-
-              <motion.div
-                whileHover={{ scale: 1.03 }}
-                whileTap={{ scale: 1 }}
-                transition={{ duration: 0.2 }}
-              >
-                <Box w="100%" rounded="md" overflow="hidden" cursor="pointer">
-                  <Image
-                    src="https://img.freepik.com/free-vector/city-skyline-landmarks-illustration_23-2148810172.jpg?size=626&ext=jpg"
-                    layout="responsive"
-                    width={300}
-                    height={250}
+                    alt="Prefeitura de Santa Maria"
                     objectFit="cover"
                   />
                 </Box>

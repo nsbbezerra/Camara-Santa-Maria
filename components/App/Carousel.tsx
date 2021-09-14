@@ -30,6 +30,7 @@ const CarouselApp: FC = () => {
           width={dimensions?.width}
           height={dimensions?.height}
           objectFit="cover"
+          alt="Prefeitura de Santa Maria"
         />
       </Box>
 
@@ -40,6 +41,7 @@ const CarouselApp: FC = () => {
           width={dimensions?.width}
           height={dimensions?.height}
           objectFit="cover"
+          alt="Prefeitura de Santa Maria"
         />
       </Box>
 
@@ -47,6 +49,7 @@ const CarouselApp: FC = () => {
         <Image
           src="https://img.freepik.com/fotos-gratis/cidade-grande_1127-3102.jpg?size=626&ext=jpg&ga=GA1.2.2140585734.1629504000"
           layout="responsive"
+          alt="Prefeitura de Santa Maria"
           width={dimensions?.width}
           height={dimensions?.height}
           objectFit="cover"

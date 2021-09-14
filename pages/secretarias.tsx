@@ -62,6 +62,7 @@ const Secretarias: NextPage = () => {
                 width={500}
                 height={400}
                 objectFit="cover"
+                alt="Prefeitura de Santa Maria"
               />
             </Box>
             <Box>
@@ -121,6 +122,7 @@ const Secretarias: NextPage = () => {
                 width={500}
                 height={400}
                 objectFit="cover"
+                alt="Prefeitura de Santa Maria"
               />
             </Box>
             <Box>
@@ -179,6 +181,7 @@ const Secretarias: NextPage = () => {
                 layout="responsive"
                 width={500}
                 height={400}
+                alt="Prefeitura de Santa Maria"
                 objectFit="cover"
               />
             </Box>
@@ -238,6 +241,7 @@ const Secretarias: NextPage = () => {
                 layout="responsive"
                 width={500}
                 height={400}
+                alt="Prefeitura de Santa Maria"
                 objectFit="cover"
               />
             </Box>

@@ -60,6 +60,7 @@ const Noticia: NextPage = () => {
             width={500}
             height={180}
             objectFit="cover"
+            alt="Prefeitura de Santa Maria"
           />
         </Box>
         <Text fontStyle="italic" fontSize="xs" fontWeight="light">
@@ -174,6 +175,7 @@ const Noticia: NextPage = () => {
                 width={500}
                 height={320}
                 objectFit="cover"
+                alt="Prefeitura de Santa Maria"
               />
             </Box>
           </motion.div>
@@ -189,6 +191,7 @@ const Noticia: NextPage = () => {
                 width={500}
                 height={320}
                 objectFit="cover"
+                alt="Prefeitura de Santa Maria"
               />
             </Box>
           </motion.div>
@@ -204,6 +207,7 @@ const Noticia: NextPage = () => {
                 width={500}
                 height={320}
                 objectFit="cover"
+                alt="Prefeitura de Santa Maria"
               />
             </Box>
           </motion.div>
@@ -219,6 +223,7 @@ const Noticia: NextPage = () => {
                 width={500}
                 height={320}
                 objectFit="cover"
+                alt="Prefeitura de Santa Maria"
               />
             </Box>
           </motion.div>
@@ -234,6 +239,7 @@ const Noticia: NextPage = () => {
                 width={500}
                 height={320}
                 objectFit="cover"
+                alt="Prefeitura de Santa Maria"
               />
             </Box>
           </motion.div>
@@ -249,6 +255,7 @@ const Noticia: NextPage = () => {
                 width={500}
                 height={320}
                 objectFit="cover"
+                alt="Prefeitura de Santa Maria"
               />
             </Box>
           </motion.div>
@@ -277,6 +284,7 @@ const Noticia: NextPage = () => {
                 layout="responsive"
                 width={500}
                 height={350}
+                alt="Prefeitura de Santa Maria"
                 objectFit="cover"
               />
               <Tag size="sm" colorScheme="blue" mt={2} ml={2}>
@@ -307,6 +315,7 @@ const Noticia: NextPage = () => {
                 layout="responsive"
                 width={500}
                 height={350}
+                alt="Prefeitura de Santa Maria"
                 objectFit="cover"
               />
               <Tag size="sm" colorScheme="blue" mt={2} ml={2}>
@@ -337,6 +346,7 @@ const Noticia: NextPage = () => {
                 layout="responsive"
                 width={500}
                 height={350}
+                alt="Prefeitura de Santa Maria"
                 objectFit="cover"
               />
               <Tag size="sm" colorScheme="blue" mt={2} ml={2}>
@@ -367,6 +377,7 @@ const Noticia: NextPage = () => {
                 layout="responsive"
                 width={500}
                 height={350}
+                alt="Prefeitura de Santa Maria"
                 objectFit="cover"
               />
               <Tag size="sm" colorScheme="blue" mt={2} ml={2}>

@@ -10,8 +10,6 @@ import {
   Flex,
   Text,
   Box,
-  LinkBox,
-  LinkOverlay,
   AspectRatio,
 } from "@chakra-ui/react";
 import { AiOutlinePlus, AiOutlineSearch } from "react-icons/ai";
@@ -70,6 +68,7 @@ const Home: NextPage = () => {
               width={50}
               height={50}
               objectFit="cover"
+              alt="Prefeitura de Santa Maria"
             />
             <Box ml={3}>
               <Text fontWeight="bold" color="white">
@@ -154,6 +153,7 @@ const Home: NextPage = () => {
                     width={300}
                     height={300}
                     objectFit="cover"
+                    alt="Prefeitura de Santa Maria"
                   />
                 </Box>
 
@@ -170,6 +170,7 @@ const Home: NextPage = () => {
                     width={300}
                     height={300}
                     objectFit="cover"
+                    alt="Prefeitura de Santa Maria"
                   />
                 </Box>
 
@@ -185,6 +186,7 @@ const Home: NextPage = () => {
                     layout="responsive"
                     width={300}
                     height={300}
+                    alt="Prefeitura de Santa Maria"
                     objectFit="cover"
                   />
                 </Box>
@@ -503,6 +505,7 @@ const Home: NextPage = () => {
                 width={70}
                 height={70}
                 objectFit="cover"
+                alt="Prefeitura de Santa Maria"
               />
               <Heading fontSize="md" color="white" mt={1}>
                 E-SIC
@@ -529,6 +532,7 @@ const Home: NextPage = () => {
                 layout="fixed"
                 width={70}
                 height={70}
+                alt="Prefeitura de Santa Maria"
                 objectFit="cover"
               />
               <Heading fontSize="md" color="white" mt={1}>
@@ -557,6 +561,7 @@ const Home: NextPage = () => {
                 width={70}
                 height={70}
                 objectFit="cover"
+                alt="Prefeitura de Santa Maria"
               />
               <Heading fontSize="md" color="white" mt={1}>
                 NOTA ELETRÔNICA
@@ -583,6 +588,7 @@ const Home: NextPage = () => {
                 layout="fixed"
                 width={70}
                 height={70}
+                alt="Prefeitura de Santa Maria"
                 objectFit="cover"
               />
               <Heading fontSize="md" color="white" mt={1}>

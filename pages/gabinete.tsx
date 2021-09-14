@@ -58,6 +58,7 @@ const Gabinete: NextPage = () => {
                     layout="responsive"
                     width={500}
                     height={500}
+                    alt="Prefeitura de Santa Maria"
                     objectFit="cover"
                   />
                 </Box>
@@ -119,6 +120,7 @@ const Gabinete: NextPage = () => {
                     width={500}
                     height={500}
                     objectFit="cover"
+                    alt="Prefeitura de Santa Maria"
                   />
                 </Box>
                 <Box>
