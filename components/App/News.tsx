@@ -15,7 +15,13 @@ import Link from "next/link";
 const News: FC = () => {
   return (
     <Grid
-      templateColumns="repeat(auto-fit, minmax(260px, 260px))"
+      templateColumns={[
+        "repeat(2, 1fr)",
+        "repeat(3, 1fr)",
+        "repeat(3, 1fr)",
+        "repeat(4, 1fr)",
+        "repeat(4, 1fr)",
+      ]}
       gap={6}
       justifyContent="center"
     >
@@ -33,20 +39,35 @@ const News: FC = () => {
             height={350}
             objectFit="cover"
           />
-          <Flex h="230px" align="center">
+          <Flex
+            h={["200px", "230px", "230px", "230px", "230px"]}
+            align="center"
+          >
             <Box p={3}>
               <Link href="/noticia" passHref>
                 <LinkOverlay>
-                  <Heading fontSize="lg">
+                  <Heading
+                    fontSize={["md", "lg", "lg", "lg", "lg"]}
+                    noOfLines={4}
+                  >
                     Portaria n° 224/2021, que dispõe sobre o Feriado Prolongado
                     devido ao Feriado Nacional
                   </Heading>
-                  <Text fontSize="md" mt={2}>
+                  <Text
+                    fontSize={["sm", "md", "md", "md", "md"]}
+                    mt={2}
+                    noOfLines={3}
+                  >
                     O Prefeito de Pedro Afonso, Joaquim Pinheiro, publicou nesta
                     data a Portaria n° 224/2021, que
                   </Text>
 
-                  <Text fontSize="sm" mt={2} fontWeight="light">
+                  <Text
+                    fontSize={["xs", "sm", "sm", "sm", "sm"]}
+                    mt={2}
+                    fontWeight="light"
+                    noOfLines={1}
+                  >
                     09 de Setembro de 2021
                   </Text>
                 </LinkOverlay>
@@ -65,24 +86,39 @@ const News: FC = () => {
             src="https://img.freepik.com/free-vector/city-skyline-landmarks-illustration_23-2148810172.jpg?size=626&ext=jpg"
             layout="responsive"
             width={500}
+            alt="Prefeitura de Santa Maria"
             height={350}
             objectFit="cover"
-            alt="Prefeitura de Santa Maria"
           />
-          <Flex h="230px" align="center">
+          <Flex
+            h={["200px", "230px", "230px", "230px", "230px"]}
+            align="center"
+          >
             <Box p={3}>
               <Link href="/noticia" passHref>
-                <LinkOverlay href="/">
-                  <Heading fontSize="lg">
+                <LinkOverlay>
+                  <Heading
+                    fontSize={["md", "lg", "lg", "lg", "lg"]}
+                    noOfLines={4}
+                  >
                     Portaria n° 224/2021, que dispõe sobre o Feriado Prolongado
                     devido ao Feriado Nacional
                   </Heading>
-                  <Text fontSize="md" mt={2}>
+                  <Text
+                    fontSize={["sm", "md", "md", "md", "md"]}
+                    mt={2}
+                    noOfLines={3}
+                  >
                     O Prefeito de Pedro Afonso, Joaquim Pinheiro, publicou nesta
                     data a Portaria n° 224/2021, que
                   </Text>
 
-                  <Text fontSize="sm" mt={2} fontWeight="light">
+                  <Text
+                    fontSize={["xs", "sm", "sm", "sm", "sm"]}
+                    mt={2}
+                    fontWeight="light"
+                    noOfLines={1}
+                  >
                     09 de Setembro de 2021
                   </Text>
                 </LinkOverlay>
@@ -101,26 +137,43 @@ const News: FC = () => {
             src="https://img.freepik.com/free-vector/city-skyline-landmarks-illustration_23-2148810172.jpg?size=626&ext=jpg"
             layout="responsive"
             width={500}
+            alt="Prefeitura de Santa Maria"
             height={350}
             objectFit="cover"
-            alt="Prefeitura de Santa Maria"
           />
-          <Flex h="230px" align="center">
+          <Flex
+            h={["200px", "230px", "230px", "230px", "230px"]}
+            align="center"
+          >
             <Box p={3}>
-              <LinkOverlay href="/">
-                <Heading fontSize="lg">
-                  Portaria n° 224/2021, que dispõe sobre o Feriado Prolongado
-                  devido ao Feriado Nacional
-                </Heading>
-                <Text fontSize="md" mt={2}>
-                  O Prefeito de Pedro Afonso, Joaquim Pinheiro, publicou nesta
-                  data a Portaria n° 224/2021, que
-                </Text>
+              <Link href="/noticia" passHref>
+                <LinkOverlay>
+                  <Heading
+                    fontSize={["md", "lg", "lg", "lg", "lg"]}
+                    noOfLines={4}
+                  >
+                    Portaria n° 224/2021, que dispõe sobre o Feriado Prolongado
+                    devido ao Feriado Nacional
+                  </Heading>
+                  <Text
+                    fontSize={["sm", "md", "md", "md", "md"]}
+                    mt={2}
+                    noOfLines={3}
+                  >
+                    O Prefeito de Pedro Afonso, Joaquim Pinheiro, publicou nesta
+                    data a Portaria n° 224/2021, que
+                  </Text>
 
-                <Text fontSize="sm" mt={2} fontWeight="light">
-                  09 de Setembro de 2021
-                </Text>
-              </LinkOverlay>
+                  <Text
+                    fontSize={["xs", "sm", "sm", "sm", "sm"]}
+                    mt={2}
+                    fontWeight="light"
+                    noOfLines={1}
+                  >
+                    09 de Setembro de 2021
+                  </Text>
+                </LinkOverlay>
+              </Link>
             </Box>
           </Flex>
         </LinkBox>
@@ -135,26 +188,43 @@ const News: FC = () => {
             src="https://img.freepik.com/free-vector/city-skyline-landmarks-illustration_23-2148810172.jpg?size=626&ext=jpg"
             layout="responsive"
             width={500}
+            alt="Prefeitura de Santa Maria"
             height={350}
             objectFit="cover"
-            alt="Prefeitura de Santa Maria"
           />
-          <Flex h="230px" align="center">
+          <Flex
+            h={["200px", "230px", "230px", "230px", "230px"]}
+            align="center"
+          >
             <Box p={3}>
-              <LinkOverlay href="/">
-                <Heading fontSize="lg">
-                  Portaria n° 224/2021, que dispõe sobre o Feriado Prolongado
-                  devido ao Feriado Nacional
-                </Heading>
-                <Text fontSize="md" mt={2}>
-                  O Prefeito de Pedro Afonso, Joaquim Pinheiro, publicou nesta
-                  data a Portaria n° 224/2021, que
-                </Text>
+              <Link href="/noticia" passHref>
+                <LinkOverlay>
+                  <Heading
+                    fontSize={["md", "lg", "lg", "lg", "lg"]}
+                    noOfLines={4}
+                  >
+                    Portaria n° 224/2021, que dispõe sobre o Feriado Prolongado
+                    devido ao Feriado Nacional
+                  </Heading>
+                  <Text
+                    fontSize={["sm", "md", "md", "md", "md"]}
+                    mt={2}
+                    noOfLines={3}
+                  >
+                    O Prefeito de Pedro Afonso, Joaquim Pinheiro, publicou nesta
+                    data a Portaria n° 224/2021, que
+                  </Text>
 
-                <Text fontSize="sm" mt={2} fontWeight="light">
-                  09 de Setembro de 2021
-                </Text>
-              </LinkOverlay>
+                  <Text
+                    fontSize={["xs", "sm", "sm", "sm", "sm"]}
+                    mt={2}
+                    fontWeight="light"
+                    noOfLines={1}
+                  >
+                    09 de Setembro de 2021
+                  </Text>
+                </LinkOverlay>
+              </Link>
             </Box>
           </Flex>
         </LinkBox>

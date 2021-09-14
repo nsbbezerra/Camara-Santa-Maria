@@ -11,13 +11,8 @@ import {
   Text,
   Box,
   AspectRatio,
-  ButtonGroup,
 } from "@chakra-ui/react";
-import {
-  AiOutlinePlus,
-  AiOutlineSearch,
-  AiOutlineDownload,
-} from "react-icons/ai";
+import { AiOutlinePlus } from "react-icons/ai";
 import { motion } from "framer-motion";
 import Image from "next/image";
 import { Carousel } from "react-responsive-carousel";
@@ -25,6 +20,7 @@ import Footer from "../components/App/Footer";
 import Navigation from "../components/App/Navigation";
 import Link from "next/link";
 import News from "../components/App/News";
+import Publications from "../components/App/Publications";
 
 const Home: NextPage = () => {
   return (
@@ -207,210 +203,8 @@ const Home: NextPage = () => {
               </Heading>
             </Flex>
 
-            <Grid
-              templateColumns={[
-                "repeat(1, 1fr)",
-                "repeat(3, 1fr)",
-                "repeat(3, 1fr)",
-                "repeat(3, 1fr)",
-                "repeat(3, 1fr)",
-              ]}
-              gap={3}
-              mt={3}
-            >
-              <Box borderWidth="1px" rounded="md" overflow="hidden">
-                <Flex h="80px" align="center" justify="center">
-                  <Text p={2} textAlign="center" fontWeight="semibold">
-                    Edição nº 27 de 08 de Setembro de 2021
-                  </Text>
-                </Flex>
-                <Text textAlign="center" fontWeight="light" fontSize="sm">
-                  8 de Setembro de 2021
-                </Text>
-                <ButtonGroup w="100%" spacing={0}>
-                  <Button
-                    isFullWidth
-                    leftIcon={<AiOutlineSearch />}
-                    rounded="none"
-                    size="sm"
-                    colorScheme="green"
-                    mt={2}
-                  >
-                    Visualizar
-                  </Button>
-                  <Button
-                    isFullWidth
-                    leftIcon={<AiOutlineDownload />}
-                    rounded="none"
-                    size="sm"
-                    colorScheme="blue"
-                    mt={2}
-                  >
-                    Baixar
-                  </Button>
-                </ButtonGroup>
-              </Box>
-              <Box borderWidth="1px" rounded="md" overflow="hidden">
-                <Flex h="80px" align="center" justify="center">
-                  <Text p={2} textAlign="center" fontWeight="semibold">
-                    Edição nº 27 de 08 de Setembro de 2021
-                  </Text>
-                </Flex>
-                <Text textAlign="center" fontWeight="light" fontSize="sm">
-                  8 de Setembro de 2021
-                </Text>
-                <ButtonGroup w="100%" spacing={0}>
-                  <Button
-                    isFullWidth
-                    leftIcon={<AiOutlineSearch />}
-                    rounded="none"
-                    size="sm"
-                    colorScheme="green"
-                    mt={2}
-                  >
-                    Visualizar
-                  </Button>
-                  <Button
-                    isFullWidth
-                    leftIcon={<AiOutlineDownload />}
-                    rounded="none"
-                    size="sm"
-                    colorScheme="blue"
-                    mt={2}
-                  >
-                    Baixar
-                  </Button>
-                </ButtonGroup>
-              </Box>
-              <Box borderWidth="1px" rounded="md" overflow="hidden">
-                <Flex h="80px" align="center" justify="center">
-                  <Text p={2} textAlign="center" fontWeight="semibold">
-                    Edição nº 27 de 08 de Setembro de 2021
-                  </Text>
-                </Flex>
-                <Text textAlign="center" fontWeight="light" fontSize="sm">
-                  8 de Setembro de 2021
-                </Text>
-                <ButtonGroup w="100%" spacing={0}>
-                  <Button
-                    isFullWidth
-                    leftIcon={<AiOutlineSearch />}
-                    rounded="none"
-                    size="sm"
-                    colorScheme="green"
-                    mt={2}
-                  >
-                    Visualizar
-                  </Button>
-                  <Button
-                    isFullWidth
-                    leftIcon={<AiOutlineDownload />}
-                    rounded="none"
-                    size="sm"
-                    colorScheme="blue"
-                    mt={2}
-                  >
-                    Baixar
-                  </Button>
-                </ButtonGroup>
-              </Box>
-              <Box borderWidth="1px" rounded="md" overflow="hidden">
-                <Flex h="80px" align="center" justify="center">
-                  <Text p={2} textAlign="center" fontWeight="semibold">
-                    Edição nº 27 de 08 de Setembro de 2021
-                  </Text>
-                </Flex>
-                <Text textAlign="center" fontWeight="light" fontSize="sm">
-                  8 de Setembro de 2021
-                </Text>
-                <ButtonGroup w="100%" spacing={0}>
-                  <Button
-                    isFullWidth
-                    leftIcon={<AiOutlineSearch />}
-                    rounded="none"
-                    size="sm"
-                    colorScheme="green"
-                    mt={2}
-                  >
-                    Visualizar
-                  </Button>
-                  <Button
-                    isFullWidth
-                    leftIcon={<AiOutlineDownload />}
-                    rounded="none"
-                    size="sm"
-                    colorScheme="blue"
-                    mt={2}
-                  >
-                    Baixar
-                  </Button>
-                </ButtonGroup>
-              </Box>
-              <Box borderWidth="1px" rounded="md" overflow="hidden">
-                <Flex h="80px" align="center" justify="center">
-                  <Text p={2} textAlign="center" fontWeight="semibold">
-                    Edição nº 27 de 08 de Setembro de 2021
-                  </Text>
-                </Flex>
-                <Text textAlign="center" fontWeight="light" fontSize="sm">
-                  8 de Setembro de 2021
-                </Text>
-                <ButtonGroup w="100%" spacing={0}>
-                  <Button
-                    isFullWidth
-                    leftIcon={<AiOutlineSearch />}
-                    rounded="none"
-                    size="sm"
-                    colorScheme="green"
-                    mt={2}
-                  >
-                    Visualizar
-                  </Button>
-                  <Button
-                    isFullWidth
-                    leftIcon={<AiOutlineDownload />}
-                    rounded="none"
-                    size="sm"
-                    colorScheme="blue"
-                    mt={2}
-                  >
-                    Baixar
-                  </Button>
-                </ButtonGroup>
-              </Box>
-              <Box borderWidth="1px" rounded="md" overflow="hidden">
-                <Flex h="80px" align="center" justify="center">
-                  <Text p={2} textAlign="center" fontWeight="semibold">
-                    Edição nº 27 de 08 de Setembro de 2021
-                  </Text>
-                </Flex>
-                <Text textAlign="center" fontWeight="light" fontSize="sm">
-                  8 de Setembro de 2021
-                </Text>
-                <ButtonGroup w="100%" spacing={0}>
-                  <Button
-                    isFullWidth
-                    leftIcon={<AiOutlineSearch />}
-                    rounded="none"
-                    size="sm"
-                    colorScheme="green"
-                    mt={2}
-                  >
-                    Visualizar
-                  </Button>
-                  <Button
-                    isFullWidth
-                    leftIcon={<AiOutlineDownload />}
-                    rounded="none"
-                    size="sm"
-                    colorScheme="blue"
-                    mt={2}
-                  >
-                    Baixar
-                  </Button>
-                </ButtonGroup>
-              </Box>
-            </Grid>
+            <Publications />
+
             <Link href="/publicacoes" passHref>
               <a>
                 <Button

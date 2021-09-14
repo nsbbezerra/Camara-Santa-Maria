@@ -3,7 +3,6 @@ import {
   Box,
   Container,
   Grid,
-  Button,
   Stack,
   Text,
   Flex,
@@ -47,7 +46,7 @@ const Footer: FC = () => {
                 </LinkBox>
                 <LinkBox>
                   <LinkOverlay
-                    href="/"
+                    href="/secretarias"
                     color="white"
                     fontWeight="semibold"
                     _hover={{ textDecor: "underline" }}
@@ -57,7 +56,7 @@ const Footer: FC = () => {
                 </LinkBox>
                 <LinkBox>
                   <LinkOverlay
-                    href="/"
+                    href="/noticias"
                     color="white"
                     fontWeight="semibold"
                     _hover={{ textDecor: "underline" }}
@@ -67,7 +66,7 @@ const Footer: FC = () => {
                 </LinkBox>
                 <LinkBox>
                   <LinkOverlay
-                    href="/"
+                    href="/licitacoeseeditais"
                     color="white"
                     fontWeight="semibold"
                     _hover={{ textDecor: "underline" }}
@@ -77,7 +76,7 @@ const Footer: FC = () => {
                 </LinkBox>
                 <LinkBox>
                   <LinkOverlay
-                    href="/"
+                    href="/agenda"
                     color="white"
                     fontWeight="semibold"
                     _hover={{ textDecor: "underline" }}

@@ -2,6 +2,7 @@ import type { NextPage } from "next";
 import { Box, Flex, Container } from "@chakra-ui/react";
 import Header from "../components/App/Header";
 import Footer from "../components/App/Footer";
+import Publications from "../components/App/Publications";
 
 const Publicacoes: NextPage = () => {
   return (
@@ -19,6 +20,10 @@ const Publicacoes: NextPage = () => {
       >
         PUBLICAÇÕES
       </Flex>
+
+      <Container maxW="4xl" mt={20}>
+        <Publications />
+      </Container>
 
       <Footer />
     </>

@@ -22,6 +22,8 @@ import {
   DrawerContent,
   DrawerCloseButton,
   Collapse,
+  Tooltip,
+  useColorMode,
 } from "@chakra-ui/react";
 import {
   AiOutlineWhatsApp,
@@ -32,9 +34,11 @@ import {
 import Image from "next/image";
 import { useRouter } from "next/router";
 import { MdKeyboardArrowDown } from "react-icons/md";
+import { RiContrast2Fill } from "react-icons/ri";
 
 const Header: FC = () => {
   const { push } = useRouter();
+  const { toggleColorMode, colorMode } = useColorMode();
 
   const [open, setOpen] = useState<boolean>(false);
   const [collapse, setCollapse] = useState<boolean>(false);
@@ -63,7 +67,7 @@ const Header: FC = () => {
 
       <Box
         h="70px"
-        bg="whiteAlpha.900"
+        bg={colorMode === "light" ? "white" : "gray.900"}
         position="fixed"
         zIndex={1000}
         w="100%"
@@ -179,6 +183,7 @@ const Header: FC = () => {
                   _hover={{ textDecor: "none", transform: "scale(1.05)" }}
                   _active={{ transform: "scale(1)" }}
                   size="sm"
+                  onClick={() => goTo("/agenda")}
                 >
                   AGENDA
                 </Button>
@@ -282,6 +287,17 @@ const Header: FC = () => {
                 color="white"
                 fontSize="2xl"
               />
+              <Tooltip label="Alterar Tema" hasArrow>
+                <IconButton
+                  aria-label="Youtube"
+                  icon={<RiContrast2Fill />}
+                  variant="link"
+                  colorScheme="whiteAlpha"
+                  color="white"
+                  fontSize="2xl"
+                  onClick={toggleColorMode}
+                />
+              </Tooltip>
             </HStack>
           </Flex>
         </Container>
@@ -396,6 +412,7 @@ const Header: FC = () => {
                 _hover={{ textDecor: "none", transform: "scale(1.05)" }}
                 _active={{ transform: "scale(1)" }}
                 size="sm"
+                onClick={() => goTo("/agenda")}
               >
                 AGENDA
               </Button>
@@ -491,7 +508,12 @@ const Header: FC = () => {
               >
                 LICITAÇÕES E EDITAIS
               </Button>
-              <Button rounded="none" colorScheme="blue" variant="ghost">
+              <Button
+                rounded="none"
+                colorScheme="blue"
+                variant="ghost"
+                onClick={() => goTo("/agenda")}
+              >
                 AGENDA
               </Button>
               <Button rounded="none" colorScheme="blue" variant="ghost">

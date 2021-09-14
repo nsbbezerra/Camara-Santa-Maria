@@ -35,7 +35,7 @@ const Noticia: NextPage = () => {
         NOTÍCIA
       </Flex>
 
-      <Container maxW="5xl" mt={10}>
+      <Container maxW="4xl" mt={10}>
         <Heading fontSize="4xl" textAlign="justify">
           Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam sed
           mollis orci. Maecenas ut nisi porttitor, ultrices nibh nec, commodo
@@ -274,7 +274,13 @@ const Noticia: NextPage = () => {
           </Heading>
         </Flex>
         <Grid
-          templateColumns={"repeat(auto-fit, minmax(200px, 200px))"}
+          templateColumns={[
+            "repeat(2, 1fr)",
+            "repeat(3, 1fr)",
+            "repeat(4, 1fr)",
+            "repeat(4, 1fr)",
+            "repeat(4, 1fr)",
+          ]}
           gap={5}
           mt={5}
           justifyContent="center"
@@ -300,7 +306,12 @@ const Noticia: NextPage = () => {
                 <Box p={2}>
                   <Link href="/noticia" passHref>
                     <LinkOverlay href="/">
-                      <Heading fontSize="md" fontWeight="medium">
+                      <Heading
+                        fontSize={["sm", "md", "md", "md", "md"]}
+                        fontWeight="medium"
+                        noOfLines={5}
+                        w="100%"
+                      >
                         Portaria n° 224/2021, que dispõe sobre o Feriado
                         Prolongado devido ao Feriado Nacional
                       </Heading>
@@ -331,7 +342,12 @@ const Noticia: NextPage = () => {
                 <Box p={2}>
                   <Link href="/noticia" passHref>
                     <LinkOverlay href="/">
-                      <Heading fontSize="md" fontWeight="medium">
+                      <Heading
+                        fontSize={["sm", "md", "md", "md", "md"]}
+                        fontWeight="medium"
+                        noOfLines={5}
+                        w="100%"
+                      >
                         Portaria n° 224/2021, que dispõe sobre o Feriado
                         Prolongado devido ao Feriado Nacional
                       </Heading>
@@ -362,7 +378,12 @@ const Noticia: NextPage = () => {
                 <Box p={2}>
                   <Link href="/noticia" passHref>
                     <LinkOverlay href="/">
-                      <Heading fontSize="md" fontWeight="medium">
+                      <Heading
+                        fontSize={["sm", "md", "md", "md", "md"]}
+                        fontWeight="medium"
+                        noOfLines={5}
+                        w="100%"
+                      >
                         Portaria n° 224/2021, que dispõe sobre o Feriado
                         Prolongado devido ao Feriado Nacional
                       </Heading>
@@ -393,7 +414,12 @@ const Noticia: NextPage = () => {
                 <Box p={2}>
                   <Link href="/noticia" passHref>
                     <LinkOverlay href="/">
-                      <Heading fontSize="md" fontWeight="medium">
+                      <Heading
+                        fontSize={["sm", "md", "md", "md", "md"]}
+                        fontWeight="medium"
+                        noOfLines={5}
+                        w="100%"
+                      >
                         Portaria n° 224/2021, que dispõe sobre o Feriado
                         Prolongado devido ao Feriado Nacional
                       </Heading>
