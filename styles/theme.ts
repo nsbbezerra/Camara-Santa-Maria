@@ -58,6 +58,12 @@ const customTheme = extendTheme({
       baseStyle: {
         list: {
           boxShadow: "lg",
+          borderWidth: "2px",
+          borderColor: "blue.400",
+        },
+        item: {
+          _hover: { bg: "blue.500", color: "white" },
+          _focus: { bg: "blue.500", color: "white" },
         },
       },
     },

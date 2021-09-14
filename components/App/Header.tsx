@@ -11,6 +11,10 @@ import {
   Text,
   LinkBox,
   LinkOverlay,
+  Menu,
+  MenuButton,
+  MenuList,
+  MenuItem,
 } from "@chakra-ui/react";
 import {
   AiOutlineWhatsApp,
@@ -20,6 +24,7 @@ import {
 } from "react-icons/ai";
 import Image from "next/image";
 import { useRouter } from "next/router";
+import { MdKeyboardArrowDown } from "react-icons/md";
 
 const Header: FC = () => {
   const { push } = useRouter();
@@ -175,24 +180,30 @@ const Header: FC = () => {
               spacing={5}
               display={["none", "none", "none", "flex", "flex"]}
             >
-              <Button
-                variant="link"
-                colorScheme="blue"
-                _hover={{ textDecor: "none", transform: "scale(1.05)" }}
-                _active={{ transform: "scale(1)" }}
-                size="sm"
-              >
-                A PREFEITURA
-              </Button>
-              <Button
-                variant="link"
-                colorScheme="blue"
-                _hover={{ textDecor: "none", transform: "scale(1.05)" }}
-                _active={{ transform: "scale(1)" }}
-                size="sm"
-              >
-                SECRETARIAS
-              </Button>
+              <Menu>
+                <MenuButton
+                  as={Button}
+                  variant="link"
+                  colorScheme="blue"
+                  _hover={{ textDecor: "none", transform: "scale(1.05)" }}
+                  _active={{ transform: "scale(1)" }}
+                  size="sm"
+                  rightIcon={<MdKeyboardArrowDown />}
+                >
+                  A PREFEITURA
+                </MenuButton>
+                <MenuList>
+                  <MenuItem onClick={() => goTo("/historia")}>
+                    HISTÓRIA
+                  </MenuItem>
+                  <MenuItem onClick={() => goTo("/gabinete")}>
+                    GABINETE
+                  </MenuItem>
+                  <MenuItem onClick={() => goTo("/secretarias")}>
+                    SECRETARIAS
+                  </MenuItem>
+                </MenuList>
+              </Menu>
               <Button
                 variant="link"
                 colorScheme="blue"
@@ -220,6 +231,7 @@ const Header: FC = () => {
                 _hover={{ textDecor: "none", transform: "scale(1.05)" }}
                 _active={{ transform: "scale(1)" }}
                 size="sm"
+                onClick={() => goTo("/licitacoeseeditais")}
               >
                 LICITAÇÕES E EDITAIS
               </Button>

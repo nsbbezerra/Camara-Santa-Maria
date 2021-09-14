@@ -36,12 +36,12 @@ const Noticia: NextPage = () => {
       </Flex>
 
       <Container maxW="5xl" mt={10}>
-        <Heading fontSize="4xl">
+        <Heading fontSize="4xl" textAlign="justify">
           Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam sed
           mollis orci. Maecenas ut nisi porttitor, ultrices nibh nec, commodo
           justo. Sed luctus arcu ut.
         </Heading>
-        <Text mt={3}>
+        <Text mt={3} textAlign="justify">
           Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse
           viverra augue vitae congue tincidunt. Duis sodales sagittis fermentum.
           Cras ullamcorper.
@@ -68,7 +68,12 @@ const Noticia: NextPage = () => {
       </Container>
 
       <Container maxW="4xl" mt={20}>
-        <Text style={{ textIndent: "50px" }} fontSize="lg" mb={3}>
+        <Text
+          style={{ textIndent: "50px" }}
+          fontSize="lg"
+          mb={3}
+          textAlign="justify"
+        >
           Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec sed
           ante commodo, hendrerit metus a, laoreet tortor. Orci varius natoque
           penatibus et magnis dis parturient montes, nascetur ridiculus mus.
@@ -82,7 +87,12 @@ const Noticia: NextPage = () => {
           tincidunt quis. Nunc quis sapien ultrices, mattis diam id, iaculis
           est. Aliquam erat volutpat.
         </Text>
-        <Text style={{ textIndent: "50px" }} fontSize="lg" mb={3}>
+        <Text
+          style={{ textIndent: "50px" }}
+          fontSize="lg"
+          mb={3}
+          textAlign="justify"
+        >
           Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur
           tempor massa lacus, ut scelerisque magna pulvinar ut. Nam dapibus
           felis eu varius fermentum. Aliquam quis nibh eu nibh pretium fermentum
@@ -98,7 +108,12 @@ const Noticia: NextPage = () => {
           lacus, sit amet fermentum nisl tempor id. Aenean nec euismod lectus,
           ac sodales risus.
         </Text>
-        <Text style={{ textIndent: "50px" }} fontSize="lg" mb={3}>
+        <Text
+          style={{ textIndent: "50px" }}
+          fontSize="lg"
+          mb={3}
+          textAlign="justify"
+        >
           Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec sed
           ante commodo, hendrerit metus a, laoreet tortor. Orci varius natoque
           penatibus et magnis dis parturient montes, nascetur ridiculus mus.
@@ -112,7 +127,12 @@ const Noticia: NextPage = () => {
           tincidunt quis. Nunc quis sapien ultrices, mattis diam id, iaculis
           est. Aliquam erat volutpat.
         </Text>
-        <Text style={{ textIndent: "50px" }} fontSize="lg" mb={3}>
+        <Text
+          style={{ textIndent: "50px" }}
+          fontSize="lg"
+          mb={3}
+          textAlign="justify"
+        >
           Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur
           tempor massa lacus, ut scelerisque magna pulvinar ut. Nam dapibus
           felis eu varius fermentum. Aliquam quis nibh eu nibh pretium fermentum
