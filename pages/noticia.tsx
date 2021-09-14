@@ -58,7 +58,7 @@ const Noticia: NextPage = () => {
             src="https://img.freepik.com/free-vector/city-skyline-landmarks-illustration_23-2148810172.jpg?size=626&ext=jpg"
             layout="responsive"
             width={500}
-            height={180}
+            height={280}
             objectFit="cover"
             alt="Prefeitura de Santa Maria"
           />
@@ -68,7 +68,7 @@ const Noticia: NextPage = () => {
         </Text>
       </Container>
 
-      <Container maxW="4xl" mt={20}>
+      <Container maxW="4xl" mt={10}>
         <Text
           style={{ textIndent: "50px" }}
           fontSize="lg"
@@ -158,7 +158,13 @@ const Noticia: NextPage = () => {
         </Flex>
 
         <Grid
-          templateColumns="repeat(auto-fit, minmax(200px, 200px))"
+          templateColumns={[
+            "repeat(2, 1fr)",
+            "repeat(3, 1fr)",
+            "repeat(4, 1fr)",
+            "repeat(4, 1fr)",
+            "repeat(4, 1fr)",
+          ]}
           gap={5}
           mt={5}
           justifyContent="center"

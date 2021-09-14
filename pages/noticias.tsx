@@ -1,22 +1,9 @@
 import type { NextPage } from "next";
-import {
-  Container,
-  Flex,
-  Input,
-  InputRightElement,
-  IconButton,
-  InputGroup,
-  Button,
-  Text,
-} from "@chakra-ui/react";
+import { Container, Flex, Input, Button, Text } from "@chakra-ui/react";
 import Header from "../components/App/Header";
 import Footer from "../components/App/Footer";
 import News from "../components/App/News";
-import {
-  AiOutlineSearch,
-  AiOutlineArrowLeft,
-  AiOutlineArrowRight,
-} from "react-icons/ai";
+import { AiOutlineArrowLeft, AiOutlineArrowRight } from "react-icons/ai";
 
 const Noticias: NextPage = () => {
   return (
@@ -35,22 +22,7 @@ const Noticias: NextPage = () => {
         NOTÍCIAS
       </Flex>
 
-      <Container maxW="6xl" mt={10}>
-        <Flex justify="flex-end" align="center" mb={10}>
-          <InputGroup size="lg">
-            <Input placeholder="Digite para buscar" pr="3rem" />
-            <InputRightElement width="3rem">
-              <IconButton
-                aria-label="Buscar"
-                icon={<AiOutlineSearch />}
-                size="lg"
-                roundedBottomRight="none"
-                roundedBottomLeft="none"
-              />
-            </InputRightElement>
-          </InputGroup>
-        </Flex>
-
+      <Container maxW="6xl" mt={20}>
         <News />
 
         <Flex align="center" justify="center" mt={10}>
