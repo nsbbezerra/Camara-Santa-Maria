@@ -11,8 +11,13 @@ import {
   Text,
   Box,
   AspectRatio,
+  ButtonGroup,
 } from "@chakra-ui/react";
-import { AiOutlinePlus, AiOutlineSearch } from "react-icons/ai";
+import {
+  AiOutlinePlus,
+  AiOutlineSearch,
+  AiOutlineDownload,
+} from "react-icons/ai";
 import { motion } from "framer-motion";
 import Image from "next/image";
 import { Carousel } from "react-responsive-carousel";
@@ -192,18 +197,6 @@ const Home: NextPage = () => {
                 </Box>
               </Carousel>
             </Box>
-
-            <Button
-              rightIcon={<AiOutlinePlus />}
-              colorScheme="blue"
-              variant="link"
-              mt={4}
-              size="lg"
-              _hover={{ textDecor: "none", transform: "scale(1.05)" }}
-              _active={{ transform: "scale(1)" }}
-            >
-              Veja Mais
-            </Button>
           </Box>
 
           <Box>
@@ -216,7 +209,7 @@ const Home: NextPage = () => {
 
             <Grid
               templateColumns={[
-                "repeat(2, 1fr)",
+                "repeat(1, 1fr)",
                 "repeat(3, 1fr)",
                 "repeat(3, 1fr)",
                 "repeat(3, 1fr)",
@@ -234,16 +227,28 @@ const Home: NextPage = () => {
                 <Text textAlign="center" fontWeight="light" fontSize="sm">
                   8 de Setembro de 2021
                 </Text>
-                <Button
-                  isFullWidth
-                  leftIcon={<AiOutlineSearch />}
-                  rounded="none"
-                  size="sm"
-                  colorScheme="green"
-                  mt={2}
-                >
-                  Consultar
-                </Button>
+                <ButtonGroup w="100%" spacing={0}>
+                  <Button
+                    isFullWidth
+                    leftIcon={<AiOutlineSearch />}
+                    rounded="none"
+                    size="sm"
+                    colorScheme="green"
+                    mt={2}
+                  >
+                    Visualizar
+                  </Button>
+                  <Button
+                    isFullWidth
+                    leftIcon={<AiOutlineDownload />}
+                    rounded="none"
+                    size="sm"
+                    colorScheme="blue"
+                    mt={2}
+                  >
+                    Baixar
+                  </Button>
+                </ButtonGroup>
               </Box>
               <Box borderWidth="1px" rounded="md" overflow="hidden">
                 <Flex h="80px" align="center" justify="center">
@@ -254,16 +259,28 @@ const Home: NextPage = () => {
                 <Text textAlign="center" fontWeight="light" fontSize="sm">
                   8 de Setembro de 2021
                 </Text>
-                <Button
-                  isFullWidth
-                  leftIcon={<AiOutlineSearch />}
-                  rounded="none"
-                  size="sm"
-                  colorScheme="green"
-                  mt={2}
-                >
-                  Consultar
-                </Button>
+                <ButtonGroup w="100%" spacing={0}>
+                  <Button
+                    isFullWidth
+                    leftIcon={<AiOutlineSearch />}
+                    rounded="none"
+                    size="sm"
+                    colorScheme="green"
+                    mt={2}
+                  >
+                    Visualizar
+                  </Button>
+                  <Button
+                    isFullWidth
+                    leftIcon={<AiOutlineDownload />}
+                    rounded="none"
+                    size="sm"
+                    colorScheme="blue"
+                    mt={2}
+                  >
+                    Baixar
+                  </Button>
+                </ButtonGroup>
               </Box>
               <Box borderWidth="1px" rounded="md" overflow="hidden">
                 <Flex h="80px" align="center" justify="center">
@@ -274,16 +291,28 @@ const Home: NextPage = () => {
                 <Text textAlign="center" fontWeight="light" fontSize="sm">
                   8 de Setembro de 2021
                 </Text>
-                <Button
-                  isFullWidth
-                  leftIcon={<AiOutlineSearch />}
-                  rounded="none"
-                  size="sm"
-                  colorScheme="green"
-                  mt={2}
-                >
-                  Consultar
-                </Button>
+                <ButtonGroup w="100%" spacing={0}>
+                  <Button
+                    isFullWidth
+                    leftIcon={<AiOutlineSearch />}
+                    rounded="none"
+                    size="sm"
+                    colorScheme="green"
+                    mt={2}
+                  >
+                    Visualizar
+                  </Button>
+                  <Button
+                    isFullWidth
+                    leftIcon={<AiOutlineDownload />}
+                    rounded="none"
+                    size="sm"
+                    colorScheme="blue"
+                    mt={2}
+                  >
+                    Baixar
+                  </Button>
+                </ButtonGroup>
               </Box>
               <Box borderWidth="1px" rounded="md" overflow="hidden">
                 <Flex h="80px" align="center" justify="center">
@@ -294,16 +323,28 @@ const Home: NextPage = () => {
                 <Text textAlign="center" fontWeight="light" fontSize="sm">
                   8 de Setembro de 2021
                 </Text>
-                <Button
-                  isFullWidth
-                  leftIcon={<AiOutlineSearch />}
-                  rounded="none"
-                  size="sm"
-                  colorScheme="green"
-                  mt={2}
-                >
-                  Consultar
-                </Button>
+                <ButtonGroup w="100%" spacing={0}>
+                  <Button
+                    isFullWidth
+                    leftIcon={<AiOutlineSearch />}
+                    rounded="none"
+                    size="sm"
+                    colorScheme="green"
+                    mt={2}
+                  >
+                    Visualizar
+                  </Button>
+                  <Button
+                    isFullWidth
+                    leftIcon={<AiOutlineDownload />}
+                    rounded="none"
+                    size="sm"
+                    colorScheme="blue"
+                    mt={2}
+                  >
+                    Baixar
+                  </Button>
+                </ButtonGroup>
               </Box>
               <Box borderWidth="1px" rounded="md" overflow="hidden">
                 <Flex h="80px" align="center" justify="center">
@@ -314,16 +355,28 @@ const Home: NextPage = () => {
                 <Text textAlign="center" fontWeight="light" fontSize="sm">
                   8 de Setembro de 2021
                 </Text>
-                <Button
-                  isFullWidth
-                  leftIcon={<AiOutlineSearch />}
-                  rounded="none"
-                  size="sm"
-                  colorScheme="green"
-                  mt={2}
-                >
-                  Consultar
-                </Button>
+                <ButtonGroup w="100%" spacing={0}>
+                  <Button
+                    isFullWidth
+                    leftIcon={<AiOutlineSearch />}
+                    rounded="none"
+                    size="sm"
+                    colorScheme="green"
+                    mt={2}
+                  >
+                    Visualizar
+                  </Button>
+                  <Button
+                    isFullWidth
+                    leftIcon={<AiOutlineDownload />}
+                    rounded="none"
+                    size="sm"
+                    colorScheme="blue"
+                    mt={2}
+                  >
+                    Baixar
+                  </Button>
+                </ButtonGroup>
               </Box>
               <Box borderWidth="1px" rounded="md" overflow="hidden">
                 <Flex h="80px" align="center" justify="center">
@@ -334,29 +387,45 @@ const Home: NextPage = () => {
                 <Text textAlign="center" fontWeight="light" fontSize="sm">
                   8 de Setembro de 2021
                 </Text>
-                <Button
-                  isFullWidth
-                  leftIcon={<AiOutlineSearch />}
-                  rounded="none"
-                  size="sm"
-                  colorScheme="green"
-                  mt={2}
-                >
-                  Consultar
-                </Button>
+                <ButtonGroup w="100%" spacing={0}>
+                  <Button
+                    isFullWidth
+                    leftIcon={<AiOutlineSearch />}
+                    rounded="none"
+                    size="sm"
+                    colorScheme="green"
+                    mt={2}
+                  >
+                    Visualizar
+                  </Button>
+                  <Button
+                    isFullWidth
+                    leftIcon={<AiOutlineDownload />}
+                    rounded="none"
+                    size="sm"
+                    colorScheme="blue"
+                    mt={2}
+                  >
+                    Baixar
+                  </Button>
+                </ButtonGroup>
               </Box>
             </Grid>
-            <Button
-              rightIcon={<AiOutlinePlus />}
-              colorScheme="blue"
-              variant="link"
-              mt={4}
-              size="lg"
-              _hover={{ textDecor: "none", transform: "scale(1.05)" }}
-              _active={{ transform: "scale(1)" }}
-            >
-              Veja Mais
-            </Button>
+            <Link href="/publicacoes" passHref>
+              <a>
+                <Button
+                  rightIcon={<AiOutlinePlus />}
+                  colorScheme="blue"
+                  variant="link"
+                  mt={4}
+                  size="lg"
+                  _hover={{ textDecor: "none", transform: "scale(1.05)" }}
+                  _active={{ transform: "scale(1)" }}
+                >
+                  Veja Mais
+                </Button>
+              </a>
+            </Link>
           </Box>
         </Grid>
 

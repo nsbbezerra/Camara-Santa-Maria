@@ -30,6 +30,7 @@ const Footer: FC = () => {
                 width={460}
                 height={300}
                 objectFit="cover"
+                alt="Prefeitura de Santa Maria do Tocantins"
               />
             </Box>
             <Box w="100%">
