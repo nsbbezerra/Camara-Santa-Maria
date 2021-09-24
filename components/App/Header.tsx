@@ -35,6 +35,8 @@ import Image from "next/image";
 import { useRouter } from "next/router";
 import { MdKeyboardArrowDown } from "react-icons/md";
 import { RiContrast2Fill } from "react-icons/ri";
+import Link from "next/link";
+import { FaFacebook, FaFacebookF } from "react-icons/fa";
 
 const Header: FC = () => {
   const { push } = useRouter();
@@ -235,50 +237,62 @@ const Header: FC = () => {
 
               <Divider orientation="vertical" h="25px" />
 
-              <Button
-                variant="link"
-                colorScheme="whiteAlpha"
-                color="white"
-                _hover={{ textDecor: "none" }}
-                size="sm"
+              <Link
+                href="http://www.diariosantamariatocantins.com/index.php/diario"
+                passHref
               >
-                PAINEL DE CONTROLE
-              </Button>
-
-              <Divider orientation="vertical" h="25px" />
-
-              <Button
-                variant="link"
-                colorScheme="whiteAlpha"
-                color="white"
-                _hover={{ textDecor: "none" }}
-                size="sm"
-              >
-                DIÁRIO OFICIAL
-              </Button>
+                <a target="_blank">
+                  <Button
+                    variant="link"
+                    colorScheme="whiteAlpha"
+                    color="white"
+                    _hover={{ textDecor: "none" }}
+                    size="sm"
+                  >
+                    DIÁRIO OFICIAL
+                  </Button>
+                </a>
+              </Link>
             </HStack>
 
-            <HStack spacing={1}>
+            <HStack spacing={1} align="center">
               <Text fontWeight="semibold" color="white" mr={3} fontSize="sm">
                 SIGA A PREFEITURA
               </Text>
 
-              <IconButton
-                aria-label="Whatsapp"
-                icon={<AiOutlineWhatsApp />}
-                variant="link"
-                colorScheme="whiteAlpha"
-                color="white"
-                fontSize="2xl"
-              />
-              <IconButton
-                aria-label="Instagram"
-                icon={<AiOutlineInstagram />}
-                variant="link"
-                colorScheme="whiteAlpha"
-                color="white"
-                fontSize="2xl"
-              />
+              <Link
+                passHref
+                href="https://www.facebook.com/PrefSantaMari?_rdc=1&_rdr"
+              >
+                <a target="_blank">
+                  <IconButton
+                    aria-label="Whatsapp"
+                    icon={<FaFacebook />}
+                    variant="link"
+                    colorScheme="whiteAlpha"
+                    color="white"
+                    mt={1}
+                    fontSize="2xl"
+                  />
+                </a>
+              </Link>
+
+              <Link
+                href="https://www.instagram.com/prefsantamaria/?hl=pt-br"
+                passHref
+              >
+                <a target="_blank">
+                  <IconButton
+                    aria-label="Instagram"
+                    icon={<AiOutlineInstagram />}
+                    variant="link"
+                    colorScheme="whiteAlpha"
+                    color="white"
+                    fontSize="2xl"
+                    mt={1}
+                  />
+                </a>
+              </Link>
               <IconButton
                 aria-label="Youtube"
                 icon={<AiOutlineYoutube />}
@@ -358,7 +372,7 @@ const Header: FC = () => {
                   colorScheme="blue"
                   _hover={{ textDecor: "none", transform: "scale(1.05)" }}
                   _active={{ transform: "scale(1)" }}
-                  size="sm"
+                  size="md"
                   rightIcon={<MdKeyboardArrowDown />}
                 >
                   A PREFEITURA
@@ -380,7 +394,7 @@ const Header: FC = () => {
                 colorScheme="blue"
                 _hover={{ textDecor: "none", transform: "scale(1.05)" }}
                 _active={{ transform: "scale(1)" }}
-                size="sm"
+                size="md"
               >
                 TRANSPARÊNCIA
               </Button>
@@ -390,7 +404,7 @@ const Header: FC = () => {
                 colorScheme="blue"
                 _hover={{ textDecor: "none", transform: "scale(1.05)" }}
                 _active={{ transform: "scale(1)" }}
-                size="sm"
+                size="md"
                 onClick={() => goTo("/noticias")}
               >
                 NOTÍCIAS
@@ -401,7 +415,7 @@ const Header: FC = () => {
                 colorScheme="blue"
                 _hover={{ textDecor: "none", transform: "scale(1.05)" }}
                 _active={{ transform: "scale(1)" }}
-                size="sm"
+                size="md"
                 onClick={() => goTo("/licitacoeseeditais")}
               >
                 LICITAÇÕES E EDITAIS
@@ -411,7 +425,7 @@ const Header: FC = () => {
                 colorScheme="blue"
                 _hover={{ textDecor: "none", transform: "scale(1.05)" }}
                 _active={{ transform: "scale(1)" }}
-                size="sm"
+                size="md"
                 onClick={() => goTo("/agenda")}
               >
                 AGENDA

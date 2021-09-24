@@ -1,4 +1,4 @@
-import type { NextPage } from "next";
+import type { NextPage, GetStaticProps } from "next";
 import Header from "../components/App/Header";
 import CarouselApp from "../components/App/Carousel";
 import {
@@ -11,8 +11,10 @@ import {
   Text,
   Box,
   AspectRatio,
+  Icon,
 } from "@chakra-ui/react";
 import { AiOutlinePlus } from "react-icons/ai";
+import { BsInboxFill } from "react-icons/bs";
 import { motion } from "framer-motion";
 import Image from "next/image";
 import { Carousel } from "react-responsive-carousel";
@@ -21,8 +23,50 @@ import Navigation from "../components/App/Navigation";
 import Link from "next/link";
 import News from "../components/App/News";
 import Publications from "../components/App/Publications";
+import { config } from "../configs/config";
 
-const Home: NextPage = () => {
+interface IInformative {
+  _id: string;
+  image: string;
+  created_at: Date;
+}
+
+interface INews {
+  _id: string;
+  title: string;
+  resume: string;
+  author: string;
+  date: Date;
+  image: string;
+  imageCopy: string;
+  text: string;
+  galery?: IImages[];
+  month: string;
+  year: number;
+  created_at: Date;
+  tag: string;
+}
+
+interface IImages {
+  image: string;
+  _id: string;
+}
+
+interface IPublications {
+  _id: string;
+  title: string;
+  date: Date;
+  file: string;
+  created_at: Date;
+}
+
+interface IIndex {
+  informative?: IInformative[];
+  publication?: IPublications[];
+  noticia?: INews[];
+}
+
+const Home: NextPage<IIndex> = ({ informative, publication, noticia }) => {
   return (
     <>
       <Header />
@@ -81,14 +125,22 @@ const Home: NextPage = () => {
             </Box>
           </Flex>
 
-          <Button
-            size="lg"
-            rounded="full"
-            _hover={{ transform: "scale(1.05)" }}
-            _active={{ transform: "scale(1)" }}
+          <Link
+            href="http://vbmsistemas.com.br/esic-santamaria/index/"
+            passHref
           >
-            Faça aqui seu pedido
-          </Button>
+            <a target="_blank">
+              <Button
+                size="lg"
+                rounded="full"
+                _hover={{ transform: "scale(1.05)" }}
+                _active={{ transform: "scale(1)" }}
+                isFullWidth
+              >
+                Faça aqui seu pedido
+              </Button>
+            </a>
+          </Link>
 
           <Flex
             justify="flex-end"
@@ -132,66 +184,47 @@ const Home: NextPage = () => {
               overflow="hidden"
               rounded="md"
             >
-              <Carousel
-                infiniteLoop
-                autoPlay
-                interval={6000}
-                showArrows
-                showIndicators
-                showStatus={false}
-                showThumbs={false}
-              >
-                <Box
-                  rounded="md"
-                  overflow="hidden"
-                  cursor="pointer"
-                  w={["100%", "100%", "100%", "300px", "300px"]}
-                  h="300px"
-                >
-                  <Image
-                    src="https://img.freepik.com/free-vector/city-skyline-landmarks-illustration_23-2148810172.jpg?size=626&ext=jpg"
-                    layout="responsive"
-                    width={300}
-                    height={300}
-                    objectFit="cover"
-                    alt="Prefeitura de Santa Maria"
+              {!informative ? (
+                <Flex justify="center" align="center" direction="column">
+                  <Icon
+                    as={BsInboxFill}
+                    color="gray.500"
+                    fontSize="4xl"
+                    mb={3}
                   />
-                </Box>
-
-                <Box
-                  rounded="md"
-                  overflow="hidden"
-                  cursor="pointer"
-                  w={["100%", "100%", "100%", "300px", "300px"]}
-                  h="300px"
+                  <Text color="gray.500">Nenhuma Informação</Text>
+                </Flex>
+              ) : (
+                <Carousel
+                  infiniteLoop
+                  autoPlay
+                  interval={6000}
+                  showArrows
+                  showIndicators
+                  showStatus={false}
+                  showThumbs={false}
                 >
-                  <Image
-                    src="https://img.freepik.com/free-vector/city-skyline-landmarks-illustration_23-2148810172.jpg?size=626&ext=jpg"
-                    layout="responsive"
-                    width={300}
-                    height={300}
-                    objectFit="cover"
-                    alt="Prefeitura de Santa Maria"
-                  />
-                </Box>
-
-                <Box
-                  rounded="md"
-                  overflow="hidden"
-                  cursor="pointer"
-                  w={["100%", "100%", "100%", "300px", "300px"]}
-                  h="300px"
-                >
-                  <Image
-                    src="https://img.freepik.com/free-vector/city-skyline-landmarks-illustration_23-2148810172.jpg?size=626&ext=jpg"
-                    layout="responsive"
-                    width={300}
-                    height={300}
-                    alt="Prefeitura de Santa Maria"
-                    objectFit="cover"
-                  />
-                </Box>
-              </Carousel>
+                  {informative.map((info) => (
+                    <Box
+                      rounded="md"
+                      overflow="hidden"
+                      cursor="pointer"
+                      w={["100%", "100%", "100%", "300px", "300px"]}
+                      h="300px"
+                      key={info._id}
+                    >
+                      <Image
+                        src={`${config.default_url}/img/${info.image}`}
+                        layout="responsive"
+                        width={300}
+                        height={300}
+                        objectFit="cover"
+                        alt="Prefeitura de Santa Maria"
+                      />
+                    </Box>
+                  ))}
+                </Carousel>
+              )}
             </Box>
           </Box>
 
@@ -203,7 +236,7 @@ const Home: NextPage = () => {
               </Heading>
             </Flex>
 
-            <Publications />
+            <Publications publication={publication} />
 
             <Link href="/publicacoes" passHref>
               <a>
@@ -230,7 +263,7 @@ const Home: NextPage = () => {
           </Heading>
         </Flex>
 
-        <News />
+        <News news={noticia} />
 
         <Link href="/noticias" passHref>
           <a>
@@ -348,61 +381,75 @@ const Home: NextPage = () => {
           justifyContent="center"
           mt={20}
         >
-          <motion.div
-            whileHover={{ scale: 1.03 }}
-            whileTap={{ scale: 1 }}
-            transition={{ duration: 0.2 }}
+          <Link
+            href="http://vbmsistemas.com.br/esic-santamaria/index/"
+            passHref
           >
-            <Flex
-              rounded="md"
-              bg="green.500"
-              h="130px"
-              direction="column"
-              justify="center"
-              align="center"
-              cursor="pointer"
-            >
-              <Image
-                src="/img/info.png"
-                layout="fixed"
-                width={70}
-                height={70}
-                objectFit="cover"
-                alt="Prefeitura de Santa Maria"
-              />
-              <Heading fontSize="md" color="white" mt={1}>
-                E-SIC
-              </Heading>
-            </Flex>
-          </motion.div>
+            <a target="_blank">
+              <motion.div
+                whileHover={{ scale: 1.03 }}
+                whileTap={{ scale: 1 }}
+                transition={{ duration: 0.2 }}
+              >
+                <Flex
+                  rounded="md"
+                  bg="green.500"
+                  h="130px"
+                  direction="column"
+                  justify="center"
+                  align="center"
+                  cursor="pointer"
+                >
+                  <Image
+                    src="/img/info.png"
+                    layout="fixed"
+                    width={70}
+                    height={70}
+                    objectFit="cover"
+                    alt="Prefeitura de Santa Maria"
+                  />
+                  <Heading fontSize="md" color="white" mt={1}>
+                    E-SIC
+                  </Heading>
+                </Flex>
+              </motion.div>
+            </a>
+          </Link>
 
-          <motion.div
-            whileHover={{ scale: 1.03 }}
-            whileTap={{ scale: 1 }}
-            transition={{ duration: 0.2 }}
+          <Link
+            href="https://falabr.cgu.gov.br/publico/Manifestacao/SelecionarTipoManifestacao.aspx?ReturnUrl=%2f"
+            passHref
           >
-            <Flex
-              rounded="md"
-              bg="green.500"
-              h="130px"
-              direction="column"
-              justify="center"
-              align="center"
-              cursor="pointer"
-            >
-              <Image
-                src="/img/atendimento.png"
-                layout="fixed"
-                width={70}
-                height={70}
-                alt="Prefeitura de Santa Maria"
-                objectFit="cover"
-              />
-              <Heading fontSize="md" color="white" mt={1}>
-                OUVIDORIA MUNICIPAL
-              </Heading>
-            </Flex>
-          </motion.div>
+            <a target="_blank">
+              <motion.div
+                whileHover={{ scale: 1.03 }}
+                whileTap={{ scale: 1 }}
+                transition={{ duration: 0.2 }}
+              >
+                <Flex
+                  rounded="md"
+                  bg="green.500"
+                  h="130px"
+                  direction="column"
+                  justify="center"
+                  align="center"
+                  cursor="pointer"
+                >
+                  <Image
+                    src="/img/atendimento.png"
+                    layout="fixed"
+                    width={70}
+                    height={70}
+                    alt="Prefeitura de Santa Maria"
+                    objectFit="cover"
+                  />
+                  <Heading fontSize="md" color="white" mt={1}>
+                    OUVIDORIA MUNICIPAL
+                  </Heading>
+                </Flex>
+              </motion.div>
+            </a>
+          </Link>
 
           <motion.div
             whileHover={{ scale: 1.03 }}
@@ -432,33 +479,40 @@ const Home: NextPage = () => {
             </Flex>
           </motion.div>
 
-          <motion.div
-            whileHover={{ scale: 1.03 }}
-            whileTap={{ scale: 1 }}
-            transition={{ duration: 0.2 }}
+          <Link
+            href="https://docs.google.com/forms/d/e/1FAIpQLSekBOeUi8eNLXFfbIL1A35dCJeQ3Ryn8HchCxGWUJ8kCKUXfA/viewform"
+            passHref
           >
-            <Flex
-              rounded="md"
-              bg="blue.500"
-              h="130px"
-              direction="column"
-              justify="center"
-              align="center"
-              cursor="pointer"
-            >
-              <Image
-                src="/img/consulta.png"
-                layout="fixed"
-                width={70}
-                height={70}
-                alt="Prefeitura de Santa Maria"
-                objectFit="cover"
-              />
-              <Heading fontSize="md" color="white" mt={1}>
-                CONSULTA PÚBLICA
-              </Heading>
-            </Flex>
-          </motion.div>
+            <a target="_blank">
+              <motion.div
+                whileHover={{ scale: 1.03 }}
+                whileTap={{ scale: 1 }}
+                transition={{ duration: 0.2 }}
+              >
+                <Flex
+                  rounded="md"
+                  bg="blue.500"
+                  h="130px"
+                  direction="column"
+                  justify="center"
+                  align="center"
+                  cursor="pointer"
+                >
+                  <Image
+                    src="/img/consulta.png"
+                    layout="fixed"
+                    width={70}
+                    height={70}
+                    alt="Prefeitura de Santa Maria"
+                    objectFit="cover"
+                  />
+                  <Heading fontSize="md" color="white" mt={1}>
+                    CONSULTA PÚBLICA
+                  </Heading>
+                </Flex>
+              </motion.div>
+            </a>
+          </Link>
         </Grid>
       </Container>
 
@@ -468,3 +522,20 @@ const Home: NextPage = () => {
 };
 
 export default Home;
+
+export const getStaticProps: GetStaticProps = async () => {
+  const response = await fetch(`${config.default_url}/indexSite`);
+  const data = await response.json();
+  const publication = !data.publication ? null : data.publication;
+  const informative = !data.informative ? null : data.informative;
+  const noticia = !data.noticia ? null : data.noticia;
+
+  return {
+    props: {
+      publication,
+      informative,
+      noticia,
+    },
+    revalidate: 60,
+  };
+};
