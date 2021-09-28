@@ -30,7 +30,7 @@ const Publicacoes: NextPage = () => {
   const [publication, setPublication] = useState<IPublications[]>();
 
   function handlePagination(num: string) {
-    const divisor = parseFloat(num) / 10;
+    const divisor = parseFloat(num) / 12;
     if (
       divisor > parseInt(divisor.toString()) &&
       divisor < parseInt(divisor.toString()) + 1
@@ -85,7 +85,7 @@ const Publicacoes: NextPage = () => {
             leftIcon={<AiOutlineArrowLeft />}
             _hover={{ transform: "scale(1.05)" }}
             _active={{ transform: "scale(1)" }}
-            isDisabled={page <= pages}
+            isDisabled={page <= page}
             onClick={() => setPage(page - 1)}
           >
             Anterior

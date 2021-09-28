@@ -60,13 +60,25 @@ interface IPublications {
   created_at: Date;
 }
 
+interface IVideos {
+  _id: string;
+  video: string;
+  created_at: Date;
+}
+
 interface IIndex {
   informative?: IInformative[];
   publication?: IPublications[];
   noticia?: INews[];
+  video?: IVideos[];
 }
 
-const Home: NextPage<IIndex> = ({ informative, publication, noticia }) => {
+const Home: NextPage<IIndex> = ({
+  informative,
+  publication,
+  noticia,
+  video,
+}) => {
   return (
     <>
       <Header />
@@ -293,87 +305,50 @@ const Home: NextPage<IIndex> = ({ informative, publication, noticia }) => {
           gap={6}
           justifyContent="center"
         >
-          <motion.div
-            whileHover={{ scale: 1.03 }}
-            whileTap={{ scale: 1 }}
-            transition={{ duration: 0.2 }}
-          >
-            <AspectRatio ratio={16 / 9} rounded="md" overflow="hidden">
-              <iframe
-                width="560"
-                height="315"
-                src="https://www.youtube.com/embed/WMCjvVVy3LI"
-                title="YouTube video player"
-                frameBorder="0"
-                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                allowFullScreen
-              ></iframe>
-            </AspectRatio>
-          </motion.div>
-          <motion.div
-            whileHover={{ scale: 1.03 }}
-            whileTap={{ scale: 1 }}
-            transition={{ duration: 0.2 }}
-          >
-            <AspectRatio ratio={16 / 9} rounded="md" overflow="hidden">
-              <iframe
-                width="560"
-                height="315"
-                src="https://www.youtube.com/embed/WMCjvVVy3LI"
-                title="YouTube video player"
-                frameBorder="0"
-                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                allowFullScreen
-              ></iframe>
-            </AspectRatio>
-          </motion.div>
-          <motion.div
-            whileHover={{ scale: 1.03 }}
-            whileTap={{ scale: 1 }}
-            transition={{ duration: 0.2 }}
-          >
-            <AspectRatio ratio={16 / 9} rounded="md" overflow="hidden">
-              <iframe
-                width="560"
-                height="315"
-                src="https://www.youtube.com/embed/WMCjvVVy3LI"
-                title="YouTube video player"
-                frameBorder="0"
-                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                allowFullScreen
-              ></iframe>
-            </AspectRatio>
-          </motion.div>
-          <motion.div
-            whileHover={{ scale: 1.03 }}
-            whileTap={{ scale: 1 }}
-            transition={{ duration: 0.2 }}
-          >
-            <AspectRatio ratio={16 / 9} rounded="md" overflow="hidden">
-              <iframe
-                width="560"
-                height="315"
-                src="https://www.youtube.com/embed/WMCjvVVy3LI"
-                title="YouTube video player"
-                frameBorder="0"
-                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                allowFullScreen
-              ></iframe>
-            </AspectRatio>
-          </motion.div>
+          {video?.length === 0 ? (
+            <Flex justify="center" align="center" direction="column">
+              <Icon as={BsInboxFill} color="gray.500" fontSize="4xl" mb={3} />
+              <Text color="gray.500">Nenhuma Informação</Text>
+            </Flex>
+          ) : (
+            <>
+              {video?.map((vid) => (
+                <AspectRatio
+                  ratio={16 / 9}
+                  rounded="md"
+                  overflow="hidden"
+                  key={vid._id}
+                >
+                  <iframe
+                    width="560"
+                    height="315"
+                    src={vid.video}
+                    title="YouTube video player"
+                    frameBorder="0"
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                    allowFullScreen
+                  ></iframe>
+                </AspectRatio>
+              ))}
+            </>
+          )}
         </Grid>
 
-        <Button
-          rightIcon={<AiOutlinePlus />}
-          colorScheme="blue"
-          variant="link"
-          mt={4}
-          size="lg"
-          _hover={{ textDecor: "none", transform: "scale(1.05)" }}
-          _active={{ transform: "scale(1)" }}
-        >
-          Veja Mais Vídeos
-        </Button>
+        <Link href="/videos" passHref>
+          <a>
+            <Button
+              rightIcon={<AiOutlinePlus />}
+              colorScheme="blue"
+              variant="link"
+              mt={4}
+              size="lg"
+              _hover={{ textDecor: "none", transform: "scale(1.05)" }}
+              _active={{ transform: "scale(1)" }}
+            >
+              Veja Mais Vídeos
+            </Button>
+          </a>
+        </Link>
 
         <Grid
           templateColumns="repeat(auto-fit, minmax(260px, 260px))"
@@ -529,12 +504,14 @@ export const getStaticProps: GetStaticProps = async () => {
   const publication = !data.publication ? null : data.publication;
   const informative = !data.informative ? null : data.informative;
   const noticia = !data.noticia ? null : data.noticia;
+  const video = !data.video ? null : data.video;
 
   return {
     props: {
       publication,
       informative,
       noticia,
+      video,
     },
     revalidate: 60,
   };

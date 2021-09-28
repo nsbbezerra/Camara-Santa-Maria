@@ -12,6 +12,8 @@ import { AiOutlineSearch, AiOutlineDownload } from "react-icons/ai";
 import { BsInboxFill } from "react-icons/bs";
 import { format } from "date-fns";
 import pt_br from "date-fns/locale/pt-BR";
+import Link from "next/link";
+import { config } from "../../configs/config";
 
 interface IPublications {
   _id: string;
@@ -24,6 +26,15 @@ interface IPublications {
 interface IProps {
   publication?: IPublications[];
 }
+
+const Download = (url: string, file: string) => {
+  let link = document.createElement("a");
+  link.href = window.URL.createObjectURL(
+    new Blob([url], { type: "application/octet-stream" })
+  );
+  link.download = file;
+  link.click();
+};
 
 const Publications: FC<IProps> = ({ publication }) => {
   return (
@@ -58,16 +69,21 @@ const Publications: FC<IProps> = ({ publication }) => {
                 })}
               </Text>
               <ButtonGroup w="100%" spacing={0}>
-                <Button
-                  isFullWidth
-                  leftIcon={<AiOutlineSearch />}
-                  rounded="none"
-                  size="sm"
-                  colorScheme="green"
-                  mt={2}
-                >
-                  Visualizar
-                </Button>
+                <Link href={`${config.default_url}/docs/${pub.file}`} passHref>
+                  <a target="_blank" style={{ width: "50%", display: "block" }}>
+                    <Button
+                      isFullWidth
+                      leftIcon={<AiOutlineSearch />}
+                      rounded="none"
+                      size="sm"
+                      colorScheme="green"
+                      mt={2}
+                    >
+                      Visualizar
+                    </Button>
+                  </a>
+                </Link>
+
                 <Button
                   isFullWidth
                   leftIcon={<AiOutlineDownload />}
@@ -75,6 +91,9 @@ const Publications: FC<IProps> = ({ publication }) => {
                   size="sm"
                   colorScheme="blue"
                   mt={2}
+                  onClick={() =>
+                    Download(`${config.default_url}/docs/${pub.file}`, pub.file)
+                  }
                 >
                   Baixar
                 </Button>
