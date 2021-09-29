@@ -116,7 +116,7 @@ const Licitacoes: NextPage = () => {
       <Container maxW="6xl" mt={10}>
         <Stack spacing={5}>
           {bids?.map((bid) => (
-            <Box p={2} rounded="md" borderWidth="1px">
+            <Box p={2} rounded="md" borderWidth="1px" key={bid._id}>
               <Grid
                 templateColumns={[
                   "30px 1fr",
