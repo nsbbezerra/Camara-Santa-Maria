@@ -136,34 +136,7 @@ const Navigation: FC = () => {
             </a>
           </Link>
 
-          <motion.div
-            whileHover={{ scale: 1.03 }}
-            whileTap={{ scale: 1 }}
-            transition={{ duration: 0.2 }}
-          >
-            <Flex
-              bg="green.500"
-              color="white"
-              rounded="md"
-              direction="column"
-              justify="center"
-              align="center"
-              h="102px"
-              cursor="pointer"
-            >
-              <Icon as={GiInjustice} fontSize="3xl" userSelect="none" />
-              <Text
-                mt={2}
-                fontSize={["md", "sm", "md", "md", "md"]}
-                textAlign="center"
-                userSelect="none"
-              >
-                Leis Municipais
-              </Text>
-            </Flex>
-          </motion.div>
-
-          <Link href="/portarias" passHref>
+          <Link href="/portariasedecretos" passHref>
             <a>
               <motion.div
                 whileHover={{ scale: 1.03 }}
@@ -187,7 +160,7 @@ const Navigation: FC = () => {
                     textAlign="center"
                     userSelect="none"
                   >
-                    Portarias e Decretos
+                    Leis, Portarias e Decretos
                   </Text>
                 </Flex>
               </motion.div>

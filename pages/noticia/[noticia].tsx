@@ -20,6 +20,8 @@ import {
   ModalContent,
   ModalBody,
   ModalCloseButton,
+  Stack,
+  Skeleton,
 } from "@chakra-ui/react";
 import Header from "../../components/App/Header";
 import Footer from "../../components/App/Footer";
@@ -32,6 +34,7 @@ import { format } from "date-fns";
 import pt_br from "date-fns/locale/pt-BR";
 import Parse from "html-react-parser";
 import { useState } from "react";
+import { useRouter } from "next/router";
 
 interface INews {
   _id: string;
@@ -58,6 +61,7 @@ const Noticia: NextPage = ({
   news,
   others,
 }: InferGetStaticPropsType<typeof getStaticProps>) => {
+  const { isFallback } = useRouter();
   const [url, setUrl] = useState<string>("");
   const [modalImage, setModalImage] = useState<boolean>(false);
 
@@ -65,6 +69,72 @@ const Noticia: NextPage = ({
     setUrl(path);
     setModalImage(true);
   };
+
+  if (isFallback) {
+    return (
+      <>
+        <Header />
+        <Flex
+          justify="center"
+          align="center"
+          h="45px"
+          bg="blue.500"
+          textAlign="center"
+          color="white"
+          fontSize="xl"
+          fontWeight="bold"
+        >
+          NOTÍCIA
+        </Flex>
+        <Container maxW="4xl" mt={10}>
+          <Stack>
+            <Skeleton height="20px" />
+            <Skeleton height="20px" />
+            <Skeleton height="20px" />
+          </Stack>
+          <Stack mt={5}>
+            <Skeleton height="10px" />
+            <Skeleton height="10px" />
+          </Stack>
+          <Stack mt={5}>
+            <Skeleton height="10px" w="200px" />
+            <Skeleton height="10px" w="200px" />
+          </Stack>
+          <Skeleton height="300px" mt={5} />
+          <Skeleton height="10px" w="200px" mt={2} />
+
+          <Stack mt={5}>
+            <Skeleton height="20px" />
+            <Skeleton height="20px" />
+            <Skeleton height="20px" />
+            <Skeleton height="20px" />
+            <Skeleton height="20px" />
+            <Skeleton height="20px" />
+            <Skeleton height="20px" w="200px" />
+          </Stack>
+          <Stack mt={5}>
+            <Skeleton height="20px" />
+            <Skeleton height="20px" />
+            <Skeleton height="20px" />
+            <Skeleton height="20px" />
+            <Skeleton height="20px" />
+            <Skeleton height="20px" />
+            <Skeleton height="20px" w="200px" />
+          </Stack>
+          <Stack mt={5}>
+            <Skeleton height="20px" />
+            <Skeleton height="20px" />
+            <Skeleton height="20px" />
+            <Skeleton height="20px" />
+            <Skeleton height="20px" />
+            <Skeleton height="20px" />
+            <Skeleton height="20px" w="200px" />
+          </Stack>
+        </Container>
+        <Footer />
+      </>
+    );
+  }
 
   return (
     <>
@@ -262,7 +332,7 @@ export const getStaticPaths: GetStaticPaths = async () => {
 
   return {
     paths: paths,
-    fallback: false,
+    fallback: true,
   };
 };
 
