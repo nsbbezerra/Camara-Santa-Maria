@@ -137,8 +137,6 @@ export const getStaticProps: GetStaticProps = async () => {
 
   const schedule = !data ? null : data;
 
-  console.log(schedule);
-
   return {
     props: {
       schedule,

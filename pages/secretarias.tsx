@@ -1,4 +1,5 @@
-import type { NextPage } from "next";
+import { useEffect, useState } from "react";
+import type { NextPage, InferGetStaticPropsType, GetStaticProps } from "next";
 import {
   Flex,
   Container,
@@ -7,12 +8,32 @@ import {
   Heading,
   Text,
   Center,
+  Stack,
+  Icon,
 } from "@chakra-ui/react";
 import Header from "../components/App/Header";
 import Footer from "../components/App/Footer";
 import Image from "next/image";
+import { config } from "../configs/config";
+import { BsInboxFill } from "react-icons/bs";
 
-const Secretarias: NextPage = () => {
+interface ISecretary {
+  _id: string;
+  title: string;
+  name: string;
+  address: string;
+  phone: string;
+  email: string;
+  schedule: string;
+  thumbnail: string;
+  created_at: Date;
+}
+
+const Secretarias: NextPage<ISecretary> = ({
+  secretaries,
+}: InferGetStaticPropsType<typeof getStaticProps>) => {
+  const [secretarie, setSecretarie] = useState<ISecretary[]>(secretaries);
+
   return (
     <>
       <Header />
@@ -30,245 +51,75 @@ const Secretarias: NextPage = () => {
       </Flex>
 
       <Container mt={10} maxW="6xl">
-        <Box mb={10} rounded="md" borderWidth="1px" p={5}>
-          <Flex
-            justify="center"
-            align="center"
-            textAlign="center"
-            bg="green.500"
-            color="white"
-            p={3}
-            fontWeight="bold"
-            rounded="md"
-          >
-            SECRETARIA MUNICIPAL DE PLANEJAMENTO E MODERNIZAÇÃO DE GESTÃO
-          </Flex>
-          <Grid
-            templateColumns={[
-              "1fr",
-              "280px 1fr",
-              "280px 1fr",
-              "280px 1fr",
-              "280px 1fr",
-            ]}
-            gap={5}
-            mt={5}
-            justifyItems="center"
-          >
-            <Box rounded="md" overflow="hidden" w="280px" h="220px">
-              <Image
-                src="https://img.freepik.com/vetores-gratis/grande-abertura_23-2148160099.jpg?size=338&ext=jpg"
-                layout="responsive"
-                width={500}
-                height={400}
-                objectFit="cover"
-                alt="Prefeitura de Santa Maria"
-              />
-            </Box>
-            <Box>
-              <Center>
-                <Text>DADOS DA SECRETARIA</Text>
-              </Center>
-              <Heading fontSize="2xl" mt={3}>
-                Nome do Secretário
-              </Heading>
-              <Text mt={3}>
-                <strong>ENDEREÇO:</strong> It is a long established fact that a
-                reader will be distracted by the
-              </Text>
-              <Text mt={3}>
-                <strong>TELEFONE:</strong> (99) 99999-9999
-              </Text>
-              <Text mt={3}>
-                <strong>EMAIL:</strong> email@email.com
-              </Text>
-              <Text mt={3}>
-                <strong>ATENDIMENTO:</strong> 08:00 às 12:00 (Público) e 14:00
-                às 18:00, segunda a sexta-feira.
-              </Text>
-            </Box>
-          </Grid>
-        </Box>
-
-        <Box mb={10} rounded="md" borderWidth="1px" p={5}>
-          <Flex
-            justify="center"
-            align="center"
-            textAlign="center"
-            bg="green.500"
-            color="white"
-            p={3}
-            fontWeight="bold"
-            rounded="md"
-          >
-            SECRETARIA MUNICIPAL DE PLANEJAMENTO E MODERNIZAÇÃO DE GESTÃO
-          </Flex>
-          <Grid
-            templateColumns={[
-              "1fr",
-              "280px 1fr",
-              "280px 1fr",
-              "280px 1fr",
-              "280px 1fr",
-            ]}
-            gap={5}
-            mt={5}
-            justifyItems="center"
-          >
-            <Box rounded="md" overflow="hidden" w="280px" h="220px">
-              <Image
-                src="https://img.freepik.com/vetores-gratis/grande-abertura_23-2148160099.jpg?size=338&ext=jpg"
-                layout="responsive"
-                width={500}
-                height={400}
-                objectFit="cover"
-                alt="Prefeitura de Santa Maria"
-              />
-            </Box>
-            <Box>
-              <Center>
-                <Text>DADOS DA SECRETARIA</Text>
-              </Center>
-              <Heading fontSize="2xl" mt={3}>
-                Nome do Secretário
-              </Heading>
-              <Text mt={3}>
-                <strong>ENDEREÇO:</strong> It is a long established fact that a
-                reader will be distracted by the
-              </Text>
-              <Text mt={3}>
-                <strong>TELEFONE:</strong> (99) 99999-9999
-              </Text>
-              <Text mt={3}>
-                <strong>EMAIL:</strong> email@email.com
-              </Text>
-              <Text mt={3}>
-                <strong>ATENDIMENTO:</strong> 08:00 às 12:00 (Público) e 14:00
-                às 18:00, segunda a sexta-feira.
-              </Text>
-            </Box>
-          </Grid>
-        </Box>
-
-        <Box mb={10} rounded="md" borderWidth="1px" p={5}>
-          <Flex
-            justify="center"
-            align="center"
-            textAlign="center"
-            bg="green.500"
-            color="white"
-            p={3}
-            fontWeight="bold"
-            rounded="md"
-          >
-            SECRETARIA MUNICIPAL DE PLANEJAMENTO E MODERNIZAÇÃO DE GESTÃO
-          </Flex>
-          <Grid
-            templateColumns={[
-              "1fr",
-              "280px 1fr",
-              "280px 1fr",
-              "280px 1fr",
-              "280px 1fr",
-            ]}
-            gap={5}
-            mt={5}
-            justifyItems="center"
-          >
-            <Box rounded="md" overflow="hidden" w="280px" h="220px">
-              <Image
-                src="https://img.freepik.com/vetores-gratis/grande-abertura_23-2148160099.jpg?size=338&ext=jpg"
-                layout="responsive"
-                width={500}
-                height={400}
-                alt="Prefeitura de Santa Maria"
-                objectFit="cover"
-              />
-            </Box>
-            <Box>
-              <Center>
-                <Text>DADOS DA SECRETARIA</Text>
-              </Center>
-              <Heading fontSize="2xl" mt={3}>
-                Nome do Secretário
-              </Heading>
-              <Text mt={3}>
-                <strong>ENDEREÇO:</strong> It is a long established fact that a
-                reader will be distracted by the
-              </Text>
-              <Text mt={3}>
-                <strong>TELEFONE:</strong> (99) 99999-9999
-              </Text>
-              <Text mt={3}>
-                <strong>EMAIL:</strong> email@email.com
-              </Text>
-              <Text mt={3}>
-                <strong>ATENDIMENTO:</strong> 08:00 às 12:00 (Público) e 14:00
-                às 18:00, segunda a sexta-feira.
-              </Text>
-            </Box>
-          </Grid>
-        </Box>
-
-        <Box mb={10} rounded="md" borderWidth="1px" p={5}>
-          <Flex
-            justify="center"
-            align="center"
-            textAlign="center"
-            bg="green.500"
-            color="white"
-            p={3}
-            fontWeight="bold"
-            rounded="md"
-          >
-            SECRETARIA MUNICIPAL DE PLANEJAMENTO E MODERNIZAÇÃO DE GESTÃO
-          </Flex>
-          <Grid
-            templateColumns={[
-              "1fr",
-              "280px 1fr",
-              "280px 1fr",
-              "280px 1fr",
-              "280px 1fr",
-            ]}
-            gap={5}
-            mt={5}
-            justifyItems="center"
-          >
-            <Box rounded="md" overflow="hidden" w="280px" h="220px">
-              <Image
-                src="https://img.freepik.com/vetores-gratis/grande-abertura_23-2148160099.jpg?size=338&ext=jpg"
-                layout="responsive"
-                width={500}
-                height={400}
-                alt="Prefeitura de Santa Maria"
-                objectFit="cover"
-              />
-            </Box>
-            <Box>
-              <Center>
-                <Text>DADOS DA SECRETARIA</Text>
-              </Center>
-              <Heading fontSize="2xl" mt={3}>
-                Nome do Secretário
-              </Heading>
-              <Text mt={3}>
-                <strong>ENDEREÇO:</strong> It is a long established fact that a
-                reader will be distracted by the
-              </Text>
-              <Text mt={3}>
-                <strong>TELEFONE:</strong> (99) 99999-9999
-              </Text>
-              <Text mt={3}>
-                <strong>EMAIL:</strong> email@email.com
-              </Text>
-              <Text mt={3}>
-                <strong>ATENDIMENTO:</strong> 08:00 às 12:00 (Público) e 14:00
-                às 18:00, segunda a sexta-feira.
-              </Text>
-            </Box>
-          </Grid>
-        </Box>
+        <Stack spacing={5}>
+          {secretarie.length === 0 ? (
+            <Flex justify="center" align="center" direction="column">
+              <Icon as={BsInboxFill} color="gray.500" fontSize="4xl" mb={3} />
+              <Text color="gray.500">Nenhuma Informação</Text>
+            </Flex>
+          ) : (
+            <>
+              {secretarie.map((sec) => (
+                <Box rounded="md" borderWidth="1px" overflow="hidden">
+                  <Flex
+                    justify="center"
+                    align="center"
+                    textAlign="center"
+                    bg="green.500"
+                    color="white"
+                    p={3}
+                    fontWeight="bold"
+                  >
+                    {sec.title}
+                  </Flex>
+                  <Grid
+                    templateColumns={[
+                      "1fr",
+                      "280px 1fr",
+                      "280px 1fr",
+                      "280px 1fr",
+                      "280px 1fr",
+                    ]}
+                    gap={5}
+                    p={5}
+                    justifyItems="center"
+                  >
+                    <Box rounded="md" overflow="hidden" w="280px" h="220px">
+                      <Image
+                        src={`${config.default_url}/img/${sec.thumbnail}`}
+                        layout="responsive"
+                        width={500}
+                        height={400}
+                        objectFit="cover"
+                        alt="Prefeitura de Santa Maria"
+                      />
+                    </Box>
+                    <Box w="100%" pl={10}>
+                      <Center>
+                        <Text>DADOS DA SECRETARIA</Text>
+                      </Center>
+                      <Heading fontSize="2xl" mt={3}>
+                        {sec.name}
+                      </Heading>
+                      <Text mt={3}>
+                        <strong>ENDEREÇO:</strong> {sec.address}
+                      </Text>
+                      <Text mt={3}>
+                        <strong>TELEFONE:</strong> {sec.phone}
+                      </Text>
+                      <Text mt={3}>
+                        <strong>EMAIL:</strong> {sec.email}
+                      </Text>
+                      <Text mt={3}>
+                        <strong>ATENDIMENTO:</strong> {sec.schedule}
+                      </Text>
+                    </Box>
+                  </Grid>
+                </Box>
+              ))}
+            </>
+          )}
+        </Stack>
       </Container>
 
       <Footer />
@@ -277,3 +128,17 @@ const Secretarias: NextPage = () => {
 };
 
 export default Secretarias;
+
+export const getStaticProps: GetStaticProps = async () => {
+  const response = await fetch(`${config.default_url}/secretaries`);
+  const data: ISecretary = await response.json();
+
+  const secretaries = !data ? null : data;
+
+  return {
+    props: {
+      secretaries,
+    },
+    revalidate: 60,
+  };
+};

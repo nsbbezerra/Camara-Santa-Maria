@@ -151,33 +151,6 @@ const Navigation: FC = () => {
               h="102px"
               cursor="pointer"
             >
-              <Icon as={AiOutlineFile} fontSize="3xl" userSelect="none" />
-              <Text
-                mt={2}
-                fontSize={["md", "sm", "md", "md", "md"]}
-                textAlign="center"
-                userSelect="none"
-              >
-                Decretos
-              </Text>
-            </Flex>
-          </motion.div>
-
-          <motion.div
-            whileHover={{ scale: 1.03 }}
-            whileTap={{ scale: 1 }}
-            transition={{ duration: 0.2 }}
-          >
-            <Flex
-              bg="green.500"
-              color="white"
-              rounded="md"
-              direction="column"
-              justify="center"
-              align="center"
-              h="102px"
-              cursor="pointer"
-            >
               <Icon as={GiInjustice} fontSize="3xl" userSelect="none" />
               <Text
                 mt={2}
@@ -190,32 +163,36 @@ const Navigation: FC = () => {
             </Flex>
           </motion.div>
 
-          <motion.div
-            whileHover={{ scale: 1.03 }}
-            whileTap={{ scale: 1 }}
-            transition={{ duration: 0.2 }}
-          >
-            <Flex
-              bg="green.500"
-              color="white"
-              rounded="md"
-              direction="column"
-              justify="center"
-              align="center"
-              h="102px"
-              cursor="pointer"
-            >
-              <Icon as={AiOutlineCopy} fontSize="3xl" userSelect="none" />
-              <Text
-                mt={2}
-                fontSize={["md", "sm", "md", "md", "md"]}
-                textAlign="center"
-                userSelect="none"
+          <Link href="/portarias" passHref>
+            <a>
+              <motion.div
+                whileHover={{ scale: 1.03 }}
+                whileTap={{ scale: 1 }}
+                transition={{ duration: 0.2 }}
               >
-                Portarias
-              </Text>
-            </Flex>
-          </motion.div>
+                <Flex
+                  bg="green.500"
+                  color="white"
+                  rounded="md"
+                  direction="column"
+                  justify="center"
+                  align="center"
+                  h="102px"
+                  cursor="pointer"
+                >
+                  <Icon as={AiOutlineCopy} fontSize="3xl" userSelect="none" />
+                  <Text
+                    mt={2}
+                    fontSize={["md", "sm", "md", "md", "md"]}
+                    textAlign="center"
+                    userSelect="none"
+                  >
+                    Portarias e Decretos
+                  </Text>
+                </Flex>
+              </motion.div>
+            </a>
+          </Link>
 
           <Link
             href="https://santamaria.7focus.inf.br/santamaria/portal-transparencia/contra-cheques/login"
