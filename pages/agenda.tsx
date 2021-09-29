@@ -1,12 +1,8 @@
-import type { NextPage } from "next";
+import type { NextPage, GetStaticProps, InferGetStaticPropsType } from "next";
 import {
   Flex,
   Container,
   Box,
-  Select,
-  FormControl,
-  FormLabel,
-  HStack,
   Grid,
   Icon,
   Text,
@@ -16,17 +12,32 @@ import {
 } from "@chakra-ui/react";
 import Header from "../components/App/Header";
 import Footer from "../components/App/Footer";
-import { useEffect, useState } from "react";
 import { AiOutlineCalendar } from "react-icons/ai";
+import { config } from "../configs/config";
+import { BsInboxFill } from "react-icons/bs";
+import pt_br from "date-fns/locale/pt-BR";
+import { format } from "date-fns";
 
-const Agenda: NextPage = () => {
+interface ISchedule {
+  _id: string;
+  month: string;
+  year: number;
+  date: Date;
+  events: IEvents[];
+  created_at: Date;
+}
+
+interface IEvents {
+  _id: string;
+  schedule: string;
+  description: string;
+  created_at: Date;
+}
+
+const Agenda: NextPage<ISchedule> = ({
+  schedule,
+}: InferGetStaticPropsType<typeof getStaticProps>) => {
   const { colorMode } = useColorMode();
-  const [year, setYear] = useState<number>(0);
-
-  useEffect(() => {
-    const actYear = new Date();
-    setYear(actYear.getFullYear());
-  }, []);
 
   return (
     <>
@@ -44,38 +55,6 @@ const Agenda: NextPage = () => {
         AGENDA
       </Flex>
       <Container maxW="4xl" mt={20}>
-        <HStack>
-          <FormControl>
-            <FormLabel>Selecione o mês:</FormLabel>
-            <Select>
-              <option value="janeiro">Janeiro</option>
-              <option value="fevereiro">Fevereiro</option>
-              <option value="março">Março</option>
-              <option value="abril">Abril</option>
-              <option value="maio">Maio</option>
-              <option value="junho">Junho</option>
-              <option value="julho">Julho</option>
-              <option value="agosto">Agosto</option>
-              <option value="setembro">Setembro</option>
-              <option value="outubro">Outubro</option>
-              <option value="novembro">Novembro</option>
-              <option value="dezembro">Dezembro</option>
-            </Select>
-          </FormControl>
-
-          <FormControl>
-            <FormLabel>Selecione o ano:</FormLabel>
-            <Select defaultValue={year}>
-              <option value={year - 4}>{year - 4}</option>
-              <option value={year - 3}>{year - 3}</option>
-              <option value={year - 2}>{year - 2}</option>
-              <option value={year - 1}>{year - 1}</option>
-              <option value={year}>{year}</option>
-              <option value={year + 1}>{year + 1}</option>
-            </Select>
-          </FormControl>
-        </HStack>
-
         <Grid
           templateColumns={[
             "repeat(1, 1fr)",
@@ -87,162 +66,57 @@ const Agenda: NextPage = () => {
           gap={5}
           mt={10}
         >
-          <Box borderWidth="1px" rounded="md" overflow="hidden" h="min-content">
-            <Flex justify="center" align="center" bg="blue.500" p={2}>
-              <Icon as={AiOutlineCalendar} fontSize="3xl" color="white" />
-              <Heading fontSize="lg" ml={3} color="white">
-                13 de Setembro
-              </Heading>
+          {schedule.length === 0 ? (
+            <Flex justify="center" align="center" direction="column">
+              <Icon as={BsInboxFill} color="gray.500" fontSize="4xl" mb={3} />
+              <Text color="gray.500">Nenhuma Informação</Text>
             </Flex>
-            <Stack p={2}>
-              <Flex
-                bg={colorMode === "light" ? "blackAlpha.100" : "whiteAlpha.100"}
-                rounded="md"
-                align="center"
-                p={1}
-              >
-                <Text fontWeight="bold" ml={1}>
-                  12:00
-                </Text>
-                <Box ml={3}>
-                  <Text noOfLines={4} fontSize="sm">
-                    It is a long established fact that a reader will be
-                    distracted by the readable content of a page when looking at
-                    its layout.
-                  </Text>
+          ) : (
+            <>
+              {schedule?.map((sch: ISchedule) => (
+                <Box
+                  borderWidth="1px"
+                  rounded="md"
+                  overflow="hidden"
+                  h="min-content"
+                  key={sch._id}
+                >
+                  <Flex justify="center" align="center" bg="blue.500" p={2}>
+                    <Icon as={AiOutlineCalendar} fontSize="3xl" color="white" />
+                    <Heading fontSize="md" ml={3} color="white">
+                      {format(new Date(sch.date), "dd 'de' MMMM 'de' yyyy", {
+                        locale: pt_br,
+                      })}
+                    </Heading>
+                  </Flex>
+                  <Stack p={2}>
+                    {sch.events.map((evt: IEvents) => (
+                      <Flex
+                        bg={
+                          colorMode === "light"
+                            ? "blackAlpha.100"
+                            : "whiteAlpha.100"
+                        }
+                        rounded="md"
+                        align="center"
+                        p={1}
+                        key={evt._id}
+                      >
+                        <Text fontWeight="bold" ml={1}>
+                          {evt.schedule}
+                        </Text>
+                        <Box ml={3}>
+                          <Text noOfLines={4} fontSize="sm">
+                            {evt.description}
+                          </Text>
+                        </Box>
+                      </Flex>
+                    ))}
+                  </Stack>
                 </Box>
-              </Flex>
-            </Stack>
-          </Box>
-
-          <Box borderWidth="1px" rounded="md" overflow="hidden" h="min-content">
-            <Flex justify="center" align="center" bg="blue.500" p={2}>
-              <Icon as={AiOutlineCalendar} fontSize="3xl" color="white" />
-              <Heading fontSize="lg" ml={3} color="white">
-                13 de Setembro
-              </Heading>
-            </Flex>
-            <Stack p={2}>
-              <Flex
-                bg={colorMode === "light" ? "blackAlpha.100" : "whiteAlpha.100"}
-                rounded="md"
-                align="center"
-                p={1}
-              >
-                <Text fontWeight="bold" ml={1}>
-                  12:00
-                </Text>
-                <Box ml={3}>
-                  <Text noOfLines={4} fontSize="sm">
-                    It is a long established fact that a reader will be
-                    distracted by the readable content of a page when looking at
-                    its layout.
-                  </Text>
-                </Box>
-              </Flex>
-              <Flex
-                bg={colorMode === "light" ? "blackAlpha.100" : "whiteAlpha.100"}
-                rounded="md"
-                align="center"
-                p={1}
-              >
-                <Text fontWeight="bold" ml={1}>
-                  12:00
-                </Text>
-                <Box ml={3}>
-                  <Text noOfLines={4} fontSize="sm">
-                    It is a long established fact that a reader will be
-                    distracted by the readable content of a page when looking at
-                    its layout.
-                  </Text>
-                </Box>
-              </Flex>
-            </Stack>
-          </Box>
-
-          <Box borderWidth="1px" rounded="md" overflow="hidden" h="min-content">
-            <Flex justify="center" align="center" bg="blue.500" p={2}>
-              <Icon as={AiOutlineCalendar} fontSize="3xl" color="white" />
-              <Heading fontSize="lg" ml={3} color="white">
-                13 de Setembro
-              </Heading>
-            </Flex>
-            <Stack p={2}>
-              <Flex
-                bg={colorMode === "light" ? "blackAlpha.100" : "whiteAlpha.100"}
-                rounded="md"
-                align="center"
-                p={1}
-              >
-                <Text fontWeight="bold" ml={1}>
-                  12:00
-                </Text>
-                <Box ml={3}>
-                  <Text noOfLines={4} fontSize="sm">
-                    It is a long established fact that a reader will be
-                    distracted by the readable content of a page when looking at
-                    its layout.
-                  </Text>
-                </Box>
-              </Flex>
-            </Stack>
-          </Box>
-
-          <Box borderWidth="1px" rounded="md" overflow="hidden" h="min-content">
-            <Flex justify="center" align="center" bg="blue.500" p={2}>
-              <Icon as={AiOutlineCalendar} fontSize="3xl" color="white" />
-              <Heading fontSize="lg" ml={3} color="white">
-                13 de Setembro
-              </Heading>
-            </Flex>
-            <Stack p={2}>
-              <Flex
-                bg={colorMode === "light" ? "blackAlpha.100" : "whiteAlpha.100"}
-                rounded="md"
-                align="center"
-                p={1}
-              >
-                <Text fontWeight="bold" ml={1}>
-                  12:00
-                </Text>
-                <Box ml={3}>
-                  <Text noOfLines={4} fontSize="sm">
-                    It is a long established fact that a reader will be
-                    distracted by the readable content of a page when looking at
-                    its layout.
-                  </Text>
-                </Box>
-              </Flex>
-            </Stack>
-          </Box>
-
-          <Box borderWidth="1px" rounded="md" overflow="hidden" h="min-content">
-            <Flex justify="center" align="center" bg="blue.500" p={2}>
-              <Icon as={AiOutlineCalendar} fontSize="3xl" color="white" />
-              <Heading fontSize="lg" ml={3} color="white">
-                13 de Setembro
-              </Heading>
-            </Flex>
-            <Stack p={2}>
-              <Flex
-                bg={colorMode === "light" ? "blackAlpha.100" : "whiteAlpha.100"}
-                rounded="md"
-                align="center"
-                p={1}
-              >
-                <Text fontWeight="bold" ml={1}>
-                  12:00
-                </Text>
-                <Box ml={3}>
-                  <Text noOfLines={4} fontSize="sm">
-                    It is a long established fact that a reader will be
-                    distracted by the readable content of a page when looking at
-                    its layout.
-                  </Text>
-                </Box>
-              </Flex>
-            </Stack>
-          </Box>
+              ))}
+            </>
+          )}
         </Grid>
       </Container>
       <Footer />
@@ -251,3 +125,24 @@ const Agenda: NextPage = () => {
 };
 
 export default Agenda;
+
+export const getStaticProps: GetStaticProps = async () => {
+  const actDate = new Date();
+  const month = actDate.toLocaleString("pt-br", { month: "long" });
+  const year = actDate.getFullYear().toString();
+  const response = await fetch(
+    `${config.default_url}/schedule/${month}/${year}`
+  );
+  const data: ISchedule = await response.json();
+
+  const schedule = !data ? null : data;
+
+  console.log(schedule);
+
+  return {
+    props: {
+      schedule,
+    },
+    revalidate: 60,
+  };
+};

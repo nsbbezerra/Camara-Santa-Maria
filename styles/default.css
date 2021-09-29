@@ -5,13 +5,13 @@ html {
 
 /* width */
 ::-webkit-scrollbar {
-  width: 10px;
-  height: 10px;
+  width: 15px;
+  height: 15px;
 }
 
 /* Track */
 ::-webkit-scrollbar-track {
-  background: rgba(0, 0, 0, 0.05);
+  background: rgba(0, 0, 0, 0.1);
 }
 
 /* Handle */

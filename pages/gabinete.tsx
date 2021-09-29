@@ -1,4 +1,5 @@
-import type { NextPage } from "next";
+import { useState, useEffect } from "react";
+import type { NextPage, InferGetStaticPropsType, GetStaticProps } from "next";
 import {
   Container,
   Flex,
@@ -10,13 +11,36 @@ import {
   Grid,
   Box,
   Heading,
-  Text,
 } from "@chakra-ui/react";
 import Header from "../components/App/Header";
 import Footer from "../components/App/Footer";
 import Image from "next/image";
+import Parse from "html-react-parser";
+import { config } from "../configs/config";
 
-const Gabinete: NextPage = () => {
+interface IDesk {
+  _id: string | "";
+  name: string | "";
+  text: string | "";
+  type: string | "";
+  thumbnail: string | "";
+  created_at: Date;
+}
+
+const Gabinete: NextPage<IDesk> = ({
+  desks,
+}: InferGetStaticPropsType<typeof getStaticProps>) => {
+  const [desk, setDesk] = useState<IDesk[]>(desks?.desk);
+  const [major, setMajor] = useState<IDesk>();
+  const [viceMajor, setViceMajor] = useState<IDesk>();
+
+  useEffect(() => {
+    const findMajor = desk.find((obj) => obj.type === "major");
+    const findViceMajor = desk.find((obj) => obj.type === "vice-major");
+    setMajor(findMajor);
+    setViceMajor(findViceMajor);
+  }, [desk]);
+
   return (
     <>
       <Header />
@@ -54,7 +78,7 @@ const Gabinete: NextPage = () => {
               >
                 <Box rounded="md" overflow="hidden" w="280px" h="280px">
                   <Image
-                    src="https://img.freepik.com/vetores-gratis/grande-abertura_23-2148160098.jpg?size=338&ext=jpg"
+                    src={`${config.default_url}/img/${major?.thumbnail}`}
                     layout="responsive"
                     width={500}
                     height={500}
@@ -63,41 +87,8 @@ const Gabinete: NextPage = () => {
                   />
                 </Box>
                 <Box>
-                  <Heading mb={3}>Nome do Prefeito</Heading>
-                  <Text
-                    style={{ textIndent: "50px" }}
-                    textAlign="justify"
-                    mb={3}
-                  >
-                    It is a long established fact that a reader will be
-                    distracted by the readable content of a page when looking at
-                    its layout. The point of using Lorem Ipsum is that it has a
-                    more-or-less normal distribution of letters, as opposed to
-                    using 'Content here, content here', making it look like
-                    readable English. Many desktop publishing packages and web
-                    page editors now use Lorem Ipsum as their default model
-                    text, and a search for 'lorem ipsum' will uncover many web
-                    sites still in their infancy. Various versions have evolved
-                    over the years, sometimes by accident, sometimes on purpose
-                    (injected humour and the like).
-                  </Text>
-                  <Text
-                    style={{ textIndent: "50px" }}
-                    textAlign="justify"
-                    mb={3}
-                  >
-                    It is a long established fact that a reader will be
-                    distracted by the readable content of a page when looking at
-                    its layout. The point of using Lorem Ipsum is that it has a
-                    more-or-less normal distribution of letters, as opposed to
-                    using 'Content here, content here', making it look like
-                    readable English. Many desktop publishing packages and web
-                    page editors now use Lorem Ipsum as their default model
-                    text, and a search for 'lorem ipsum' will uncover many web
-                    sites still in their infancy. Various versions have evolved
-                    over the years, sometimes by accident, sometimes on purpose
-                    (injected humour and the like).
-                  </Text>
+                  <Heading mb={3}>{major?.name}</Heading>
+                  <div id="news-container">{Parse(major?.text || "")}</div>
                 </Box>
               </Grid>
             </TabPanel>
@@ -115,7 +106,7 @@ const Gabinete: NextPage = () => {
               >
                 <Box rounded="md" overflow="hidden" w="280px" h="280px">
                   <Image
-                    src="https://img.freepik.com/vetores-gratis/grande-abertura_23-2148160099.jpg?size=338&ext=jpg"
+                    src={`${config.default_url}/img/${viceMajor?.thumbnail}`}
                     layout="responsive"
                     width={500}
                     height={500}
@@ -124,41 +115,8 @@ const Gabinete: NextPage = () => {
                   />
                 </Box>
                 <Box>
-                  <Heading mb={3}>Nome do Vice-Prefeito</Heading>
-                  <Text
-                    style={{ textIndent: "50px" }}
-                    textAlign="justify"
-                    mb={3}
-                  >
-                    It is a long established fact that a reader will be
-                    distracted by the readable content of a page when looking at
-                    its layout. The point of using Lorem Ipsum is that it has a
-                    more-or-less normal distribution of letters, as opposed to
-                    using 'Content here, content here', making it look like
-                    readable English. Many desktop publishing packages and web
-                    page editors now use Lorem Ipsum as their default model
-                    text, and a search for 'lorem ipsum' will uncover many web
-                    sites still in their infancy. Various versions have evolved
-                    over the years, sometimes by accident, sometimes on purpose
-                    (injected humour and the like).
-                  </Text>
-                  <Text
-                    style={{ textIndent: "50px" }}
-                    textAlign="justify"
-                    mb={3}
-                  >
-                    It is a long established fact that a reader will be
-                    distracted by the readable content of a page when looking at
-                    its layout. The point of using Lorem Ipsum is that it has a
-                    more-or-less normal distribution of letters, as opposed to
-                    using 'Content here, content here', making it look like
-                    readable English. Many desktop publishing packages and web
-                    page editors now use Lorem Ipsum as their default model
-                    text, and a search for 'lorem ipsum' will uncover many web
-                    sites still in their infancy. Various versions have evolved
-                    over the years, sometimes by accident, sometimes on purpose
-                    (injected humour and the like).
-                  </Text>
+                  <Heading mb={3}>{viceMajor?.name}</Heading>
+                  <div id="news-container">{Parse(viceMajor?.text || "")}</div>
                 </Box>
               </Grid>
             </TabPanel>
@@ -171,3 +129,17 @@ const Gabinete: NextPage = () => {
 };
 
 export default Gabinete;
+
+export const getStaticProps: GetStaticProps = async () => {
+  const response = await fetch(`${config.default_url}/desk`);
+  const data: IDesk = await response.json();
+
+  const desks = !data ? null : data;
+
+  return {
+    props: {
+      desks,
+    },
+    revalidate: 60,
+  };
+};

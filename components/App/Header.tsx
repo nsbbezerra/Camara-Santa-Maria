@@ -26,7 +26,6 @@ import {
   useColorMode,
 } from "@chakra-ui/react";
 import {
-  AiOutlineWhatsApp,
   AiOutlineInstagram,
   AiOutlineYoutube,
   AiOutlineMenu,
@@ -36,7 +35,7 @@ import { useRouter } from "next/router";
 import { MdKeyboardArrowDown } from "react-icons/md";
 import { RiContrast2Fill } from "react-icons/ri";
 import Link from "next/link";
-import { FaFacebook, FaFacebookF } from "react-icons/fa";
+import { FaFacebook } from "react-icons/fa";
 
 const Header: FC = () => {
   const { push } = useRouter();
@@ -148,15 +147,23 @@ const Header: FC = () => {
                     </MenuItem>
                   </MenuList>
                 </Menu>
-                <Button
-                  variant="link"
-                  colorScheme="blue"
-                  _hover={{ textDecor: "none", transform: "scale(1.05)" }}
-                  _active={{ transform: "scale(1)" }}
-                  size="sm"
+
+                <Link
+                  href="https://santamaria.7focus.inf.br/santamaria/portal-transparencia"
+                  passHref
                 >
-                  TRANSPARÊNCIA
-                </Button>
+                  <a target="_blank">
+                    <Button
+                      variant="link"
+                      colorScheme="blue"
+                      _hover={{ textDecor: "none", transform: "scale(1.05)" }}
+                      _active={{ transform: "scale(1)" }}
+                      size="sm"
+                    >
+                      TRANSPARÊNCIA
+                    </Button>
+                  </a>
+                </Link>
 
                 <Button
                   variant="link"
@@ -389,15 +396,23 @@ const Header: FC = () => {
                   </MenuItem>
                 </MenuList>
               </Menu>
-              <Button
-                variant="link"
-                colorScheme="blue"
-                _hover={{ textDecor: "none", transform: "scale(1.05)" }}
-                _active={{ transform: "scale(1)" }}
-                size="md"
+
+              <Link
+                href="https://santamaria.7focus.inf.br/santamaria/portal-transparencia"
+                passHref
               >
-                TRANSPARÊNCIA
-              </Button>
+                <a target="_blank">
+                  <Button
+                    variant="link"
+                    colorScheme="blue"
+                    _hover={{ textDecor: "none", transform: "scale(1.05)" }}
+                    _active={{ transform: "scale(1)" }}
+                    size="md"
+                  >
+                    TRANSPARÊNCIA
+                  </Button>
+                </a>
+              </Link>
 
               <Button
                 variant="link"
@@ -503,9 +518,22 @@ const Header: FC = () => {
                   </Stack>
                 </Collapse>
               </Box>
-              <Button rounded="none" colorScheme="blue" variant="ghost">
-                TRANSPARÊNCIA
-              </Button>
+
+              <Link
+                href="https://santamaria.7focus.inf.br/santamaria/portal-transparencia"
+                passHref
+              >
+                <a target="_blank">
+                  <Button
+                    rounded="none"
+                    colorScheme="blue"
+                    variant="ghost"
+                    isFullWidth
+                  >
+                    TRANSPARÊNCIA
+                  </Button>
+                </a>
+              </Link>
               <Button
                 rounded="none"
                 colorScheme="blue"

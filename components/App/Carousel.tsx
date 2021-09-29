@@ -11,7 +11,7 @@ interface IDimensions {
 const CarouselApp: FC = () => {
   const [dimensions] = useState<IDimensions | undefined>({
     width: 1080,
-    height: 450,
+    height: 400,
   });
 
   return (
