@@ -60,7 +60,12 @@ const Secretarias: NextPage<ISecretary> = ({
           ) : (
             <>
               {secretarie.map((sec) => (
-                <Box rounded="md" borderWidth="1px" overflow="hidden">
+                <Box
+                  rounded="md"
+                  borderWidth="1px"
+                  overflow="hidden"
+                  key={sec._id}
+                >
                   <Flex
                     justify="center"
                     align="center"
