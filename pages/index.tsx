@@ -196,8 +196,8 @@ const Home: NextPage<IIndex> = ({
               overflow="hidden"
               rounded="md"
             >
-              {!informative ? (
-                <Flex justify="center" align="center" direction="column">
+              {!informative?.length ? (
+                <Flex justify="center" align="center" direction="column" mt={5}>
                   <Icon
                     as={BsInboxFill}
                     color="gray.500"

@@ -7,13 +7,13 @@ import {
   Box,
   ButtonGroup,
   Icon,
+  HStack,
 } from "@chakra-ui/react";
 import { AiOutlineSearch, AiOutlineDownload } from "react-icons/ai";
 import { BsInboxFill } from "react-icons/bs";
 import { format } from "date-fns";
 import pt_br from "date-fns/locale/pt-BR";
 import Link from "next/link";
-import { config } from "../../configs/config";
 
 interface IPublications {
   _id: string;
@@ -40,7 +40,13 @@ const Publications: FC<IProps> = ({ publication }) => {
   return (
     <>
       {!publication || publication.length === 0 ? (
-        <Flex justify="center" align="center" direction="column">
+        <Flex
+          justify="center"
+          align="center"
+          direction="column"
+          mt={5}
+          w="100%"
+        >
           <Icon as={BsInboxFill} color="gray.500" fontSize="4xl" mb={3} />
           <Text color="gray.500">Nenhuma Informação</Text>
         </Flex>
@@ -68,16 +74,18 @@ const Publications: FC<IProps> = ({ publication }) => {
                   locale: pt_br,
                 })}
               </Text>
-              <ButtonGroup w="100%" spacing={0}>
-                <Link href={`${config.default_url}/docs/${pub.file}`} passHref>
-                  <a target="_blank" style={{ width: "50%", display: "block" }}>
+              <HStack w="100%" spacing={0} mt={2}>
+                <Link href={pub.file} passHref>
+                  <a
+                    target="_blank"
+                    style={{ width: "100%", display: "block" }}
+                  >
                     <Button
                       isFullWidth
                       leftIcon={<AiOutlineSearch />}
                       rounded="none"
                       size="sm"
                       colorScheme="green"
-                      mt={2}
                     >
                       Visualizar
                     </Button>
@@ -91,13 +99,11 @@ const Publications: FC<IProps> = ({ publication }) => {
                   size="sm"
                   colorScheme="blue"
                   mt={2}
-                  onClick={() =>
-                    Download(`${config.default_url}/docs/${pub.file}`, pub.file)
-                  }
+                  onClick={() => Download(`${pub.file}`, pub.title)}
                 >
                   Baixar
                 </Button>
-              </ButtonGroup>
+              </HStack>
             </Box>
           ))}
         </Grid>

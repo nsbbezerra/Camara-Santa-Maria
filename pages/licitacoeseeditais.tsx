@@ -19,7 +19,6 @@ import {
   ButtonGroup,
   Button,
   Input,
-  useToast,
 } from "@chakra-ui/react";
 import Header from "../components/App/Header";
 import Footer from "../components/App/Footer";
@@ -51,10 +50,9 @@ interface IFile {
 }
 
 const Licitacoes: NextPage = () => {
-  const toast = useToast();
   const [page, setPage] = useState<number>(1);
   const [pages, setPages] = useState<number>(0);
-  const { data, error } = useFetch(`/bidPag/${page}`);
+  const { data } = useFetch(`/bidPag/${page}`);
 
   const [bids, setBids] = useState<IBids[]>();
 
@@ -75,17 +73,6 @@ const Licitacoes: NextPage = () => {
     } else {
       setPages(parseInt(divisor.toString()));
     }
-  }
-
-  if (error) {
-    toast({
-      title: "Erro",
-      description: "Ocorreu um erro ao conectar-se com o servidor",
-      status: "error",
-      position: "bottom-right",
-      duration: 8000,
-      isClosable: true,
-    });
   }
 
   const Download = (url: string, file: string) => {

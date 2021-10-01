@@ -32,7 +32,7 @@ interface ISecretary {
 const Secretarias: NextPage<ISecretary> = ({
   secretaries,
 }: InferGetStaticPropsType<typeof getStaticProps>) => {
-  const [secretarie, setSecretarie] = useState<ISecretary[]>(secretaries);
+  const [secretarie] = useState<ISecretary[]>(secretaries);
 
   return (
     <>

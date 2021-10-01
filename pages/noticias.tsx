@@ -1,13 +1,6 @@
 import type { NextPage } from "next";
 import { useState, useEffect } from "react";
-import {
-  Container,
-  Flex,
-  Input,
-  Button,
-  Text,
-  useToast,
-} from "@chakra-ui/react";
+import { Container, Flex, Input, Button, Text } from "@chakra-ui/react";
 import Header from "../components/App/Header";
 import Footer from "../components/App/Footer";
 import News from "../components/App/News";
@@ -36,10 +29,9 @@ interface IImages {
 }
 
 const Noticias: NextPage = () => {
-  const toast = useToast();
   const [page, setPage] = useState<number>(1);
   const [pages, setPages] = useState<number>(0);
-  const { data, error } = useFetch(`/news/${page}`);
+  const { data } = useFetch(`/news/${page}`);
 
   const [news, setNews] = useState<INews[]>();
 
@@ -60,17 +52,6 @@ const Noticias: NextPage = () => {
     } else {
       setPages(parseInt(divisor.toString()));
     }
-  }
-
-  if (error) {
-    toast({
-      title: "Erro",
-      description: "Ocorreu um erro ao conectar-se com o servidor",
-      status: "error",
-      position: "bottom-right",
-      duration: 8000,
-      isClosable: true,
-    });
   }
 
   return (

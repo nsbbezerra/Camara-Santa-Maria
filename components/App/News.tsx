@@ -46,8 +46,14 @@ interface IProps {
 const News: FC<IProps> = ({ news }) => {
   return (
     <>
-      {!news ? (
-        <Flex justify="center" align="center" direction="column">
+      {!news?.length ? (
+        <Flex
+          justify="center"
+          align="center"
+          direction="column"
+          w="100%"
+          mt={5}
+        >
           <Icon as={BsInboxFill} color="gray.500" fontSize="4xl" mb={3} />
           <Text color="gray.500">Nenhuma Informação</Text>
         </Flex>
@@ -63,7 +69,7 @@ const News: FC<IProps> = ({ news }) => {
           gap={6}
           justifyContent="center"
         >
-          {news.map((not) => (
+          {news?.map((not) => (
             <motion.div
               whileHover={{ scale: 1.03 }}
               whileTap={{ scale: 1 }}

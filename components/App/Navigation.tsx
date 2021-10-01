@@ -136,7 +136,38 @@ const Navigation: FC = () => {
             </a>
           </Link>
 
-          <Link href="/portariasedecretos" passHref>
+          <Link href="/decretos" passHref>
+            <a>
+              <motion.div
+                whileHover={{ scale: 1.03 }}
+                whileTap={{ scale: 1 }}
+                transition={{ duration: 0.2 }}
+              >
+                <Flex
+                  bg="green.500"
+                  color="white"
+                  rounded="md"
+                  direction="column"
+                  justify="center"
+                  align="center"
+                  h="102px"
+                  cursor="pointer"
+                >
+                  <Icon as={AiOutlineFile} fontSize="3xl" userSelect="none" />
+                  <Text
+                    mt={2}
+                    fontSize={["md", "sm", "md", "md", "md"]}
+                    textAlign="center"
+                    userSelect="none"
+                  >
+                    Decretos
+                  </Text>
+                </Flex>
+              </motion.div>
+            </a>
+          </Link>
+
+          <Link href="/portarias" passHref>
             <a>
               <motion.div
                 whileHover={{ scale: 1.03 }}
@@ -160,7 +191,7 @@ const Navigation: FC = () => {
                     textAlign="center"
                     userSelect="none"
                   >
-                    Leis, Portarias e Decretos
+                    Portarias
                   </Text>
                 </Flex>
               </motion.div>

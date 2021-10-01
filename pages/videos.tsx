@@ -7,7 +7,6 @@ import {
   Flex,
   Grid,
   AspectRatio,
-  useToast,
   Icon,
   Text,
   Button,
@@ -24,10 +23,9 @@ interface IVideos {
 }
 
 const Videos: NextPage = () => {
-  const toast = useToast();
   const [page, setPage] = useState<number>(1);
   const [pages, setPages] = useState<number>(0);
-  const { data, error } = useFetch(`/videos/${page}`);
+  const { data } = useFetch(`/videos/${page}`);
   const [videos, setVideos] = useState<IVideos[]>();
 
   useEffect(() => {
@@ -47,17 +45,6 @@ const Videos: NextPage = () => {
     } else {
       setPages(parseInt(divisor.toString()));
     }
-  }
-
-  if (error) {
-    toast({
-      title: "Erro",
-      description: "Ocorreu um erro ao conectar-se com o servidor",
-      status: "error",
-      position: "bottom-right",
-      duration: 8000,
-      isClosable: true,
-    });
   }
 
   return (

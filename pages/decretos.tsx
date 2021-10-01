@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react";
-import type { NextPage, InferGetStaticPropsType, GetStaticProps } from "next";
+import type { NextPage } from "next";
 import {
   Flex,
   Container,
@@ -8,9 +8,6 @@ import {
   Icon,
   Text,
   Heading,
-  Stack,
-  Radio,
-  RadioGroup,
   HStack,
   Divider,
   Button,
@@ -18,7 +15,6 @@ import {
 } from "@chakra-ui/react";
 import Header from "../components/App/Header";
 import Footer from "../components/App/Footer";
-import { ImOffice } from "react-icons/im";
 import { FaFilePdf } from "react-icons/fa";
 import {
   AiOutlineArrowLeft,
@@ -30,44 +26,21 @@ import { useFetch } from "../hooks/useFetch";
 import Link from "next/link";
 import { config } from "../configs/config";
 
-interface IOrdinance {
+interface IDecrees {
   _id: string;
   title: string;
   description: string;
-  secretary_id: string;
   file?: string;
   created_at: Date;
 }
 
-interface ISecretary {
-  _id: string;
-  title: string;
-  name: string;
-  address: string;
-  phone: string;
-  email: string;
-  schedule: string;
-  thumbnail: string;
-  created_at: Date;
-}
-
-const Ordinances: NextPage = ({
-  secretary,
-}: InferGetStaticPropsType<typeof getStaticProps>) => {
-  const [secretarie_id, setSecretarie_id] = useState<string>();
+const Decrees: NextPage = () => {
   const [page, setPage] = useState<number>(1);
   const [pages, setPages] = useState<number>(0);
 
-  const { data } = useFetch(`/ordinances/${secretarie_id}/${page}`);
+  const { data } = useFetch(`/decrees/${page}`);
 
-  const [ordinances, setOrdinances] = useState<IOrdinance[]>();
-  const [secretaries] = useState<ISecretary[]>(secretary);
-
-  useEffect(() => {
-    if (secretaries.length !== 0) {
-      setSecretarie_id(secretaries[0]._id);
-    }
-  }, [secretaries]);
+  const [ordinances, setOrdinances] = useState<IDecrees[]>();
 
   useEffect(() => {
     if (data) {
@@ -101,42 +74,11 @@ const Ordinances: NextPage = ({
         fontSize="xl"
         fontWeight="bold"
       >
-        PORTARIAS
+        DECRETOS
       </Flex>
 
       <Container mt={20} maxW="6xl">
-        <Grid
-          templateColumns={[
-            "1fr",
-            "280px 1fr",
-            "280px 1fr",
-            "280px 1fr",
-            "280px 1fr",
-          ]}
-          gap={5}
-        >
-          <Box rounded="md" borderWidth="1px" overflow="hidden" h="min-content">
-            <Flex align="center" bg="blue.500" p={3} color="white">
-              <Icon as={ImOffice} mr={3} />
-              <Text fontWeight="bold">SECRETARIAS</Text>
-            </Flex>
-
-            <RadioGroup
-              p={4}
-              colorScheme="blue"
-              value={secretarie_id}
-              onChange={(e) => setSecretarie_id(e)}
-            >
-              <Stack>
-                {secretaries.map((sec) => (
-                  <Radio key={sec._id} value={sec._id}>
-                    {sec.title}
-                  </Radio>
-                ))}
-              </Stack>
-            </RadioGroup>
-          </Box>
-
+        <Grid templateColumns={"1fr"} gap={5}>
           <Box>
             {ordinances?.map((ord) => (
               <Box borderWidth="1px" p={5} rounded="md" key={ord._id}>
@@ -218,18 +160,4 @@ const Ordinances: NextPage = ({
   );
 };
 
-export default Ordinances;
-
-export const getStaticProps: GetStaticProps = async () => {
-  const response = await fetch(`${config.default_url}/secretaries`);
-  const data: ISecretary = await response.json();
-
-  const secretary = !data ? null : data;
-
-  return {
-    props: {
-      secretary,
-    },
-    revalidate: 60,
-  };
-};
+export default Decrees;

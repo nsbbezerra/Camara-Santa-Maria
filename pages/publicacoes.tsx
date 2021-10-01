@@ -1,12 +1,5 @@
 import type { NextPage } from "next";
-import {
-  Flex,
-  Container,
-  useToast,
-  Button,
-  Input,
-  Text,
-} from "@chakra-ui/react";
+import { Flex, Container, Button, Input, Text } from "@chakra-ui/react";
 import Header from "../components/App/Header";
 import Footer from "../components/App/Footer";
 import Publications from "../components/App/Publications";
@@ -23,10 +16,9 @@ interface IPublications {
 }
 
 const Publicacoes: NextPage = () => {
-  const toast = useToast();
   const [page, setPage] = useState<number>(1);
   const [pages, setPages] = useState<number>(0);
-  const { error, data } = useFetch(`/publicationPage/${page}`);
+  const { data } = useFetch(`/publicationPage/${page}`);
   const [publication, setPublication] = useState<IPublications[]>();
 
   function handlePagination(num: string) {
@@ -47,17 +39,6 @@ const Publicacoes: NextPage = () => {
       handlePagination(data.count.toString());
     }
   }, [data]);
-
-  if (error) {
-    toast({
-      title: "Erro",
-      description: "Ocorreu um erro ao conectar-se com o servidor",
-      status: "error",
-      position: "bottom-right",
-      duration: 8000,
-      isClosable: true,
-    });
-  }
 
   return (
     <>
