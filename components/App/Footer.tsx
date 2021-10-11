@@ -90,7 +90,7 @@ const Footer: FC = () => {
             <Box>
               <Stack spacing={4}>
                 <Text color="white">
-                  Horário de Funcionamento: das 7h30 às 1130, e das 13h30 às
+                  Horário de Funcionamento: das 7h30 às 11h30 e das 13h30 às
                   17h30
                 </Text>
                 <Text color="white">
@@ -99,6 +99,7 @@ const Footer: FC = () => {
                 </Text>
                 <Text color="white">(63) 9 9290-1172</Text>
                 <Text color="white">(63) 3441-1243</Text>
+                <Text color="white">Responsável Técnico: Leonardo Noleto</Text>
               </Stack>
             </Box>
           </Grid>
