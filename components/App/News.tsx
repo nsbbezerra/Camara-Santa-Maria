@@ -9,6 +9,8 @@ import {
   LinkOverlay,
   Icon,
   Tag,
+  Wrap,
+  WrapItem,
 } from "@chakra-ui/react";
 import { motion } from "framer-motion";
 import Image from "next/image";
@@ -85,14 +87,43 @@ const News: FC<IProps> = ({ news }) => {
                   height={350}
                   objectFit="cover"
                 />
-                <Flex
-                  h={["200px", "230px", "230px", "230px", "230px"]}
-                  align="center"
-                >
+                <Flex align="center">
                   <Box p={3}>
-                    <Tag colorScheme="blue" size="sm">
-                      {not.tag}
-                    </Tag>
+                    {!not.tag.includes(",") ? (
+                      <Tag
+                        colorScheme="blue"
+                        size="sm"
+                        d={[
+                          "none",
+                          "inline-flex",
+                          "inline-flex",
+                          "inline-flex",
+                          "inline-flex",
+                        ]}
+                      >
+                        {not.tag}
+                      </Tag>
+                    ) : (
+                      <Wrap mb={2}>
+                        {not.tag.split(",").map((tag) => (
+                          <WrapItem key={tag}>
+                            <Tag
+                              colorScheme="blue"
+                              size="sm"
+                              d={[
+                                "none",
+                                "inline-flex",
+                                "inline-flex",
+                                "inline-flex",
+                                "inline-flex",
+                              ]}
+                            >
+                              {tag}
+                            </Tag>
+                          </WrapItem>
+                        ))}
+                      </Wrap>
+                    )}
                     <Link href={`/noticia/${not._id}`} passHref>
                       <LinkOverlay>
                         <Heading
