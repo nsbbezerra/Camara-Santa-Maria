@@ -22,6 +22,8 @@ import {
   ModalCloseButton,
   Stack,
   Skeleton,
+  Wrap,
+  WrapItem,
 } from "@chakra-ui/react";
 import Header from "../../components/App/Header";
 import Footer from "../../components/App/Footer";
@@ -229,6 +231,22 @@ const Noticia: NextPage = ({
               ))}
             </Grid>
           </>
+        )}
+
+        {news.tag.includes(",") ? (
+          <Wrap spacing={3} mt={10}>
+            {news.tag.split(",").map((tag: string) => (
+              <WrapItem key={tag}>
+                <Tag colorScheme="blue" cursor="pointer">
+                  {tag}
+                </Tag>
+              </WrapItem>
+            ))}
+          </Wrap>
+        ) : (
+          <Tag colorScheme="blue" mt={10}>
+            {news.tag}
+          </Tag>
         )}
 
         {others.length !== 0 && (

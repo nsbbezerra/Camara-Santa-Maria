@@ -351,7 +351,7 @@ const Home: NextPage<IIndex> = ({
         </Link>
 
         <Grid
-          templateColumns="repeat(auto-fit, minmax(260px, 260px))"
+          templateColumns="repeat(auto-fit, minmax(300px, 300px))"
           gap={6}
           justifyContent="center"
           mt={20}
@@ -366,33 +366,28 @@ const Home: NextPage<IIndex> = ({
                 whileTap={{ scale: 1 }}
                 transition={{ duration: 0.2 }}
               >
-                <Flex
+                <Box
                   rounded="md"
-                  bg="green.500"
-                  h="130px"
-                  direction="column"
-                  justify="center"
-                  align="center"
+                  h="180px"
                   cursor="pointer"
+                  borderWidth="1px"
+                  overflow="hidden"
                 >
                   <Image
-                    src="/img/info.png"
-                    layout="fixed"
-                    width={70}
-                    height={70}
-                    objectFit="cover"
+                    src="/img/esic.jpg"
+                    layout="responsive"
+                    width={290}
+                    height={180}
+                    quality={100}
                     alt="Prefeitura de Santa Maria"
                   />
-                  <Heading fontSize="md" color="white" mt={1}>
-                    E-SIC
-                  </Heading>
-                </Flex>
+                </Box>
               </motion.div>
             </a>
           </Link>
 
           <Link
-            href="https://falabr.cgu.gov.br/publico/Manifestacao/SelecionarTipoManifestacao.aspx?ReturnUrl=%2f"
+            href="https://app.powerbi.com/view?r=eyJrIjoiODkzMTY1MmYtNzVkZC00MzJiLTliYWUtNWQ5NTk0OGMxZDU3IiwidCI6IjI0OWJjYjU2LTk2ODEtNDY3ZC04NTNhLTEzNTI4OTNhMzFhOCJ9"
             passHref
           >
             <a target="_blank">
@@ -401,27 +396,22 @@ const Home: NextPage<IIndex> = ({
                 whileTap={{ scale: 1 }}
                 transition={{ duration: 0.2 }}
               >
-                <Flex
+                <Box
                   rounded="md"
-                  bg="green.500"
-                  h="130px"
-                  direction="column"
-                  justify="center"
-                  align="center"
+                  h="180px"
                   cursor="pointer"
+                  borderWidth="1px"
+                  overflow="hidden"
                 >
                   <Image
-                    src="/img/atendimento.png"
-                    layout="fixed"
-                    width={70}
-                    height={70}
+                    src="/img/covid.jpg"
+                    layout="responsive"
+                    width={290}
+                    height={180}
                     alt="Prefeitura de Santa Maria"
-                    objectFit="cover"
+                    quality={100}
                   />
-                  <Heading fontSize="md" color="white" mt={1}>
-                    OUVIDORIA MUNICIPAL
-                  </Heading>
-                </Flex>
+                </Box>
               </motion.div>
             </a>
           </Link>
@@ -431,27 +421,22 @@ const Home: NextPage<IIndex> = ({
             whileTap={{ scale: 1 }}
             transition={{ duration: 0.2 }}
           >
-            <Flex
+            <Box
               rounded="md"
-              bg="green.500"
-              h="130px"
-              direction="column"
-              justify="center"
-              align="center"
+              h="180px"
               cursor="pointer"
+              borderWidth="1px"
+              overflow="hidden"
             >
               <Image
-                src="/img/nfe.png"
-                layout="fixed"
-                width={70}
-                height={70}
-                objectFit="cover"
+                src="/img/ouvidoria.jpg"
+                layout="responsive"
+                width={290}
+                height={180}
                 alt="Prefeitura de Santa Maria"
+                quality={100}
               />
-              <Heading fontSize="md" color="white" mt={1}>
-                NOTA ELETRÔNICA
-              </Heading>
-            </Flex>
+            </Box>
           </motion.div>
 
           <Link
@@ -464,27 +449,21 @@ const Home: NextPage<IIndex> = ({
                 whileTap={{ scale: 1 }}
                 transition={{ duration: 0.2 }}
               >
-                <Flex
+                <Box
                   rounded="md"
-                  bg="blue.500"
-                  h="130px"
-                  direction="column"
-                  justify="center"
-                  align="center"
+                  h="180px"
                   cursor="pointer"
+                  borderWidth="1px"
+                  overflow="hidden"
                 >
                   <Image
-                    src="/img/consulta.png"
-                    layout="fixed"
-                    width={70}
-                    height={70}
+                    src="/img/cansulta.jpg"
+                    layout="responsive"
+                    width={260}
+                    height={180}
                     alt="Prefeitura de Santa Maria"
-                    objectFit="cover"
                   />
-                  <Heading fontSize="md" color="white" mt={1}>
-                    CONSULTA PÚBLICA
-                  </Heading>
-                </Flex>
+                </Box>
               </motion.div>
             </a>
           </Link>

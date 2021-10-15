@@ -13,37 +13,53 @@ const CarouselApp: FC = () => {
     width: 1080,
     height: 400,
   });
+  const [show] = useState<boolean>(false);
 
   return (
-    <Carousel
-      autoPlay
-      showArrows
-      showStatus={false}
-      showThumbs={false}
-      infiniteLoop
-      interval={5000}
-    >
-      <Box>
-        <Image
-          src="/img/santa.jpg"
-          layout="responsive"
-          width={dimensions?.width}
-          height={dimensions?.height}
-          objectFit="cover"
-          alt="Prefeitura de Santa Maria"
-        />
-      </Box>
-      <Box>
-        <Image
-          src="/img/santa.jpg"
-          layout="responsive"
-          width={dimensions?.width}
-          height={dimensions?.height}
-          objectFit="cover"
-          alt="Prefeitura de Santa Maria"
-        />
-      </Box>
-    </Carousel>
+    <>
+      {show ? (
+        <Carousel
+          autoPlay
+          showArrows
+          showStatus={false}
+          showThumbs={false}
+          infiniteLoop
+          interval={5000}
+        >
+          <Box>
+            <Image
+              src="/img/santa.jpg"
+              layout="responsive"
+              width={dimensions?.width}
+              height={dimensions?.height}
+              objectFit="cover"
+              alt="Prefeitura de Santa Maria"
+            />
+          </Box>
+          <Box>
+            <Image
+              src="/img/santa.jpg"
+              layout="responsive"
+              width={dimensions?.width}
+              height={dimensions?.height}
+              objectFit="cover"
+              alt="Prefeitura de Santa Maria"
+            />
+          </Box>
+        </Carousel>
+      ) : (
+        <Box>
+          <Image
+            src="/img/prefeitura.jpg"
+            layout="responsive"
+            width={dimensions?.width}
+            height={dimensions?.height}
+            objectFit="cover"
+            alt="Prefeitura de Santa Maria"
+          />
+        </Box>
+      )}
+    </>
   );
 };
 
