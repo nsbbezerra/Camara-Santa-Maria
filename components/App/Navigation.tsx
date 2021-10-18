@@ -2,7 +2,6 @@ import { FC } from "react";
 import { Grid, Button, Stack, Flex, Icon, Text } from "@chakra-ui/react";
 import {
   AiOutlineSearch,
-  AiOutlineFile,
   AiOutlineMedicineBox,
   AiOutlineTool,
   AiOutlineCopy,
@@ -19,7 +18,6 @@ import {
   FaInfoCircle,
   FaReceipt,
   FaSearch,
-  FaUsers,
 } from "react-icons/fa";
 import Link from "next/link";
 
@@ -54,15 +52,6 @@ const Navigation: FC = () => {
               </Button>
             </a>
           </Link>
-          <Button
-            colorScheme="blue"
-            leftIcon={<AiOutlineFile />}
-            _hover={{ transform: "scale(1.05)" }}
-            _active={{ transform: "scale(1)" }}
-            size="lg"
-          >
-            Nota Eletrônica
-          </Button>
           <Link
             href="https://santamaria.7focus.inf.br/santamaria/portal-transparencia/menu-transparencia/receitas-covid19"
             passHref
@@ -153,14 +142,14 @@ const Navigation: FC = () => {
                   h="102px"
                   cursor="pointer"
                 >
-                  <Icon as={AiOutlineFile} fontSize="3xl" userSelect="none" />
+                  <Icon as={GiInjustice} fontSize="3xl" userSelect="none" />
                   <Text
                     mt={2}
                     fontSize={["md", "sm", "md", "md", "md"]}
                     textAlign="center"
                     userSelect="none"
                   >
-                    Decretos
+                    Leis e Decretos
                   </Text>
                 </Flex>
               </motion.div>

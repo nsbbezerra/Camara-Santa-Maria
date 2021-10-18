@@ -12,6 +12,7 @@ import {
   Divider,
   Button,
   Input,
+  Stack,
 } from "@chakra-ui/react";
 import Header from "../components/App/Header";
 import Footer from "../components/App/Footer";
@@ -74,40 +75,42 @@ const Decrees: NextPage = () => {
         fontSize="xl"
         fontWeight="bold"
       >
-        DECRETOS
+        LEIS E DECRETOS
       </Flex>
 
       <Container mt={20} maxW="6xl">
         <Grid templateColumns={"1fr"} gap={5}>
           <Box>
-            {ordinances?.map((ord) => (
-              <Box borderWidth="1px" p={5} rounded="md" key={ord._id}>
-                <HStack spacing={10} align="flex-start">
-                  <Icon as={FaFilePdf} fontSize="5xl" color="green.500" />
-                  <Box w="100%">
-                    <Heading fontSize="3xl">{ord.title}</Heading>
-                    <div id="news-container">
-                      {Parse(ord.description || "")}
-                    </div>
-                    <Divider mt={5} mb={5} />
-                    <Link
-                      href={`${config.default_url}/docs/${ord.file}`}
-                      passHref
-                    >
-                      <a target="_blank">
-                        <Button
-                          leftIcon={<AiOutlineSearch />}
-                          colorScheme="blue"
-                          onClick={() => {}}
-                        >
-                          Visualizar
-                        </Button>
-                      </a>
-                    </Link>
-                  </Box>
-                </HStack>
-              </Box>
-            ))}
+            <Stack spacing={5}>
+              {ordinances?.map((ord) => (
+                <Box borderWidth="1px" p={5} rounded="md" key={ord._id}>
+                  <HStack spacing={10} align="flex-start">
+                    <Icon as={FaFilePdf} fontSize="5xl" color="gray.500" />
+                    <Box w="100%">
+                      <Heading fontSize="3xl">{ord.title}</Heading>
+                      <div id="news-container">
+                        {Parse(ord.description || "")}
+                      </div>
+                      <Divider mt={5} mb={5} />
+                      <Link
+                        href={`${config.default_url}/docs/${ord.file}`}
+                        passHref
+                      >
+                        <a target="_blank">
+                          <Button
+                            leftIcon={<AiOutlineSearch />}
+                            colorScheme="blue"
+                            onClick={() => {}}
+                          >
+                            Visualizar
+                          </Button>
+                        </a>
+                      </Link>
+                    </Box>
+                  </HStack>
+                </Box>
+              ))}
+            </Stack>
 
             <Flex align="center" justify="center" mt={10}>
               <Button

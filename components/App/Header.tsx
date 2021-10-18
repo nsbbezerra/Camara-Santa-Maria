@@ -562,9 +562,6 @@ const Header: FC = () => {
                 WEBMAIL
               </Button>
               <Button rounded="none" colorScheme="blue" variant="ghost">
-                PAINEL DE CONTROLE
-              </Button>
-              <Button rounded="none" colorScheme="blue" variant="ghost">
                 DIÁRIO OFICIAL
               </Button>
             </Stack>
