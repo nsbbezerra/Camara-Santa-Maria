@@ -174,7 +174,7 @@ const Ordinances: NextPage = ({
                 leftIcon={<AiOutlineArrowLeft />}
                 _hover={{ transform: "scale(1.05)" }}
                 _active={{ transform: "scale(1)" }}
-                isDisabled={page <= page}
+                isDisabled={page <= 1}
                 onClick={() => setPage(page - 1)}
               >
                 Anterior

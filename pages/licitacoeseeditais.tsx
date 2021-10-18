@@ -15,7 +15,6 @@ import {
   Tbody,
   Tr,
   Td,
-  Divider,
   ButtonGroup,
   Button,
   Input,
@@ -23,13 +22,13 @@ import {
 import Header from "../components/App/Header";
 import Footer from "../components/App/Footer";
 import {
-  AiTwotoneFolderOpen,
   AiOutlineFilePdf,
   AiOutlineDownload,
   AiOutlineSearch,
   AiOutlineArrowLeft,
   AiOutlineArrowRight,
 } from "react-icons/ai";
+import { BsFillFolderFill } from "react-icons/bs";
 import { useFetch } from "../hooks/useFetch";
 import pt_br from "date-fns/locale/pt-BR";
 import { format } from "date-fns";
@@ -116,9 +115,10 @@ const Licitacoes: NextPage = () => {
                 alignItems="center"
               >
                 <Icon
-                  as={AiTwotoneFolderOpen}
-                  fontSize={["4xl", "6xl", "6xl", "6xl", "6xl"]}
-                  color="green.500"
+                  as={BsFillFolderFill}
+                  fontSize={["4xl", "5xl", "5xl", "5xl", "5xl"]}
+                  color="gray.500"
+                  ml={5}
                 />
                 <Flex align="center" cursor="pointer">
                   <Box>
@@ -133,8 +133,8 @@ const Licitacoes: NextPage = () => {
                   </Box>
                 </Flex>
               </Grid>
-              <Divider mt={5} />
-              <Table size="sm">
+
+              <Table size="sm" variant="unstyled" mt={5}>
                 <Thead>
                   <Tr>
                     <Th w="5%" textAlign="center"></Th>
@@ -150,7 +150,14 @@ const Licitacoes: NextPage = () => {
                       <Td w="5%" textAlign="center">
                         <Icon as={AiOutlineFilePdf} />
                       </Td>
-                      <Td>{file.file}</Td>
+                      <Td>
+                        <Text
+                          w={["88%", "78%", "78%", "78%", "78%"]}
+                          noOfLines={1}
+                        >
+                          {file.file}
+                        </Text>
+                      </Td>
                       <Td
                         w={["7%", "15%", "15%", "15%", "15%"]}
                         textAlign="center"
@@ -216,7 +223,7 @@ const Licitacoes: NextPage = () => {
             leftIcon={<AiOutlineArrowLeft />}
             _hover={{ transform: "scale(1.05)" }}
             _active={{ transform: "scale(1)" }}
-            isDisabled={page <= page}
+            isDisabled={page <= 1}
             onClick={() => setPage(page - 1)}
           >
             Anterior
