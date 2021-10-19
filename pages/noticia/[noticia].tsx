@@ -285,16 +285,13 @@ const Noticia: NextPage = ({
                   alt="Prefeitura de Santa Maria"
                   objectFit="cover"
                 />
-                <Tag size="sm" colorScheme="blue" mt={2} ml={2}>
-                  {ord.tag}
-                </Tag>
-                <Flex h="110px" align="center">
+                <Flex align="center">
                   <Box p={2}>
                     <Link href={`/noticia/${ord._id}`} passHref>
                       <LinkOverlay href="/">
                         <Heading
                           fontSize={["sm", "md", "md", "md", "md"]}
-                          fontWeight="medium"
+                          fontWeight="semibold"
                           noOfLines={5}
                           w="100%"
                         >

@@ -177,7 +177,7 @@ const Home: NextPage<IIndex> = ({
         </Grid>
 
         <Grid
-          templateColumns={["1fr", "1fr", "1fr", "300px 1fr", "300px 1fr"]}
+          templateColumns={["1fr", "1fr", "1fr", "280px 1fr", "280px 1fr"]}
           gap={8}
           mt={20}
         >
@@ -190,8 +190,8 @@ const Home: NextPage<IIndex> = ({
             </Flex>
 
             <Box
-              w={["100%", "100%", "100%", "300px", "300px"]}
-              h="300px"
+              w={["100%", "100%", "100%", "280px", "280px"]}
+              h="280px"
               mt={3}
               overflow="hidden"
               rounded="md"
@@ -244,13 +244,13 @@ const Home: NextPage<IIndex> = ({
             <Flex align="center">
               <Box h="20px" w="10px" bg="green.500" />
               <Heading fontSize="xl" ml={2}>
-                ÚLTIMAS PUBLICAÇÕES
+                ÚLTIMAS NOTÍCIAS
               </Heading>
             </Flex>
 
-            <Publications publication={publication} />
+            <News news={noticia} />
 
-            <Link href="/publicacoes" passHref>
+            <Link href="/noticias" passHref>
               <a>
                 <Button
                   rightIcon={<AiOutlinePlus />}
@@ -261,37 +261,12 @@ const Home: NextPage<IIndex> = ({
                   _hover={{ textDecor: "none", transform: "scale(1.05)" }}
                   _active={{ transform: "scale(1)" }}
                 >
-                  Veja Mais
+                  Veja Mais Notícias
                 </Button>
               </a>
             </Link>
           </Box>
         </Grid>
-
-        <Flex align="center" mt={20} mb={10}>
-          <Box h="20px" w="10px" bg="green.500" />
-          <Heading fontSize="xl" ml={2}>
-            ÚLTIMAS NOTÍCIAS
-          </Heading>
-        </Flex>
-
-        <News news={noticia} />
-
-        <Link href="/noticias" passHref>
-          <a>
-            <Button
-              rightIcon={<AiOutlinePlus />}
-              colorScheme="blue"
-              variant="link"
-              mt={4}
-              size="lg"
-              _hover={{ textDecor: "none", transform: "scale(1.05)" }}
-              _active={{ transform: "scale(1)" }}
-            >
-              Veja Mais Notícias
-            </Button>
-          </a>
-        </Link>
 
         <Flex align="center" mt={20} mb={10}>
           <Box h="20px" w="10px" bg="green.500" />
@@ -351,7 +326,7 @@ const Home: NextPage<IIndex> = ({
         </Link>
 
         <Grid
-          templateColumns="repeat(auto-fit, minmax(300px, 300px))"
+          templateColumns="repeat(auto-fit, minmax(260px, 260px))"
           gap={6}
           justifyContent="center"
           mt={20}
@@ -376,7 +351,7 @@ const Home: NextPage<IIndex> = ({
                   <Image
                     src="/img/esic.jpg"
                     layout="responsive"
-                    width={290}
+                    width={260}
                     height={180}
                     quality={100}
                     alt="Prefeitura de Santa Maria"
@@ -406,7 +381,7 @@ const Home: NextPage<IIndex> = ({
                   <Image
                     src="/img/covid.jpg"
                     layout="responsive"
-                    width={290}
+                    width={260}
                     height={180}
                     alt="Prefeitura de Santa Maria"
                     quality={100}
@@ -431,7 +406,7 @@ const Home: NextPage<IIndex> = ({
               <Image
                 src="/img/ouvidoria.jpg"
                 layout="responsive"
-                width={290}
+                width={260}
                 height={180}
                 alt="Prefeitura de Santa Maria"
                 quality={100}
