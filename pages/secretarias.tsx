@@ -70,7 +70,7 @@ const Secretarias: NextPage<ISecretary> = ({
                     justify="center"
                     align="center"
                     textAlign="center"
-                    bg="green.500"
+                    bg="gray.500"
                     color="white"
                     p={3}
                     fontWeight="bold"
@@ -88,21 +88,19 @@ const Secretarias: NextPage<ISecretary> = ({
                     gap={5}
                     p={5}
                     justifyItems="center"
+                    alignItems="center"
                   >
-                    <Box rounded="md" overflow="hidden" w="280px" h="220px">
+                    <Box rounded="md" overflow="hidden" w="280px" h="280px">
                       <Image
                         src={`${config.default_url}/img/${sec.thumbnail}`}
                         layout="responsive"
                         width={500}
-                        height={400}
+                        height={580}
                         objectFit="cover"
                         alt="Prefeitura de Santa Maria"
                       />
                     </Box>
                     <Box w="100%" pl={10}>
-                      <Center>
-                        <Text>DADOS DA SECRETARIA</Text>
-                      </Center>
                       <Heading fontSize="2xl" mt={3}>
                         {sec.name}
                       </Heading>
