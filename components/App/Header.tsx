@@ -64,6 +64,40 @@ const Header: FC = () => {
       <Head>
         <title>Prefeitura Municipal de Santa Maria do Tocantins</title>
         <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <meta
+          name="description"
+          content="Confira as principais informações da Prefeitura Municipal de Santa Maria do Tocantins - TO sobre assuntos relevantes para o cidadão, servidores e empresas."
+        />
+        <meta
+          name="keywords"
+          content="prefeitura, santa maria do tocantins, santa maria, gestão, população, prefeito, secretarias"
+        />
+        <meta property="og:locale" content="pt_BR" />
+        <meta property="og:type" content="website" />
+        <meta
+          property="og:title"
+          content="Prefeitura Municipal de Santa Maria do Tocantins - TO"
+        />
+        <meta
+          property="og:url"
+          content="https://santamariadotocantins.to.gov.br/"
+        />
+        <meta
+          property="og:site_name"
+          content="Prefeitura Municipal de Santa Maria do Tocantins - TO"
+        />
+        <meta
+          name="og:description"
+          content="Confira as principais informações da Prefeitura Municipal de Santa Maria do Tocantins - TO sobre assuntos relevantes para o cidadão, servidores e empresas."
+        />
+        <meta name="robots" content="index,nofollow" />
+        <meta
+          property="og:author"
+          content="NK Informática de Pedro Afonso - TO, Desenvolvedor Responsável: Natanael Bezerra"
+        />
+        <meta name="googletboot" content="index,nofollow" />
+        <meta httpEquiv="content-language" content="pt-br" />
+        <meta content="Global" name="distribution" />
       </Head>
 
       <Box
