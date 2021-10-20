@@ -98,6 +98,7 @@ const Header: FC = () => {
         <meta name="googletboot" content="index,nofollow" />
         <meta httpEquiv="content-language" content="pt-br" />
         <meta content="Global" name="distribution" />
+        <meta name="google-site-verification" content="upcCXF3SRMHmKvSLQDEeqTJhSFM0v5cGEu6fO4QGQRI" />
       </Head>
 
       <Box
