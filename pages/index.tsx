@@ -22,7 +22,6 @@ import Footer from "../components/App/Footer";
 import Navigation from "../components/App/Navigation";
 import Link from "next/link";
 import News from "../components/App/News";
-import Publications from "../components/App/Publications";
 import { config } from "../configs/config";
 
 interface IInformative {
