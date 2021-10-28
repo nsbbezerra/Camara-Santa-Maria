@@ -33,7 +33,7 @@ interface INews {
   month: string;
   year: number;
   created_at: Date;
-  tag: string;
+  tag?: string;
 }
 
 interface IImages {
@@ -89,40 +89,46 @@ const News: FC<IProps> = ({ news }) => {
                 />
                 <Flex align="center">
                   <Box p={3}>
-                    {!not.tag.includes(",") ? (
-                      <Tag
-                        colorScheme="blue"
-                        size="sm"
-                        d={[
-                          "none",
-                          "inline-flex",
-                          "inline-flex",
-                          "inline-flex",
-                          "inline-flex",
-                        ]}
-                      >
-                        {not.tag}
-                      </Tag>
+                    {!not.tag ? (
+                      ""
                     ) : (
-                      <Wrap mb={2}>
-                        {not.tag.split(",").map((tag) => (
-                          <WrapItem key={tag}>
-                            <Tag
-                              colorScheme="blue"
-                              size="sm"
-                              d={[
-                                "none",
-                                "inline-flex",
-                                "inline-flex",
-                                "inline-flex",
-                                "inline-flex",
-                              ]}
-                            >
-                              {tag}
-                            </Tag>
-                          </WrapItem>
-                        ))}
-                      </Wrap>
+                      <>
+                        {!not.tag?.includes(",") ? (
+                          <Tag
+                            colorScheme="blue"
+                            size="sm"
+                            d={[
+                              "none",
+                              "inline-flex",
+                              "inline-flex",
+                              "inline-flex",
+                              "inline-flex",
+                            ]}
+                          >
+                            {not.tag}
+                          </Tag>
+                        ) : (
+                          <Wrap mb={2}>
+                            {not.tag?.split(",").map((tag) => (
+                              <WrapItem key={tag}>
+                                <Tag
+                                  colorScheme="blue"
+                                  size="sm"
+                                  d={[
+                                    "none",
+                                    "inline-flex",
+                                    "inline-flex",
+                                    "inline-flex",
+                                    "inline-flex",
+                                  ]}
+                                >
+                                  {tag}
+                                </Tag>
+                              </WrapItem>
+                            ))}
+                          </Wrap>
+                        )}
+                      </>
                     )}
                     <Link href={`/noticia/${not._id}`} passHref>
                       <LinkOverlay>

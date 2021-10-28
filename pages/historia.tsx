@@ -3,7 +3,6 @@ import { Container, Flex, Grid, Box, Text } from "@chakra-ui/react";
 import Header from "../components/App/Header";
 import Footer from "../components/App/Footer";
 import Image from "next/image";
-import { motion } from "framer-motion";
 
 const Historia: NextPage = () => {
   return (
@@ -34,104 +33,21 @@ const Historia: NextPage = () => {
         >
           <Box w="100%">
             <Text style={{ textIndent: "50px" }} mb={3} textAlign="justify">
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras
-              ullamcorper tellus at nibh porta euismod. Sed quis justo
-              imperdiet, molestie purus in, ultricies ex. Suspendisse pharetra
-              urna ut dignissim posuere. Duis ut commodo ipsum, quis condimentum
-              augue. Integer convallis mollis nisl, eget pellentesque ante
-              interdum eget. Donec eget vehicula dolor, ac cursus ex. Duis non
-              interdum justo. Nam a odio a diam varius sollicitudin. Vestibulum
-              lacus ante, vestibulum at mollis at, hendrerit a sem.
+              Cidade de Santa Maria do Tocantins ganha destaque por grande
+              número de obras finalizadas no município pelo prefeito Itamar
+              Barrachini.
             </Text>
             <Text style={{ textIndent: "50px" }} mb={3} textAlign="justify">
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras
-              ullamcorper tellus at nibh porta euismod. Sed quis justo
-              imperdiet, molestie purus in, ultricies ex. Suspendisse pharetra
-              urna ut dignissim posuere. Duis ut commodo ipsum, quis condimentum
-              augue. Integer convallis mollis nisl, eget pellentesque ante
-              interdum eget. Donec eget vehicula dolor, ac cursus ex. Duis non
-              interdum justo. Nam a odio a diam varius sollicitudin. Vestibulum
-              lacus ante, vestibulum at mollis at, hendrerit a sem.
+              Fazer projetos, organizar ideias, planejar para, enfim, ver
+              realizados os sonhos, os anseios de um povo. Esse é o objetivo de
+              toda a equipe que faz parte da atual gestão. O pensamento
+              coletivo, o engajamento de cada servidor, funcionário, secretário,
+              colaborador, fez com que o município alcançasse um número de
+              construções, reformas e ampliações jamais visto na história de
+              Santa Maria do Tocantins.
             </Text>
             <Text style={{ textIndent: "50px" }} mb={3} textAlign="justify">
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras
-              ullamcorper tellus at nibh porta euismod. Sed quis justo
-              imperdiet, molestie purus in, ultricies ex. Suspendisse pharetra
-              urna ut dignissim posuere. Duis ut commodo ipsum, quis condimentum
-              augue. Integer convallis mollis nisl, eget pellentesque ante
-              interdum eget. Donec eget vehicula dolor, ac cursus ex. Duis non
-              interdum justo. Nam a odio a diam varius sollicitudin. Vestibulum
-              lacus ante, vestibulum at mollis at, hendrerit a sem.
-            </Text>
-            <Text style={{ textIndent: "50px" }} mb={3} textAlign="justify">
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras
-              ullamcorper tellus at nibh porta euismod. Sed quis justo
-              imperdiet, molestie purus in, ultricies ex. Suspendisse pharetra
-              urna ut dignissim posuere. Duis ut commodo ipsum, quis condimentum
-              augue. Integer convallis mollis nisl, eget pellentesque ante
-              interdum eget. Donec eget vehicula dolor, ac cursus ex. Duis non
-              interdum justo. Nam a odio a diam varius sollicitudin. Vestibulum
-              lacus ante, vestibulum at mollis at, hendrerit a sem.
-            </Text>
-            <Text style={{ textIndent: "50px" }} mb={3} textAlign="justify">
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras
-              ullamcorper tellus at nibh porta euismod. Sed quis justo
-              imperdiet, molestie purus in, ultricies ex. Suspendisse pharetra
-              urna ut dignissim posuere. Duis ut commodo ipsum, quis condimentum
-              augue. Integer convallis mollis nisl, eget pellentesque ante
-              interdum eget. Donec eget vehicula dolor, ac cursus ex. Duis non
-              interdum justo. Nam a odio a diam varius sollicitudin. Vestibulum
-              lacus ante, vestibulum at mollis at, hendrerit a sem.
-            </Text>
-            <Text style={{ textIndent: "50px" }} mb={3} textAlign="justify">
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras
-              ullamcorper tellus at nibh porta euismod. Sed quis justo
-              imperdiet, molestie purus in, ultricies ex. Suspendisse pharetra
-              urna ut dignissim posuere. Duis ut commodo ipsum, quis condimentum
-              augue. Integer convallis mollis nisl, eget pellentesque ante
-              interdum eget. Donec eget vehicula dolor, ac cursus ex. Duis non
-              interdum justo. Nam a odio a diam varius sollicitudin. Vestibulum
-              lacus ante, vestibulum at mollis at, hendrerit a sem.
-            </Text>
-            <Text style={{ textIndent: "50px" }} mb={3} textAlign="justify">
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras
-              ullamcorper tellus at nibh porta euismod. Sed quis justo
-              imperdiet, molestie purus in, ultricies ex. Suspendisse pharetra
-              urna ut dignissim posuere. Duis ut commodo ipsum, quis condimentum
-              augue. Integer convallis mollis nisl, eget pellentesque ante
-              interdum eget. Donec eget vehicula dolor, ac cursus ex. Duis non
-              interdum justo. Nam a odio a diam varius sollicitudin. Vestibulum
-              lacus ante, vestibulum at mollis at, hendrerit a sem.
-            </Text>
-            <Text style={{ textIndent: "50px" }} mb={3} textAlign="justify">
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras
-              ullamcorper tellus at nibh porta euismod. Sed quis justo
-              imperdiet, molestie purus in, ultricies ex. Suspendisse pharetra
-              urna ut dignissim posuere. Duis ut commodo ipsum, quis condimentum
-              augue. Integer convallis mollis nisl, eget pellentesque ante
-              interdum eget. Donec eget vehicula dolor, ac cursus ex. Duis non
-              interdum justo. Nam a odio a diam varius sollicitudin. Vestibulum
-              lacus ante, vestibulum at mollis at, hendrerit a sem.
-            </Text>
-            <Text style={{ textIndent: "50px" }} mb={3} textAlign="justify">
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras
-              ullamcorper tellus at nibh porta euismod. Sed quis justo
-              imperdiet, molestie purus in, ultricies ex. Suspendisse pharetra
-              urna ut dignissim posuere. Duis ut commodo ipsum, quis condimentum
-              augue. Integer convallis mollis nisl, eget pellentesque ante
-              interdum eget. Donec eget vehicula dolor, ac cursus ex. Duis non
-              interdum justo. Nam a odio a diam varius sollicitudin. Vestibulum
-              lacus ante, vestibulum at mollis at, hendrerit a sem.
-            </Text>
-            <Text style={{ textIndent: "50px" }} mb={3} textAlign="justify">
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras
-              ullamcorper tellus at nibh porta euismod. Sed quis justo
-              imperdiet, molestie purus in, ultricies ex. Suspendisse pharetra
-              urna ut dignissim posuere. Duis ut commodo ipsum, quis condimentum
-              augue. Integer convallis mollis nisl, eget pellentesque ante
-              interdum eget. Donec eget vehicula dolor, ac cursus ex. Duis non
-              interdum justo. Nam a odio a diam varius sollicitudin. Vestibulum
-              lacus ante, vestibulum at mollis at, hendrerit a sem.
+              É tempo de crescer e desenvolver.
             </Text>
           </Box>
           <Box>
@@ -145,85 +61,27 @@ const Historia: NextPage = () => {
               ]}
               gap={5}
             >
-              <motion.div
-                whileHover={{ scale: 1.03 }}
-                whileTap={{ scale: 1 }}
-                transition={{ duration: 0.2 }}
-              >
-                <Box w="100%" rounded="md" overflow="hidden" cursor="pointer">
-                  <Image
-                    src="https://img.freepik.com/free-vector/city-skyline-landmarks-illustration_23-2148810172.jpg?size=626&ext=jpg"
-                    layout="responsive"
-                    width={300}
-                    height={250}
-                    alt="Prefeitura de Santa Maria"
-                    objectFit="cover"
-                  />
-                </Box>
-                <Text fontSize="xs" fontStyle="italic">
-                  Copy Image
-                </Text>
-              </motion.div>
+              <Box w="100%" rounded="md" overflow="hidden" cursor="pointer">
+                <Image
+                  src="/img/st01.jpg"
+                  layout="responsive"
+                  width={300}
+                  height={250}
+                  alt="Prefeitura de Santa Maria"
+                  objectFit="cover"
+                />
+              </Box>
 
-              <motion.div
-                whileHover={{ scale: 1.03 }}
-                whileTap={{ scale: 1 }}
-                transition={{ duration: 0.2 }}
-              >
-                <Box w="100%" rounded="md" overflow="hidden" cursor="pointer">
-                  <Image
-                    src="https://img.freepik.com/free-vector/city-skyline-landmarks-illustration_23-2148810172.jpg?size=626&ext=jpg"
-                    layout="responsive"
-                    width={300}
-                    height={250}
-                    alt="Prefeitura de Santa Maria"
-                    objectFit="cover"
-                  />
-                </Box>
-                <Text fontSize="xs" fontStyle="italic">
-                  Copy Image
-                </Text>
-              </motion.div>
-
-              <motion.div
-                whileHover={{ scale: 1.03 }}
-                whileTap={{ scale: 1 }}
-                transition={{ duration: 0.2 }}
-              >
-                <Box w="100%" rounded="md" overflow="hidden" cursor="pointer">
-                  <Image
-                    src="https://img.freepik.com/free-vector/city-skyline-landmarks-illustration_23-2148810172.jpg?size=626&ext=jpg"
-                    layout="responsive"
-                    alt="Prefeitura de Santa Maria"
-                    width={300}
-                    height={250}
-                    objectFit="cover"
-                  />
-                </Box>
-                <Text fontSize="xs" fontStyle="italic">
-                  Copy Image
-                </Text>
-              </motion.div>
-
-              <motion.div
-                whileHover={{ scale: 1.03 }}
-                whileTap={{ scale: 1 }}
-                transition={{ duration: 0.2 }}
-              >
-                <Box w="100%" rounded="md" overflow="hidden" cursor="pointer">
-                  <Image
-                    src="https://img.freepik.com/free-vector/city-skyline-landmarks-illustration_23-2148810172.jpg?size=626&ext=jpg"
-                    layout="responsive"
-                    width={300}
-                    height={250}
-                    alt="Prefeitura de Santa Maria"
-                    objectFit="cover"
-                  />
-                </Box>
-                <Text fontSize="xs" fontStyle="italic">
-                  Copy Image
-                </Text>
-              </motion.div>
+              <Box w="100%" rounded="md" overflow="hidden" cursor="pointer">
+                <Image
+                  src="/img/st02.jpg"
+                  layout="responsive"
+                  width={300}
+                  height={250}
+                  alt="Prefeitura de Santa Maria"
+                  objectFit="cover"
+                />
+              </Box>
             </Grid>
           </Box>
         </Grid>

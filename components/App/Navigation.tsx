@@ -188,7 +188,7 @@ const Navigation: FC = () => {
           </Link>
 
           <Link
-            href="https://santamaria.7focus.inf.br/santamaria/portal-transparencia/contra-cheques/login"
+            href="https://santamaria.7focus.inf.br/santamaria/portal-transparencia"
             passHref
           >
             <a target="_blank">
@@ -256,7 +256,7 @@ const Navigation: FC = () => {
           </Link>
 
           <Link
-            href="https://santamaria.7focus.inf.br/santamaria/portal-transparencia/menu-transparencia/empenhos-covid19"
+            href="https://santamaria.7focus.inf.br/santamaria/portal-empenhos-covid19"
             passHref
           >
             <a target="_blank">
@@ -290,7 +290,7 @@ const Navigation: FC = () => {
           </Link>
 
           <Link
-            href="https://santamaria.7focus.inf.br/santamaria/portal-transparencia/menu-transparencia/receitas-covid19"
+            href="https://santamaria.7focus.inf.br/santamaria/portal-receitas-covid19"
             passHref
           >
             <a target="_blank">
@@ -322,87 +322,6 @@ const Navigation: FC = () => {
               </motion.div>
             </a>
           </Link>
-
-          <motion.div
-            whileHover={{ scale: 1.03 }}
-            whileTap={{ scale: 1 }}
-            transition={{ duration: 0.2 }}
-          >
-            <Flex
-              bg="green.500"
-              color="white"
-              rounded="md"
-              direction="column"
-              justify="center"
-              align="center"
-              h="102px"
-              cursor="pointer"
-            >
-              <Icon as={FaReceipt} fontSize="3xl" userSelect="none" />
-              <Text
-                mt={2}
-                fontSize={["md", "sm", "md", "md", "md"]}
-                textAlign="center"
-                userSelect="none"
-              >
-                Emissão ISS
-              </Text>
-            </Flex>
-          </motion.div>
-
-          <motion.div
-            whileHover={{ scale: 1.03 }}
-            whileTap={{ scale: 1 }}
-            transition={{ duration: 0.2 }}
-          >
-            <Flex
-              bg="green.500"
-              color="white"
-              rounded="md"
-              direction="column"
-              justify="center"
-              align="center"
-              h="102px"
-              cursor="pointer"
-            >
-              <Icon as={FaFileInvoice} fontSize="3xl" userSelect="none" />
-              <Text
-                mt={2}
-                fontSize={["md", "sm", "md", "md", "md"]}
-                textAlign="center"
-                userSelect="none"
-              >
-                Emissão CDN
-              </Text>
-            </Flex>
-          </motion.div>
-
-          <motion.div
-            whileHover={{ scale: 1.03 }}
-            whileTap={{ scale: 1 }}
-            transition={{ duration: 0.2 }}
-          >
-            <Flex
-              bg="green.500"
-              color="white"
-              rounded="md"
-              direction="column"
-              justify="center"
-              align="center"
-              h="102px"
-              cursor="pointer"
-            >
-              <Icon as={FaSearch} fontSize="3xl" userSelect="none" />
-              <Text
-                mt={2}
-                fontSize={["md", "sm", "md", "md", "md"]}
-                textAlign="center"
-                userSelect="none"
-              >
-                Consultar CDN
-              </Text>
-            </Flex>
-          </motion.div>
 
           <Link
             href="http://vbmsistemas.com.br/esic-santamaria/index/"

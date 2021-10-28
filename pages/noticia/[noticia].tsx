@@ -51,7 +51,7 @@ interface INews {
   month: string;
   year: number;
   created_at: Date;
-  tag: string;
+  tag?: string;
 }
 
 interface IImages {
@@ -233,20 +233,26 @@ const Noticia: NextPage = ({
           </>
         )}
 
-        {news.tag.includes(",") ? (
-          <Wrap spacing={3} mt={10}>
-            {news.tag.split(",").map((tag: string) => (
-              <WrapItem key={tag}>
-                <Tag colorScheme="blue" cursor="pointer">
-                  {tag}
-                </Tag>
-              </WrapItem>
-            ))}
-          </Wrap>
+        {!news.tag ? (
+          ""
         ) : (
-          <Tag colorScheme="blue" mt={10}>
-            {news.tag}
-          </Tag>
+          <>
+            {news.tag.includes(",") ? (
+              <Wrap spacing={3} mt={10}>
+                {news.tag.split(",").map((tag: string) => (
+                  <WrapItem key={tag}>
+                    <Tag colorScheme="blue" cursor="pointer">
+                      {tag}
+                    </Tag>
+                  </WrapItem>
+                ))}
+              </Wrap>
+            ) : (
+              <Tag colorScheme="blue" mt={10}>
+                {news.tag}
+              </Tag>
+            )}
+          </>
         )}
 
         {others.length !== 0 && (

@@ -240,7 +240,7 @@ const Home: NextPage<IIndex> = ({
           </Box>
 
           <Box>
-            <Flex align="center">
+            <Flex align="center" mb={3}>
               <Box h="20px" w="10px" bg="green.500" />
               <Heading fontSize="xl" ml={2}>
                 ÚLTIMAS NOTÍCIAS
