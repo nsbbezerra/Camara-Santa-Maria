@@ -98,7 +98,10 @@ const Header: FC = () => {
         <meta name="googletboot" content="index,nofollow" />
         <meta httpEquiv="content-language" content="pt-br" />
         <meta content="Global" name="distribution" />
-        <meta name="google-site-verification" content="upcCXF3SRMHmKvSLQDEeqTJhSFM0v5cGEu6fO4QGQRI" />
+        <meta
+          name="google-site-verification"
+          content="upcCXF3SRMHmKvSLQDEeqTJhSFM0v5cGEu6fO4QGQRI"
+        />
       </Head>
 
       <Box
@@ -279,10 +282,7 @@ const Header: FC = () => {
 
               <Divider orientation="vertical" h="25px" />
 
-              <Link
-                href="http://www.diariosantamariatocantins.com/index.php/diario"
-                passHref
-              >
+              <Link href="https://diariosantamariatocantins.com.br/" passHref>
                 <a target="_blank">
                   <Button
                     variant="link"

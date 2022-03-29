@@ -91,10 +91,7 @@ const Navigation: FC = () => {
           ]}
           gap={3}
         >
-          <Link
-            href="http://www.diariosantamariatocantins.com/index.php/diario"
-            passHref
-          >
+          <Link href="https://diariosantamariatocantins.com.br/" passHref>
             <a target="_blank">
               <motion.div
                 whileHover={{ scale: 1.03 }}
