@@ -7,6 +7,7 @@ import {
   AiOutlineCopy,
   AiOutlineFall,
   AiOutlineRise,
+  AiOutlineFileText,
 } from "react-icons/ai";
 import { GiInjustice } from "react-icons/gi";
 import { ImNewspaper } from "react-icons/im";
@@ -91,6 +92,45 @@ const Navigation: FC = () => {
           ]}
           gap={3}
         >
+          <Link
+            href={
+              "https://santamariadotocantins.megasoftarrecadanet.com.br/home"
+            }
+            passHref
+          >
+            <a target="_blank">
+              <motion.div
+                whileHover={{ scale: 1.03 }}
+                whileTap={{ scale: 1 }}
+                transition={{ duration: 0.2 }}
+              >
+                <Flex
+                  bg="green.500"
+                  color="white"
+                  rounded="md"
+                  direction="column"
+                  justify="center"
+                  align="center"
+                  h="102px"
+                  cursor="pointer"
+                >
+                  <Icon
+                    as={AiOutlineFileText}
+                    fontSize="3xl"
+                    userSelect="none"
+                  />
+                  <Text
+                    mt={2}
+                    fontSize={["md", "sm", "md", "md", "md"]}
+                    textAlign="center"
+                    userSelect="none"
+                  >
+                    Nota Fiscal NFS-e
+                  </Text>
+                </Flex>
+              </motion.div>
+            </a>
+          </Link>
           <Link href="https://diariosantamariatocantins.com.br/" passHref>
             <a target="_blank">
               <motion.div
