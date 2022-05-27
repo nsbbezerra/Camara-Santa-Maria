@@ -187,7 +187,7 @@ const Header: FC = () => {
                 </Menu>
 
                 <Link
-                  href="https://santamaria.7focus.inf.br/santamaria/portal-transparencia"
+                  href="https://santamariadotocantins.megasofttransparencia.com.br/"
                   passHref
                 >
                   <a target="_blank">
@@ -433,7 +433,7 @@ const Header: FC = () => {
               </Menu>
 
               <Link
-                href="https://santamaria.7focus.inf.br/santamaria/portal-transparencia"
+                href="https://santamariadotocantins.megasofttransparencia.com.br/"
                 passHref
               >
                 <a target="_blank">
@@ -555,7 +555,7 @@ const Header: FC = () => {
               </Box>
 
               <Link
-                href="https://santamaria.7focus.inf.br/santamaria/portal-transparencia"
+                href="https://santamariadotocantins.megasofttransparencia.com.br/"
                 passHref
               >
                 <a target="_blank">

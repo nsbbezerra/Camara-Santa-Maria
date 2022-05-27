@@ -37,7 +37,7 @@ const Navigation: FC = () => {
       >
         <Stack spacing={4}>
           <Link
-            href="https://santamaria.7focus.inf.br/santamaria/portal-transparencia"
+            href="https://santamariadotocantins.megasofttransparencia.com.br/"
             passHref
           >
             <a target="_blank">
