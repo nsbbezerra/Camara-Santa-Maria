@@ -12,8 +12,15 @@ import {
   Box,
   AspectRatio,
   Icon,
+  Modal,
+  ModalOverlay,
+  ModalContent,
+  ModalHeader,
+  ModalFooter,
+  ModalBody,
+  ModalCloseButton,
 } from "@chakra-ui/react";
-import { AiOutlinePlus } from "react-icons/ai";
+import { AiOutlinePlus, AiOutlineSearch } from "react-icons/ai";
 import { BsInboxFill } from "react-icons/bs";
 import { motion } from "framer-motion";
 import Image from "next/image";
@@ -23,6 +30,7 @@ import Navigation from "../components/App/Navigation";
 import Link from "next/link";
 import News from "../components/App/News";
 import { config } from "../configs/config";
+import { useState } from "react";
 
 interface IInformative {
   _id: string;
@@ -72,16 +80,141 @@ interface IIndex {
   video?: IVideos[];
 }
 
-const Home: NextPage<IIndex> = ({
-  informative,
-  publication,
-  noticia,
-  video,
-}) => {
+const Home: NextPage<IIndex> = ({ informative, noticia, video }) => {
+  const [open, setOpen] = useState<boolean>(false);
+  const [url, setUrl] = useState<string>("");
+  const [modal, setModal] = useState<boolean>(false);
+
+  const handleInformativo = (target: string) => {
+    setUrl(target);
+    setModal(true);
+  };
+
   return (
     <>
       <Header />
       <CarouselApp />
+
+      <Container maxW={"6xl"}>
+        <Box
+          my={10}
+          w="full"
+          h="xs"
+          rounded="md"
+          overflow={"hidden"}
+          position="relative"
+        >
+          <Box display={["block", "none", "none", "none", "none"]}>
+            <Image
+              src="/img/vacine.jpg"
+              layout="fill"
+              objectFit="cover"
+              alt="Prefeitura de Santa Maria"
+            />
+          </Box>
+          <Box display={["none", "block", "block", "block", "block"]}>
+            <Image
+              src="/img/vacinacao.jpg"
+              layout="fill"
+              objectFit="cover"
+              alt="Prefeitura de Santa Maria"
+            />
+          </Box>
+          <Text
+            w="full"
+            textAlign={"center"}
+            zIndex={100}
+            display="block"
+            position={"absolute"}
+            bottom={[1, 1, 5, 5, 5]}
+            fontSize={["xs", "sm", "md", "md", "md"]}
+            fontWeight="bold"
+          >
+            Clique aqui para saber mais
+          </Text>
+
+          <Grid
+            position={"absolute"}
+            top={0}
+            right={0}
+            left={0}
+            bottom={0}
+            bg="blackAlpha.900"
+            templateColumns={[
+              "1fr",
+              "1fr 1fr",
+              "1fr 1fr",
+              "1fr 1fr",
+              "1fr 1fr",
+            ]}
+            gap={[5, 5, 10, 10, 10]}
+            p={[5, 5, 10, 10, 10]}
+            opacity={open ? 1 : 0}
+            transition={"all"}
+            transitionDelay={"0.2s"}
+            onClick={() => setOpen(!open)}
+            cursor="pointer"
+            onBlur={() => setOpen(false)}
+          >
+            <Flex
+              bg={"whiteAlpha.300"}
+              rounded="md"
+              w="full"
+              h="full"
+              direction={"column"}
+              justify="center"
+              align={"center"}
+              p={3}
+            >
+              <Heading
+                textAlign={"center"}
+                fontSize={["md", "2xl", "2xl", "2xl", "2xl"]}
+                color={"white"}
+              >
+                Plano municipal de operacionalização da campanha de vacinação
+                contra a Covid-19
+              </Heading>
+              <Link
+                href={
+                  "https://drive.google.com/file/d/1bm4Sm1elrptcNA5sCr98baVPGI6Eydd4/view?usp=sharing"
+                }
+                passHref
+              >
+                <a target={"_blank"}>
+                  <Button mt={5} colorScheme="green">
+                    Veja aqui
+                  </Button>
+                </a>
+              </Link>
+            </Flex>
+            <Flex
+              bg={"whiteAlpha.300"}
+              rounded="md"
+              w="full"
+              h="full"
+              direction={"column"}
+              justify="center"
+              align={"center"}
+              p={3}
+            >
+              <Heading
+                textAlign={"center"}
+                fontSize={["md", "2xl", "2xl", "2xl", "2xl"]}
+                color={"white"}
+              >
+                Dados de vacinação contra a Covid-19
+              </Heading>
+              <Link href={"/vacinacao"} passHref>
+                <a target={"_blank"}>
+                  <Button mt={5} colorScheme="green">
+                    Veja aqui
+                  </Button>
+                </a>
+              </Link>
+            </Flex>
+          </Grid>
+        </Box>
+      </Container>
 
       <Center mt={10} mb={10}>
         <Heading fontSize="2xl">ACESSO À INFORMAÇÃO</Heading>
@@ -209,7 +342,7 @@ const Home: NextPage<IIndex> = ({
                 <Carousel
                   infiniteLoop
                   autoPlay
-                  interval={6000}
+                  interval={7000}
                   showArrows
                   showIndicators
                   showStatus={false}
@@ -223,6 +356,7 @@ const Home: NextPage<IIndex> = ({
                       w={["100%", "100%", "100%", "300px", "300px"]}
                       h="300px"
                       key={info._id}
+                      position="relative"
                     >
                       <Image
                         src={`${config.default_url}/img/${info.image}`}
@@ -232,6 +366,31 @@ const Home: NextPage<IIndex> = ({
                         objectFit="cover"
                         alt="Prefeitura de Santa Maria"
                       />
+
+                      <Flex
+                        w="full"
+                        h="full"
+                        bg="blackAlpha.800"
+                        position={"absolute"}
+                        top={0}
+                        right={0}
+                        left={0}
+                        bottom={0}
+                        justify="center"
+                        align={"center"}
+                        color="white"
+                        fontSize={"8xl"}
+                        cursor="pointer"
+                        opacity={0}
+                        _hover={{ opacity: 1 }}
+                        onClick={() =>
+                          handleInformativo(
+                            `${config.default_url}/img/${info.image}`
+                          )
+                        }
+                      >
+                        <AiOutlineSearch />
+                      </Flex>
                     </Box>
                   ))}
                 </Carousel>
@@ -445,6 +604,28 @@ const Home: NextPage<IIndex> = ({
       </Container>
 
       <Footer />
+
+      <Modal
+        isOpen={modal}
+        onClose={() => setModal(false)}
+        size="6xl"
+        isCentered={false}
+      >
+        <ModalOverlay />
+        <ModalContent bg="transparent" shadow={"none"}>
+          <ModalCloseButton bg={"whiteAlpha.500"} zIndex={100} />
+          <ModalBody h={"full"} bg="transparent">
+            <Box w={"full"} h="container.sm">
+              <Image
+                src={url}
+                layout="fill"
+                objectFit="contain"
+                alt="Prefeitura de Santa Maria"
+              />
+            </Box>
+          </ModalBody>
+        </ModalContent>
+      </Modal>
     </>
   );
 };
